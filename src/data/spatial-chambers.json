@@ -114,31 +114,61 @@
     "title": "全球科技 · 剧情推理 · 奇闻观察",
     "items": [
       {
-        "category": "GLOBAL TECH // 海外前沿聚焦",
-        "time": "TODAY // 08:40 UTC",
+        "categoryId": "global",
+        "category": "寰宇前沿 // GLOBAL TECH",
+        "time": "TODAY // 09:09 UTC",
         "title": "OBS Studio 33",
-        "summary": "HackerNews 社区热榜头条（得分 102）。该项目引发全网架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ SOURCE: HACKERNEWS #102★ ]",
+        "summary": "HackerNews 社区热榜头条（得分 125）。该项目引发全网架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ SOURCE: HACKERNEWS #125★ ]",
         "linkText": "READ INTEL // 展开内参 ↳",
         "url": "https://github.com/obsproject/obs-studio/releases/tag/33.0.0"
       },
       {
-        "category": "DEV ECOSYSTEM // 国内极客观察",
-        "time": "TODAY // 08:40 UTC",
+        "categoryId": "domestic",
+        "category": "极客生态 // DOMESTIC DEV",
+        "time": "TODAY // 09:09 UTC",
         "title": "为什么很多人都把 DeepSeek 神化了，看不起国内豆包和其它 LLM？",
-        "summary": "来自国内开发者社区的热点思潮（讨论度 60 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ RADAR FREQ: V2EX 60 REPLIES ]",
+        "summary": "来自国内开发者社区的热点思潮（讨论度 61 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ RADAR FREQ: V2EX 61 REPLIES ]",
         "linkText": "READ INTEL // 展开内参 ↳",
         "url": "https://www.v2ex.com/t/1251402"
       },
       {
-        "category": "AI & NARRATIVE // 逻辑与密室推演",
-        "time": "TODAY // 08:40 UTC",
+        "categoryId": "ai",
+        "category": "智子推演 // AI & PARADOX",
+        "time": "TODAY // 09:09 UTC",
         "title": "多模态推演能否构建真正的“物理闭环密室”？",
         "summary": "实测最新前沿大模型在多重伪解答架构中的表现：虽然能瞬间生成海量障眼法，但在微观物理材质力学与时间线交叉口供的精确剪裁上，人类本格心机依然是不可替代的胜负手。",
         "specTag": "[ INTEL: DUAL-CHAMBER LOGIC ]",
         "linkText": "READ INTEL // 展开内参 ↳",
         "url": "https://bckj.site"
+      }
+    ],
+    "categories": [
+      {
+        "id": "all",
+        "label": "全境侦测",
+        "en": "ALL RADAR"
+      },
+      {
+        "id": "ai",
+        "label": "智子推演",
+        "en": "AI & PARADOX"
+      },
+      {
+        "id": "global",
+        "label": "寰宇前沿",
+        "en": "GLOBAL TECH"
+      },
+      {
+        "id": "domestic",
+        "label": "极客生态",
+        "en": "DOMESTIC DEV"
+      },
+      {
+        "id": "observatory",
+        "label": "视界暗线",
+        "en": "OBSERVATORY"
       }
     ]
   },
@@ -161,7 +191,8 @@
           "SWISS TYPO"
         ],
         "footLabel": "INTERACTIVE ARCHIVE",
-        "linkText": "VISIT ARCHIVE // 打开灵感 ↳"
+        "linkText": "VISIT ARCHIVE // 打开灵感 ↳",
+        "categoryId": "shader"
       },
       {
         "url": "https://codepen.io/wodniack",
@@ -178,9 +209,146 @@
           "OPEN SOURCE"
         ],
         "footLabel": "CREATIVE SOURCE",
-        "linkText": "EXPLORE PEN // 探查源码 ↳"
+        "linkText": "EXPLORE PEN // 探查源码 ↳",
+        "categoryId": "shader"
+      },
+      {
+        "url": "https://bruno-simon.com",
+        "badge": "3D EXPERIMENTAL",
+        "badgeClass": "is-codepen",
+        "rank": "№ 02 · THREE.JS CAR",
+        "title": "Bruno Simon 3D Interactive World",
+        "domain": "bruno-simon.com ↗",
+        "categoryId": "shader",
+        "desc": "在网页中开着越野车漫游探索的 WebGL 3D 物理交互神作，Three.js 交互叙事里程碑。",
+        "techTags": [
+          "THREE.JS",
+          "CANNON.JS",
+          "GLSL",
+          "PHYSICS 3D"
+        ],
+        "footLabel": "CREATIVE WORLD",
+        "linkText": "ENTER WORLD // 启动漫游 ↳"
+      },
+      {
+        "url": "https://www.shadertoy.com",
+        "badge": "MATH & ART",
+        "badgeClass": "is-webby",
+        "rank": "№ 03 · PIXEL MAGIC",
+        "title": "Shadertoy // 光线步进算法艺术殿堂",
+        "domain": "shadertoy.com ↗",
+        "categoryId": "shader",
+        "desc": "仅用纯数学公式与像素着色器（Fragment Shader）渲染出逼真黑洞、云海与机械奇迹的代码圣殿。",
+        "techTags": [
+          "RAYMARCHING",
+          "GLSL SHADER",
+          "PURE MATH",
+          "GPU POWER"
+        ],
+        "footLabel": "ALGORITHM VAULT",
+        "linkText": "DECODE SHADER // 破译算力 ↳"
+      },
+      {
+        "url": "https://www.swissted.com",
+        "badge": "VINTAGE PUNK",
+        "badgeClass": "is-webby",
+        "rank": "№ 04 · SWISS POSTER",
+        "title": "Swissted // 国际主义平面设计海报展",
+        "domain": "swissted.com ↗",
+        "categoryId": "typo",
+        "desc": "将经典朋克摇滚海报用严谨的瑞士国际字体排版风格进行重构，黑白线框与红黑撞色的教科书。",
+        "techTags": [
+          "INTERNATIONAL TYPO",
+          "HELVETICA",
+          "GRID SYSTEM",
+          "BRUTALISM"
+        ],
+        "footLabel": "TYPO MASTER",
+        "linkText": "EXPLORE POSTER // 探查海报 ↳"
+      },
+      {
+        "url": "https://www.curated.design",
+        "badge": "CURATION GOLD",
+        "badgeClass": "is-codepen",
+        "rank": "№ 05 · GRID CATALOG",
+        "title": "Curated Design // 极简网格灵感图谱",
+        "domain": "curated.design ↗",
+        "categoryId": "typo",
+        "desc": "按版式网格、衬线排版、动效曲线严苛分类的全球数字设计索引库，寻找神仙审美的必看矿脉。",
+        "techTags": [
+          "GRID CATALOG",
+          "MICRO-INTERACTIONS",
+          "EDITORIAL",
+          "CURATION"
+        ],
+        "footLabel": "INSPIRATION HUB",
+        "linkText": "SEARCH CATALOG // 查阅图谱 ↳"
+      },
+      {
+        "url": "https://linear.app",
+        "badge": "CRAFT CELEBRITY",
+        "badgeClass": "is-webby",
+        "rank": "№ 06 · KINETIC CRAFT",
+        "title": "Linear // 极致微交互与暗黑质感巅峰",
+        "domain": "linear.app ↗",
+        "categoryId": "kinetic",
+        "desc": "被全网前端与产品设计师奉为神作的软件官网。光影渐变漫反射、精密快捷键交互与极致帧率体验。",
+        "techTags": [
+          "KEYBOARD FIRST",
+          "DARK MODE LUXURY",
+          "GLOW SHADER",
+          "REACT SMOOTH"
+        ],
+        "footLabel": "CRAFT EXCELLENCE",
+        "linkText": "STUDY CRAFT // 研读微动效 ↳"
+      },
+      {
+        "url": "https://rauno.me/craft",
+        "badge": "INDIE ENGINEER",
+        "badgeClass": "is-webby",
+        "rank": "№ 08 · DESIGN ENGINEERING",
+        "title": "Rauno Craft // 交互工程手记",
+        "domain": "rauno.me/craft ↗",
+        "categoryId": "studio",
+        "desc": "Vercel 设计工程副总监的个人实验手札。解构磁吸光标、弹簧物理阻尼与流体界面计算模型。",
+        "techTags": [
+          "SPRING PHYSICS",
+          "MAGNETIC CURSOR",
+          "MICRO-CRAFT",
+          "INTERACTION"
+        ],
+        "footLabel": "ENGINEERING NOTES",
+        "linkText": "READ CRAFT // 研读手札 ↳"
       }
-    ]
+    ],
+    "categories": [
+      {
+        "id": "all",
+        "label": "全境矿脉",
+        "en": "ALL GEMS"
+      },
+      {
+        "id": "shader",
+        "label": "视觉力场",
+        "en": "SHADER & 3D"
+      },
+      {
+        "id": "typo",
+        "label": "瑞士排版",
+        "en": "TYPO & GRID"
+      },
+      {
+        "id": "kinetic",
+        "label": "奇趣交互",
+        "en": "KINETIC UX"
+      },
+      {
+        "id": "studio",
+        "label": "灵感矿脉",
+        "en": "STUDIO VAULT"
+      }
+    ],
+    "archive": []
   },
   "toolboxChamber": {
     "tag": "[ GEEK TOOLBOX // 极客离线生产力装备 ]",
@@ -190,38 +358,192 @@
         "name": "BC Cloud Drive // 个人私有高速云盘",
         "desc": "基于 AList 与百度网盘聚合的高速资源仓 · 包含插画课程、单机游戏与设计资产，直链极速下载。",
         "badge": "ONLINE · CLOUD",
+        "categoryId": "local",
         "url": "http://111.229.205.54:5244",
         "isPrimary": true,
-        "launchText": "打开云盘 ➔"
+        "launchText": "打开云盘 ➔",
+        "platform": "ALL PLATFORMS"
       },
       {
-        "name": "lx-music-desktop // 一个基于 Electron 的音乐软件…",
+        "name": "lx-music-desktop // 跨平台音乐流媒体客户端",
         "desc": "一个基于 Electron 的音乐软件",
         "badge": "GITHUB · 54.7k★",
+        "categoryId": "audio",
         "url": "https://github.com/lyswhut/lx-music-desktop",
-        "launchText": "探查源码 ➔"
+        "launchText": "探查源码 ➔",
+        "stars": "54.7k★"
       },
       {
-        "name": "spotube // 🎧 Open source music streaming app! …",
+        "name": "spotube // 跨平台音乐流媒体客户端",
         "desc": "🎧 Open source music streaming app! Available for both desktop & mobile!",
         "badge": "GITHUB · 50.3k★",
+        "categoryId": "audio",
         "url": "https://github.com/team-spotube/spotube",
-        "launchText": "探查源码 ➔"
+        "launchText": "探查源码 ➔",
+        "stars": "50.3k★"
       },
       {
-        "name": "pear-desktop // Pear 🍐 is extension for music playe…",
+        "name": "pear-desktop // 跨平台音乐流媒体客户端",
         "desc": "Pear 🍐 is extension for music player",
         "badge": "GITHUB · 33.9k★",
+        "categoryId": "audio",
         "url": "https://github.com/pear-devs/pear-desktop",
-        "launchText": "探查源码 ➔"
+        "launchText": "探查源码 ➔",
+        "stars": "33.9k★"
       },
       {
         "name": "MusicFree // 插件化多音源桌面音乐播放器",
         "desc": "基于插件化架构的跨平台音乐神器。本身不集成任何音源，用户可通过自定义 JS 脚本插件自由接入全网无损音频与歌单，纯净无广告。",
         "badge": "MULTI-SOURCE · 16.8k★",
         "url": "https://github.com/maotoumao/MusicFree",
-        "launchText": "探查源码 ➔"
+        "launchText": "探查源码 ➔",
+        "categoryId": "audio"
+      },
+      {
+        "name": "Spotube // 纯净跨平台流媒体音乐客户端",
+        "desc": "利用 Spotify API 抓取元数据并由 YouTube / Piped 提供无损无广告音频流，完全开源轻量，内存占用不足官方十分之一。",
+        "badge": "CROSS-PLATFORM · 33.2k★",
+        "categoryId": "audio",
+        "url": "https://github.com/KRTirtho/spotube",
+        "launchText": "探查源码 ➔",
+        "platform": "WIN · MAC · LINUX"
+      },
+      {
+        "name": "YesPlayMusic // 高颜值网易云第三方桌面客户端",
+        "desc": "极具现代苹果设计美学的第三方音乐客户端。支持 UnblockNeteaseMusic 自动音源替换、Touch Bar 快捷控制与暗黑模式。",
+        "badge": "DESIGN AWARD · 31.5k★",
+        "categoryId": "audio",
+        "url": "https://github.com/qier222/YesPlayMusic",
+        "launchText": "探查源码 ➔",
+        "platform": "WIN · MAC · WEB"
+      },
+      {
+        "name": "Listen1 // 全网音乐多合一聚合搜索播放器",
+        "desc": "打破曲库壁垒，聚合各大平台曲库。一个搜索框搞定全网找歌与歌单导入，本地安全离线运行。",
+        "badge": "AGGREGATION · 14.1k★",
+        "categoryId": "audio",
+        "url": "https://github.com/listen1/listen1_desktop",
+        "launchText": "探查源码 ➔",
+        "platform": "CHROME · DESKTOP"
+      },
+      {
+        "name": "IINA // macOS 现代极简视频播放器天花板",
+        "desc": "基于 mpv 内核深度定制的现代化开源播放器。完美契合 macOS 设计哲学，支持画中画、外挂字幕实时搜索、HDR 与任意流媒体协议解码。",
+        "badge": "MACOS ELITE · 38.5k★",
+        "categoryId": "video",
+        "url": "https://github.com/iina/iina",
+        "launchText": "探查源码 ➔",
+        "platform": "MACOS"
+      },
+      {
+        "name": "LosslessCut // 无损音视频极速裁剪拼接神兵",
+        "desc": "基于 FFmpeg 打造的零编解码极速剪刀。无需二次渲染，光速粗剪 4K 巨型视频无画质损耗，极客工作流必备生产力。",
+        "badge": "LOSSLESS · 22.4k★",
+        "categoryId": "video",
+        "url": "https://github.com/mifi/lossless-cut",
+        "launchText": "探查源码 ➔",
+        "platform": "CROSS-PLATFORM"
+      },
+      {
+        "name": "MediaGo // 跨平台网页流媒体嗅探与下载器",
+        "desc": "支持 m3u8 / MPD 自动解密与多线程合并抓取，内置极简浏览器自动嗅探网页视频源，快速保存公开高清素材。",
+        "badge": "SNIFFER · 6.8k★",
+        "categoryId": "video",
+        "url": "https://github.com/bistutu/MediaGo",
+        "launchText": "探查源码 ➔",
+        "platform": "WIN · MAC · LINUX"
+      },
+      {
+        "name": "mpv.net // 现代化极客硬核视频渲染播放器",
+        "desc": "基于 libmpv 架构的高性能视频播放器，具备完备的 GPU 着色器扩展与高画质升采样算法支持。",
+        "badge": "HIGH-PERF · 4.9k★",
+        "categoryId": "video",
+        "url": "https://github.com/mpvnet-player/mpv.net",
+        "launchText": "探查源码 ➔",
+        "platform": "WINDOWS"
+      },
+      {
+        "name": "BBDown // 命令行高画质流媒体解构下载器",
+        "desc": "多线程分块下载、杜比视界与真彩画质解析、多音轨分离抓取的硬核轻量级媒体终端工具。",
+        "badge": "CLI POWER · 12.3k★",
+        "categoryId": "video",
+        "url": "https://github.com/nilaoda/BBDown",
+        "launchText": "探查源码 ➔",
+        "platform": "ALL TERMINALS"
+      },
+      {
+        "name": "DevToys // 瑞士军刀开发者离线工具箱",
+        "desc": "纯本地离线运行的开发利器，涵盖 JSON/YAML 校验、JWT 解码、正则表达式演算、Hash 验算与色彩转换。",
+        "badge": "OFFLINE · 25.1k★",
+        "categoryId": "local",
+        "url": "https://github.com/DevToys-app/DevToys",
+        "launchText": "探查源码 ➔",
+        "platform": "WIN · MAC · LINUX"
+      },
+      {
+        "name": "LocalSend // 局域网跨端无损极速传输协议",
+        "desc": "无需连接互联网、纯局域网点对点互传文件神器。完全开源，秒杀 AirDrop 并通吃 iOS、Android、Windows、Mac。",
+        "badge": "P2P SHARE · 49.8k★",
+        "categoryId": "local",
+        "url": "https://github.com/localsend/localsend",
+        "launchText": "探查源码 ➔",
+        "platform": "ALL PLATFORMS"
+      },
+      {
+        "name": "Flameshot // 现代化硬核极简截图标注工具",
+        "desc": "支持像素级拾色、模糊马赛克、序号标注、多显示器协同与命令行截图自动化，完全本地隐私无后台。",
+        "badge": "PRODUCTIVITY · 24.6k★",
+        "categoryId": "local",
+        "url": "https://github.com/flameshot-org/flameshot",
+        "launchText": "探查源码 ➔",
+        "platform": "CROSS-PLATFORM"
+      },
+      {
+        "name": "HTTP Toolkit // 现代化抓包嗅探与网络重构台",
+        "desc": "一键拦截、检查并重写 HTTP(S) 网络请求。精准调试 API 接口、解密 App 请求协议与流量分析。",
+        "badge": "TRAFFIC · 9.8k★",
+        "categoryId": "geek",
+        "url": "https://github.com/httptoolkit/httptoolkit",
+        "launchText": "探查源码 ➔",
+        "platform": "WIN · MAC · LINUX"
+      },
+      {
+        "name": "CyberChef // 极客密码学与数据转换瑞士军刀",
+        "desc": "被称为网络安全界的厨师机。纯本地浏览器运行的加密解密、编码转换、反混淆与特征分析超级工作台。",
+        "badge": "SWISS ARMY · 30.2k★",
+        "categoryId": "geek",
+        "url": "https://github.com/gchq/CyberChef",
+        "launchText": "探查源码 ➔",
+        "platform": "BROWSER / OFFLINE"
       }
-    ]
+    ],
+    "categories": [
+      {
+        "id": "all",
+        "label": "全库装备",
+        "en": "ALL ARSENAL"
+      },
+      {
+        "id": "audio",
+        "label": "天籁之源",
+        "en": "AUDIO & SOURCE"
+      },
+      {
+        "id": "video",
+        "label": "极影魔方",
+        "en": "VIDEO & STREAM"
+      },
+      {
+        "id": "local",
+        "label": "离线神兵",
+        "en": "LOCAL FIRST"
+      },
+      {
+        "id": "geek",
+        "label": "逆向兵刃",
+        "en": "GEEK TOOLS"
+      }
+    ],
+    "archive": []
   }
 }

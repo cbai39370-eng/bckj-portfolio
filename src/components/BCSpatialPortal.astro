@@ -231,22 +231,43 @@ import spatialData from '../data/spatial-chambers.json'
         </div>
       </section>
 
-      <!-- 空间 3: 今日热点雷达 · 深度洞察 -->
+      <!-- 空间 3: 今日热点雷达 · 深度洞察 (15条先进先出滚动) -->
       <section class="bc-spatial-portal__view js-view-radar u-hidden" data-view="radar">
         <div class="bc-space-radar">
           <div class="bc-space-radar__header">
-            <span class="bc-space-radar__tag">[ TODAY'S TREND RADAR // 今日热点雷达 ]</span>
+            <div class="bc-space-radar__head-meta">
+              <span class="bc-space-radar__tag">[ TODAY'S TREND RADAR // 今日热点雷达 ]</span>
+              <span class="bc-radar-quota-badge">LIVE 15 ROLLING BUFFER · 自动迭代</span>
+            </div>
             <h1 class="bc-space-radar__title">全球科技 · 剧情推理 · 奇闻观察</h1>
+
+            <div class="bc-category-bar">
+              <span class="bc-category-bar__label">RADAR FREQ // 侦测频段:</span>
+              <div class="bc-category-pills">
+                {spatialData.radarChamber.categories && spatialData.radarChamber.categories.map((cat, idx) => (
+                  <button
+                    type="button"
+                    class={`bc-cat-pill js-cat-pill ${cat.id === 'all' ? 'is-active' : ''}`}
+                    data-category={cat.id}
+                  >
+                    <span class="bc-cat-pill__idx">0{idx}</span>
+                    <span class="bc-cat-pill__name">{cat.label}</span>
+                    <span class="bc-cat-pill__en">{cat.en}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div class="bc-space-radar__list">
+          <div class="bc-space-radar__list js-card-container">
             {spatialData.radarChamber.items.map((item) => (
               item.url ? (
                 <a
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="bc-space-radar__item bc-space-radar__item--link"
+                  class="bc-space-radar__item bc-space-radar__item--link js-filterable-card"
+                  data-category={item.categoryId || 'all'}
                 >
                   <div class="bc-card-corner bc-card-corner--tl"></div>
                   <div class="bc-card-corner bc-card-corner--tr"></div>
@@ -254,7 +275,7 @@ import spatialData from '../data/spatial-chambers.json'
                   <div class="bc-card-corner bc-card-corner--br"></div>
 
                   <div class="bc-space-radar__meta">
-                    <span class="bc-space-radar__category">{item.category}</span>
+                    <span class="bc-space-radar__category">[{item.category}]</span>
                     <span class="bc-space-radar__time">{item.time}</span>
                   </div>
                   <h2 class="bc-space-radar__item-title">{item.title}</h2>
@@ -265,14 +286,14 @@ import spatialData from '../data/spatial-chambers.json'
                   </div>
                 </a>
               ) : (
-                <article class="bc-space-radar__item">
+                <article class="bc-space-radar__item js-filterable-card" data-category={item.categoryId || 'all'}>
                   <div class="bc-card-corner bc-card-corner--tl"></div>
                   <div class="bc-card-corner bc-card-corner--tr"></div>
                   <div class="bc-card-corner bc-card-corner--bl"></div>
                   <div class="bc-card-corner bc-card-corner--br"></div>
 
                   <div class="bc-space-radar__meta">
-                    <span class="bc-space-radar__category">{item.category}</span>
+                    <span class="bc-space-radar__category">[{item.category}]</span>
                     <span class="bc-space-radar__time">{item.time}</span>
                   </div>
                   <h2 class="bc-space-radar__item-title">{item.title}</h2>
@@ -288,17 +309,50 @@ import spatialData from '../data/spatial-chambers.json'
         </div>
       </section>
 
-      <!-- 空间 4: 神仙网站探索 · 数字灵感矿藏 -->
+      <!-- 空间 4: 神仙网站探索 · 数字灵感矿藏 (当期精选 + 历史卷宗) -->
       <section class="bc-spatial-portal__view js-view-gems u-hidden" data-view="gems">
         <div class="bc-space-gems">
           <div class="bc-space-gems__header">
-            <span class="bc-space-gems__tag">{spatialData.gemsChamber.tag}</span>
+            <div class="bc-space-gems__head-meta">
+              <span class="bc-space-gems__tag">{spatialData.gemsChamber.tag}</span>
+              <span class="bc-radar-quota-badge">DIGITAL INSPIRATION // 灵感矿脉</span>
+            </div>
             <h1 class="bc-space-gems__title">{spatialData.gemsChamber.title}</h1>
+
+            <div class="bc-chamber-controls">
+              <div class="bc-track-switch">
+                <button type="button" class="bc-track-btn js-track-toggle is-active" data-track="current">
+                  <span class="bc-track-pulse">●</span>
+                  <span>当期精选 // ACTIVE ({spatialData.gemsChamber.gems.length})</span>
+                </button>
+                <button type="button" class="bc-track-btn js-track-toggle" data-track="archive">
+                  <span>◫ 历史卷宗 // ARCHIVE ({spatialData.gemsChamber.archive ? spatialData.gemsChamber.archive.length : 0})</span>
+                </button>
+              </div>
+
+              <div class="bc-category-bar">
+                <span class="bc-category-bar__label">AESTHETICS // 美学谱系:</span>
+                <div class="bc-category-pills">
+                  {spatialData.gemsChamber.categories && spatialData.gemsChamber.categories.map((cat, idx) => (
+                    <button
+                      type="button"
+                      class={`bc-cat-pill js-cat-pill ${cat.id === 'all' ? 'is-active' : ''}`}
+                      data-category={cat.id}
+                    >
+                      <span class="bc-cat-pill__idx">0{idx}</span>
+                      <span class="bc-cat-pill__name">{cat.label}</span>
+                      <span class="bc-cat-pill__en">{cat.en}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="bc-space-gems__grid">
+          <!-- 当期神仙网站 -->
+          <div class="bc-space-gems__grid js-track-current js-card-container">
             {spatialData.gemsChamber.gems.map((g) => (
-              <a href={g.url} target="_blank" rel="noopener noreferrer" class="bc-space-gems__card">
+              <a href={g.url} target="_blank" rel="noopener noreferrer" class="bc-space-gems__card js-filterable-card" data-category={g.categoryId || 'all'}>
                 <div class="bc-card-corner bc-card-corner--tl"></div>
                 <div class="bc-card-corner bc-card-corner--tr"></div>
                 <div class="bc-card-corner bc-card-corner--bl"></div>
@@ -329,18 +383,86 @@ import spatialData from '../data/spatial-chambers.json'
               </a>
             ))}
           </div>
+
+          <!-- 历史卷宗归档 -->
+          <div class="bc-space-gems__grid js-track-archive js-card-container u-hidden">
+            {spatialData.gemsChamber.archive && spatialData.gemsChamber.archive.length > 0 ? (
+              spatialData.gemsChamber.archive.map((g) => (
+                <a href={g.url} target="_blank" rel="noopener noreferrer" class="bc-space-gems__card bc-space-gems__card--archive js-filterable-card" data-category={g.categoryId || 'all'}>
+                  <div class="bc-card-corner bc-card-corner--tl"></div>
+                  <div class="bc-card-corner bc-card-corner--tr"></div>
+                  <div class="bc-card-corner bc-card-corner--bl"></div>
+                  <div class="bc-card-corner bc-card-corner--br"></div>
+
+                  <div class="bc-space-gems__top">
+                    <span class="bc-space-gems__card-badge is-archived">{g.archivedAt || 'ARCHIVE'}</span>
+                    <span class="bc-space-gems__rank">{g.rank || 'HISTORIC'}</span>
+                  </div>
+
+                  <div class="bc-space-gems__title-row">
+                    <h3 class="bc-space-gems__site-title">{g.title}</h3>
+                    <span class="bc-space-gems__domain">{g.domain}</span>
+                  </div>
+
+                  <p class="bc-space-gems__desc">{g.desc}</p>
+
+                  <div class="bc-space-gems__foot">
+                    <span class="bc-space-gems__link">{g.linkText || 'VISIT ARCHIVE ↳'}</span>
+                  </div>
+                </a>
+              ))
+            ) : (
+              <div class="bc-archive-empty">
+                <span class="bc-archive-empty__stamp">[ ARCHIVE STANDBY // 灵感卷宗就绪 ]</span>
+                <p>超出当期 20 款容量的探索站点将自动沉淀封存于此，目前所有站点均在当期精选列席。</p>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
-      <!-- 空间 5: 极客实用工具箱 // GEEK SUITE -->
+      <!-- 空间 5: 极客实用工具箱 // GEEK ARSENAL (月度30款 + 历史军械库) -->
       <section class="bc-spatial-portal__view js-view-toolbox u-hidden" data-view="toolbox">
         <div class="bc-space-toolbox">
           <div class="bc-space-toolbox__header">
-            <span class="bc-space-toolbox__tag">{spatialData.toolboxChamber.tag}</span>
+            <div class="bc-space-toolbox__head-meta">
+              <span class="bc-space-toolbox__tag">{spatialData.toolboxChamber.tag}</span>
+              <span class="bc-radar-quota-badge">MONTHLY 30 ARSENAL · 永久沉淀</span>
+            </div>
             <h1 class="bc-space-toolbox__title">{spatialData.toolboxChamber.title}</h1>
+
+            <div class="bc-chamber-controls">
+              <div class="bc-track-switch">
+                <button type="button" class="bc-track-btn js-track-toggle is-active" data-track="current">
+                  <span class="bc-track-pulse">●</span>
+                  <span>当期精选装备 // ACTIVE ({spatialData.toolboxChamber.tools.length})</span>
+                </button>
+                <button type="button" class="bc-track-btn js-track-toggle" data-track="archive">
+                  <span>◫ 历史卷宗军械库 // ARCHIVE ({spatialData.toolboxChamber.archive ? spatialData.toolboxChamber.archive.length : 0})</span>
+                </button>
+              </div>
+
+              <div class="bc-category-bar">
+                <span class="bc-category-bar__label">ARSENAL CLASS // 装备谱系:</span>
+                <div class="bc-category-pills">
+                  {spatialData.toolboxChamber.categories && spatialData.toolboxChamber.categories.map((cat, idx) => (
+                    <button
+                      type="button"
+                      class={`bc-cat-pill js-cat-pill ${cat.id === 'all' ? 'is-active' : ''}`}
+                      data-category={cat.id}
+                    >
+                      <span class="bc-cat-pill__idx">0{idx}</span>
+                      <span class="bc-cat-pill__name">{cat.label}</span>
+                      <span class="bc-cat-pill__en">{cat.en}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="bc-space-toolbox__table">
+          <!-- 当期装备列表 -->
+          <div class="bc-space-toolbox__table js-track-current js-card-container">
             <div class="bc-card-corner bc-card-corner--tl"></div>
             <div class="bc-card-corner bc-card-corner--tr"></div>
             <div class="bc-card-corner bc-card-corner--bl"></div>
@@ -352,11 +474,13 @@ import spatialData from '../data/spatial-chambers.json'
                   href={t.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class={`bc-space-toolbox__row bc-space-toolbox__row--link ${t.isPrimary ? 'is-primary' : ''}`}
+                  class={`bc-space-toolbox__row bc-space-toolbox__row--link js-filterable-card ${t.isPrimary ? 'is-primary' : ''}`}
+                  data-category={t.isPrimary ? 'all' : (t.categoryId || 'all')}
                 >
                   <div class="bc-space-toolbox__tool-name">
                     {t.isPrimary && <span class="bc-cloud-pulse">❖ </span>}
                     {t.name}
+                    {t.platform && <span class="bc-platform-tag">{t.platform}</span>}
                   </div>
                   <div class="bc-space-toolbox__tool-desc">{t.desc}</div>
                   <div class="bc-space-toolbox__action-col">
@@ -365,13 +489,49 @@ import spatialData from '../data/spatial-chambers.json'
                   </div>
                 </a>
               ) : (
-                <div class="bc-space-toolbox__row">
+                <div class="bc-space-toolbox__row js-filterable-card" data-category={t.categoryId || 'all'}>
                   <div class="bc-space-toolbox__tool-name">{t.name}</div>
                   <div class="bc-space-toolbox__tool-desc">{t.desc}</div>
                   <span class="bc-space-toolbox__badge">{t.badge}</span>
                 </div>
               )
             ))}
+          </div>
+
+          <!-- 历史卷宗军械库 -->
+          <div class="bc-space-toolbox__table js-track-archive js-card-container u-hidden">
+            <div class="bc-card-corner bc-card-corner--tl"></div>
+            <div class="bc-card-corner bc-card-corner--tr"></div>
+            <div class="bc-card-corner bc-card-corner--bl"></div>
+            <div class="bc-card-corner bc-card-corner--br"></div>
+
+            {spatialData.toolboxChamber.archive && spatialData.toolboxChamber.archive.length > 0 ? (
+              spatialData.toolboxChamber.archive.map((t) => (
+                <a
+                  href={t.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bc-space-toolbox__row bc-space-toolbox__row--link js-filterable-card"
+                  data-category={t.categoryId || 'all'}
+                >
+                  <div class="bc-space-toolbox__tool-name">
+                    <span class="bc-archive-stamp">◫ {t.archivedAt || 'ARCHIVE'}</span>
+                    {t.name}
+                    {t.platform && <span class="bc-platform-tag">{t.platform}</span>}
+                  </div>
+                  <div class="bc-space-toolbox__tool-desc">{t.desc}</div>
+                  <div class="bc-space-toolbox__action-col">
+                    <span class="bc-space-toolbox__badge">{t.badge}</span>
+                    <span class="bc-space-toolbox__launch-btn">{t.launchText || '探查源码 ➔'}</span>
+                  </div>
+                </a>
+              ))
+            ) : (
+              <div class="bc-archive-empty">
+                <span class="bc-archive-empty__stamp">[ ARSENAL ARCHIVE STANDBY // 历史军械库就绪 ]</span>
+                <p>每月超出 30 款容量的神兵将自动移入此处永久封存，目前全部装备均在当期精选库列席。</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -518,8 +678,9 @@ import spatialData from '../data/spatial-chambers.json'
         }
       });
 
-      // 绑定案卷建议表单提交
+      // 绑定案卷建议表单提交与分类中控舵
       this.initSuggestForm();
+      this.bindCategoryFilters();
 
       // 挂载到 window 方便调试与全局通信
       (window as any).bcSpatialPortal = this;
@@ -1266,6 +1427,112 @@ import spatialData from '../data/spatial-chambers.json'
         form.reset();
         form.classList.remove('is-submitted');
         if (successBox) successBox.classList.add('u-hidden');
+      });
+    }
+
+    /**
+     * 动力学分类中控舵与双轨历史卷宗系统
+     */
+    bindCategoryFilters() {
+      const portal = this.container;
+
+      // 1. 分类药丸点击与 GSAP 动力学卡片洗牌
+      portal.querySelectorAll('.js-cat-pill').forEach((pill: any) => {
+        pill.addEventListener('click', (e: Event) => {
+          e.preventDefault();
+          const chamber = pill.closest('.bc-space-radar, .bc-space-toolbox, .bc-space-gems');
+          if (!chamber) return;
+
+          const categoryId = pill.dataset.category;
+
+          // 更新该 chamber 内 pill 的激活态
+          chamber.querySelectorAll('.js-cat-pill').forEach((p: any) => p.classList.remove('is-active'));
+          pill.classList.add('is-active');
+
+          // 获取当前可见容器中的卡片
+          const activeTrack = chamber.querySelector('.js-track-archive:not(.u-hidden)') ? '.js-track-archive' : '.js-track-current';
+          const container = chamber.querySelector(activeTrack) || chamber.querySelector('.js-card-container');
+          if (!container) return;
+
+          const cards = container.querySelectorAll('.js-filterable-card');
+          const showCards: HTMLElement[] = [];
+          const hideCards: HTMLElement[] = [];
+
+          cards.forEach((card: any) => {
+            const cardCat = card.dataset.category;
+            if (categoryId === 'all' || cardCat === categoryId) {
+              showCards.push(card);
+            } else {
+              hideCards.push(card);
+            }
+          });
+
+          // 隐藏非目标卡片
+          if (hideCards.length) {
+            gsap.to(hideCards, {
+              opacity: 0,
+              scale: 0.96,
+              duration: 0.18,
+              ease: 'power2.in',
+              onComplete: () => {
+                hideCards.forEach(c => c.classList.add('u-filtered-out'));
+              }
+            });
+          }
+
+          // 显现并洗牌展示目标卡片
+          showCards.forEach(c => c.classList.remove('u-filtered-out'));
+          if (showCards.length) {
+            gsap.fromTo(
+              showCards,
+              { opacity: 0, y: 15, scale: 0.97 },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.35,
+                stagger: 0.03,
+                ease: 'power3.out'
+              }
+            );
+          }
+        });
+      });
+
+      // 2. 双轨视图切换舵 (当期精选 ⟷ 历史卷宗)
+      portal.querySelectorAll('.js-track-toggle').forEach((btn: any) => {
+        btn.addEventListener('click', (e: Event) => {
+          e.preventDefault();
+          const chamber = btn.closest('.bc-space-toolbox, .bc-space-gems');
+          if (!chamber) return;
+
+          const track = btn.dataset.track;
+          chamber.querySelectorAll('.js-track-toggle').forEach((b: any) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+
+          const currentView = chamber.querySelector('.js-track-current');
+          const archiveView = chamber.querySelector('.js-track-archive');
+
+          if (track === 'archive') {
+            if (currentView) currentView.classList.add('u-hidden');
+            if (archiveView) {
+              archiveView.classList.remove('u-hidden');
+              const cards = archiveView.querySelectorAll('.js-filterable-card:not(.u-filtered-out)');
+              if (cards.length) {
+                gsap.fromTo(cards, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.35, stagger: 0.03, ease: 'power3.out' });
+              }
+            }
+          } else {
+            if (archiveView) archiveView.classList.add('u-hidden');
+            if (currentView) {
+              currentView.classList.remove('u-hidden');
+              const cards = currentView.querySelectorAll('.js-filterable-card:not(.u-filtered-out)');
+              if (cards.length) {
+                gsap.fromTo(cards, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.35, stagger: 0.03, ease: 'power3.out' });
+              }
+            }
+          }
+        });
       });
     }
   }
@@ -2821,5 +3088,193 @@ import spatialData from '../data/spatial-chambers.json'
       outline: 2px solid transparent;
       transform: scale(1);
     }
+  }
+
+  // ==========================================
+  // 时空舱创新中控与动力学分类条 (Tactical Controls & Kinetic Pills)
+  // ==========================================
+  .bc-radar-quota-badge {
+    font: 700 9px / 1 font-family(fraktion);
+    color: rgba(0, 248, 241, 0.9);
+    background: rgba(0, 248, 241, 0.08);
+    border: 1px solid rgba(0, 248, 241, 0.3);
+    padding: 3px 8px;
+    letter-spacing: 0.1em;
+    display: inline-block;
+  }
+
+  .bc-space-radar__head-meta,
+  .bc-space-gems__head-meta,
+  .bc-space-toolbox__head-meta {
+    @include flex(row, center, space-between);
+    margin-bottom: 0.5rem;
+  }
+
+  .bc-chamber-controls {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bc-track-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 4px;
+    width: fit-content;
+  }
+
+  .bc-track-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: rgba(255, 255, 255, 0.65);
+    font: 600 11px / 1 font-family(fraktion);
+    padding: 0.5rem 0.85rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    &.is-active {
+      background: rgba(0, 248, 241, 0.12);
+      color: #00f8f1;
+      border-color: rgba(0, 248, 241, 0.4);
+      box-shadow: 0 0 15px rgba(0, 248, 241, 0.2);
+    }
+  }
+
+  .bc-track-pulse {
+    font-size: 8px;
+    color: #00f8f1;
+    animation: bcPulseDot 1.6s infinite ease-in-out;
+  }
+
+  .bc-category-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+
+    &__label {
+      font: 700 9.5px / 1 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+    }
+  }
+
+  .bc-category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .bc-cat-pill {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+      border-color: rgba(0, 248, 241, 0.5);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    &.is-active {
+      background: #00f8f1;
+      color: #000000;
+      font-weight: 700;
+      border-color: #00f8f1;
+      box-shadow: 0 0 20px rgba(0, 248, 241, 0.45);
+      transform: translateY(-1px);
+
+      .bc-cat-pill__idx,
+      .bc-cat-pill__en {
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    &__idx {
+      font: 700 8.5px / 1 font-family(fraktion);
+      color: rgba(0, 248, 241, 0.8);
+    }
+
+    &__name {
+      font: 600 11.5px / 1 font-family(fraktion);
+      letter-spacing: 0.04em;
+    }
+
+    &__en {
+      font: 400 8px / 1 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .bc-platform-tag {
+    font: 600 8.5px / 1 font-family(fraktion);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 2px 6px;
+    margin-left: 8px;
+    letter-spacing: 0.06em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .bc-archive-stamp {
+    font: 700 9px / 1 font-family(fraktion);
+    color: #ffb800;
+    background: rgba(255, 184, 0, 0.1);
+    border: 1px solid rgba(255, 184, 0, 0.3);
+    padding: 2px 6px;
+    margin-right: 8px;
+    letter-spacing: 0.08em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .bc-archive-empty {
+    padding: 3.5rem 2rem;
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+
+    &__stamp {
+      font: 700 11px / 1 font-family(fraktion);
+      color: #00f8f1;
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font: 400 13px / 1.6 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0;
+    }
+  }
+
+  .u-filtered-out {
+    display: none !important;
   }
 </style>
