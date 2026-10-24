@@ -1,0 +1,2825 @@
+---
+// BCSpatialPortal.astro
+// 基于 Wodniack 标志性 [Wormhole] 虫洞时空穿梭与 [2025 Webby Nominee] 全屏沉浸空间
+// 内容已完全抽离至 src/data/spatial-chambers.json，创作者无需碰代码即可更新内容！
+import spatialData from '../data/spatial-chambers.json'
+---
+
+<div class="bc-spatial-portal js-spatial-portal notranslate" translate="no" aria-hidden="true">
+  <!-- 0. 奇点激波脉冲与高能爆发闪光 -->
+  <div class="bc-warp-shockwave js-warp-shockwave"></div>
+  <div class="bc-warp-flash js-warp-flash"></div>
+
+  <!-- 1. 100% 官方原版 Webby Nominee (WbNLpNj) 虫洞引力引擎 (支持 3D 摄像机光速推进) -->
+  <div class="bc-webby-portal js-webby-portal">
+    <div class="aura"></div>
+    <div class="overlay"></div>
+    <canvas class="js-canvas"></canvas>
+  </div>
+
+  <!-- 2. 瑞士极客风格超空间时空对齐 HUD 仪表 -->
+  <div class="bc-spatial-portal__transit-hud js-transit-hud">
+    <div class="bc-transit-gauge">
+      <div class="bc-transit-corner bc-transit-corner--tl"></div>
+      <div class="bc-transit-corner bc-transit-corner--tr"></div>
+      <div class="bc-transit-corner bc-transit-corner--bl"></div>
+      <div class="bc-transit-corner bc-transit-corner--br"></div>
+
+      <div class="bc-transit-header">
+        <span class="bc-transit-pulse"></span>
+        <span class="bc-transit-tag">BC // HYPERDRIVE WARP NAVIGATOR</span>
+        <span class="bc-transit-status-badge">LOCKING</span>
+      </div>
+
+      <div class="bc-transit-target-box">
+        <span class="bc-transit-target-label">DESTINATION CHAMBER</span>
+        <div class="bc-transit-title js-transit-target">DIMENSION // 01 · 研发机密舱</div>
+      </div>
+
+      <div class="bc-transit-metrics">
+        <div class="bc-transit-metric">
+          <span class="bc-transit-metric-label">WARP VELOCITY</span>
+          <span class="bc-transit-metric-val js-transit-vel">0.0 LY/S</span>
+        </div>
+        <div class="bc-transit-metric">
+          <span class="bc-transit-metric-label">SINGULARITY FLUX</span>
+          <span class="bc-transit-metric-val js-transit-flux">99.8%</span>
+        </div>
+        <div class="bc-transit-metric">
+          <span class="bc-transit-metric-label">STABILITY</span>
+          <span class="bc-transit-metric-val">1.414 × 10⁸</span>
+        </div>
+      </div>
+
+      <div class="bc-transit-bar">
+        <div class="bc-transit-bar-fill js-transit-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 全屏沉浸多维空间容器 (BC 案卷研发机密舱) -->
+  <div class="bc-spatial-portal__chamber js-portal-chamber">
+    <!-- 顶栏状态条 -->
+    <header class="bc-spatial-portal__header">
+      <div class="bc-spatial-portal__header-left">
+        <span class="bc-spatial-portal__badge">BC // SPATIAL CHAMBER</span>
+        <span class="bc-spatial-portal__space-title js-space-indicator">DIMENSION // 01</span>
+      </div>
+
+      <button type="button" class="bc-spatial-portal__btn-close js-portal-close" title="返回现实维度">
+        <span class="bc-spatial-portal__close-text" data-i18n="portalClose">返回现实维度</span>
+      </button>
+    </header>
+
+    <!-- 空间内容区 (按模块动态切换) -->
+    <main class="bc-spatial-portal__body">
+      <!-- 空间 1: 独立推理剧本新作 · 研发机密舱 -->
+      <section class="bc-spatial-portal__view js-view-dev u-hidden" data-view="dev">
+        <div class="bc-space-dev">
+          <div class="bc-space-dev__hero">
+            <span class="bc-space-dev__tag">[ NARRATIVE ROADMAP // 本格推理新作 ]</span>
+            <h1 class="bc-space-dev__title">2025 独立推理案卷《第七次停钟》</h1>
+            <div class="bc-space-dev__status-bar">
+              <span class="bc-space-dev__status-dot"></span>
+              <span class="bc-space-dev__status-text">PHASE 04 · 逻辑闭环调优中 (82% COMPLETED)</span>
+            </div>
+          </div>
+
+          <div class="bc-space-dev__grid">
+            {spatialData.devChamber.cases.map((c) => (
+              <article class="bc-space-dev__card js-dev-card">
+                <div class="bc-card-corner bc-card-corner--tl"></div>
+                <div class="bc-card-corner bc-card-corner--tr"></div>
+                <div class="bc-card-corner bc-card-corner--bl"></div>
+                <div class="bc-card-corner bc-card-corner--br"></div>
+
+                <div class="bc-space-dev__card-top">
+                  <div class="bc-space-dev__ref">
+                    <span class="bc-space-dev__ref-prefix">CASE REF //</span>
+                    <span class="bc-space-dev__ref-code">{c.caseRef}</span>
+                  </div>
+                  <div class="bc-space-dev__status-wrap">
+                    <span class={`bc-space-dev__pulse-dot ${c.statusType}`}></span>
+                    <span class={`bc-space-dev__badge ${c.statusType}`}>{c.statusText}</span>
+                  </div>
+                </div>
+
+                <div class="bc-space-dev__title-row">
+                  <div class="bc-space-dev__title-content">
+                    <h3 class="bc-space-dev__card-title">{c.title}</h3>
+                    <span class="bc-space-dev__card-sub">{c.subtitle}</span>
+                  </div>
+                  <span class="bc-space-dev__num">{c.id}</span>
+                </div>
+
+                <p class="bc-space-dev__desc">{c.desc}</p>
+
+                <div class="bc-space-dev__specs">
+                  {c.specs.map((s) => (
+                    <div class="bc-space-dev__spec">
+                      <span class="bc-space-dev__spec-k">{s.k}</span>
+                      <span class="bc-space-dev__spec-v">{s.v}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div class="bc-space-dev__card-foot">
+                  <span class="bc-space-dev__barcode">{c.barcode}</span>
+                  <span class="bc-space-dev__explore">INSPECT CASE // 查看推演 ↳</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- 空间 2: 侦探参谋局 · 剧本逻辑与开发建议投递 -->
+      <section class="bc-spatial-portal__view js-view-suggest u-hidden" data-view="suggest">
+        <div class="bc-space-suggest">
+          <div class="bc-space-suggest__header">
+            <span class="bc-space-suggest__tag">[ CO-DEV BUREAU // 案卷共研立案局 ]</span>
+            <h1 class="bc-space-suggest__title">线索挑刺 · 密室脑洞 · 开发建议投递</h1>
+            <p class="bc-space-suggest__desc">
+              发现剧本逻辑中的漏洞？有绝妙的不在场证明新脑洞？或者想对 BC 工坊提出开发建议？
+              每一条线索都将被永久封存归档，并载入工坊感谢名录。
+            </p>
+          </div>
+
+          <form class="bc-space-suggest__form js-suggest-form">
+            <div class="bc-card-corner bc-card-corner--tl"></div>
+            <div class="bc-card-corner bc-card-corner--tr"></div>
+            <div class="bc-card-corner bc-card-corner--bl"></div>
+            <div class="bc-card-corner bc-card-corner--br"></div>
+
+            <!-- 建议类型切换标签 -->
+            <div class="bc-space-suggest__tags">
+              <label class="bc-space-suggest__tag-opt">
+                <input type="radio" name="suggest_type" value="logic_critique" checked />
+                <span>[ 剧本逻辑挑刺 ]</span>
+              </label>
+              <label class="bc-space-suggest__tag-opt">
+                <input type="radio" name="suggest_type" value="trick_idea" />
+                <span>[ 密室诡计脑洞 ]</span>
+              </label>
+              <label class="bc-space-suggest__tag-opt">
+                <input type="radio" name="suggest_type" value="dev_feature" />
+                <span>[ 网站工具建议 ]</span>
+              </label>
+              <label class="bc-space-suggest__tag-opt">
+                <input type="radio" name="suggest_type" value="case_archive" />
+                <span>[ 离奇奇案投稿 ]</span>
+              </label>
+            </div>
+
+            <!-- 案卷建议正文输入 -->
+            <div class="bc-space-suggest__field">
+              <label for="suggest-content" class="bc-space-suggest__label">案卷正文 / 线索论述 *</label>
+              <textarea
+                id="suggest-content"
+                class="bc-space-suggest__textarea js-suggest-content"
+                rows="5"
+                placeholder="在此写下你的逻辑推演、漏洞批判或功能脑洞（支持长文本，欢迎硬核探讨）..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="bc-space-suggest__row">
+              <div class="bc-space-suggest__field bc-space-suggest__field--half">
+                <label for="suggest-author" class="bc-space-suggest__label">侦探代号 / 署名</label>
+                <input
+                  type="text"
+                  id="suggest-author"
+                  class="bc-space-suggest__input js-suggest-author"
+                  placeholder="例如：贝克街游民 (选填)"
+                />
+              </div>
+
+              <div class="bc-space-suggest__field bc-space-suggest__field--half">
+                <label for="suggest-contact" class="bc-space-suggest__label">联系方式 (选填)</label>
+                <input
+                  type="text"
+                  id="suggest-contact"
+                  class="bc-space-suggest__input js-suggest-contact"
+                  placeholder="邮箱或微信号，方便 BC 深入推演"
+                />
+              </div>
+            </div>
+
+            <div class="bc-space-suggest__submit-box">
+              <button type="submit" class="bc-space-suggest__btn-submit js-suggest-submit">
+                <span class="bc-space-suggest__submit-line"></span>
+                <span class="bc-space-suggest__submit-text">盖章立案归档 // FILE THIS CASE</span>
+                <span class="bc-space-suggest__submit-stamp">❖</span>
+              </button>
+            </div>
+
+            <!-- 提交成功后盖印动画容器 -->
+            <div class="bc-space-suggest__success js-suggest-success u-hidden">
+              <div class="bc-space-suggest__seal">
+                <span>CASE FILED</span>
+                <span class="bc-space-suggest__seal-id js-success-id">#BC-2026-088</span>
+                <span class="bc-space-suggest__seal-sub">已存入工坊档案库</span>
+              </div>
+              <p class="bc-space-suggest__success-msg">
+                “早上好，以防再也见不到你，祝你下午好，晚上好，晚安！线索已收到，感谢你的参谋！”
+              </p>
+              <button type="button" class="bc-space-suggest__btn-reset js-suggest-reset">
+                [ 再次投递新案卷 ]
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- 空间 3: 今日热点雷达 · 深度洞察 -->
+      <section class="bc-spatial-portal__view js-view-radar u-hidden" data-view="radar">
+        <div class="bc-space-radar">
+          <div class="bc-space-radar__header">
+            <span class="bc-space-radar__tag">[ TODAY'S TREND RADAR // 今日热点雷达 ]</span>
+            <h1 class="bc-space-radar__title">全球科技 · 剧情推理 · 奇闻观察</h1>
+          </div>
+
+          <div class="bc-space-radar__list">
+            {spatialData.radarChamber.items.map((item) => (
+              item.url ? (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bc-space-radar__item bc-space-radar__item--link"
+                >
+                  <div class="bc-card-corner bc-card-corner--tl"></div>
+                  <div class="bc-card-corner bc-card-corner--tr"></div>
+                  <div class="bc-card-corner bc-card-corner--bl"></div>
+                  <div class="bc-card-corner bc-card-corner--br"></div>
+
+                  <div class="bc-space-radar__meta">
+                    <span class="bc-space-radar__category">{item.category}</span>
+                    <span class="bc-space-radar__time">{item.time}</span>
+                  </div>
+                  <h2 class="bc-space-radar__item-title">{item.title}</h2>
+                  <p class="bc-space-radar__summary">{item.summary}</p>
+                  <div class="bc-space-radar__foot">
+                    <span class="bc-space-radar__tag-spec">{item.specTag}</span>
+                    <span class="bc-space-radar__read">{item.linkText || 'READ INTEL // 展开内参 ↳'}</span>
+                  </div>
+                </a>
+              ) : (
+                <article class="bc-space-radar__item">
+                  <div class="bc-card-corner bc-card-corner--tl"></div>
+                  <div class="bc-card-corner bc-card-corner--tr"></div>
+                  <div class="bc-card-corner bc-card-corner--bl"></div>
+                  <div class="bc-card-corner bc-card-corner--br"></div>
+
+                  <div class="bc-space-radar__meta">
+                    <span class="bc-space-radar__category">{item.category}</span>
+                    <span class="bc-space-radar__time">{item.time}</span>
+                  </div>
+                  <h2 class="bc-space-radar__item-title">{item.title}</h2>
+                  <p class="bc-space-radar__summary">{item.summary}</p>
+                  <div class="bc-space-radar__foot">
+                    <span class="bc-space-radar__tag-spec">{item.specTag}</span>
+                    <span class="bc-space-radar__read">{item.linkText}</span>
+                  </div>
+                </article>
+              )
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- 空间 4: 神仙网站探索 · 数字灵感矿藏 -->
+      <section class="bc-spatial-portal__view js-view-gems u-hidden" data-view="gems">
+        <div class="bc-space-gems">
+          <div class="bc-space-gems__header">
+            <span class="bc-space-gems__tag">{spatialData.gemsChamber.tag}</span>
+            <h1 class="bc-space-gems__title">{spatialData.gemsChamber.title}</h1>
+          </div>
+
+          <div class="bc-space-gems__grid">
+            {spatialData.gemsChamber.gems.map((g) => (
+              <a href={g.url} target="_blank" rel="noopener noreferrer" class="bc-space-gems__card">
+                <div class="bc-card-corner bc-card-corner--tl"></div>
+                <div class="bc-card-corner bc-card-corner--tr"></div>
+                <div class="bc-card-corner bc-card-corner--bl"></div>
+                <div class="bc-card-corner bc-card-corner--br"></div>
+
+                <div class="bc-space-gems__top">
+                  <span class={`bc-space-gems__card-badge ${g.badgeClass}`}>{g.badge}</span>
+                  <span class="bc-space-gems__rank">{g.rank}</span>
+                </div>
+
+                <div class="bc-space-gems__title-row">
+                  <h3 class="bc-space-gems__site-title">{g.title}</h3>
+                  <span class="bc-space-gems__domain">{g.domain}</span>
+                </div>
+
+                <p class="bc-space-gems__desc">{g.desc}</p>
+
+                <div class="bc-space-gems__tags">
+                  {g.techTags.map((tag) => (
+                    <span class="bc-tech-pill">{tag}</span>
+                  ))}
+                </div>
+
+                <div class="bc-space-gems__foot">
+                  <span class="bc-space-gems__foot-label">{g.footLabel}</span>
+                  <span class="bc-space-gems__link">{g.linkText}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- 空间 5: 极客实用工具箱 // GEEK SUITE -->
+      <section class="bc-spatial-portal__view js-view-toolbox u-hidden" data-view="toolbox">
+        <div class="bc-space-toolbox">
+          <div class="bc-space-toolbox__header">
+            <span class="bc-space-toolbox__tag">{spatialData.toolboxChamber.tag}</span>
+            <h1 class="bc-space-toolbox__title">{spatialData.toolboxChamber.title}</h1>
+          </div>
+
+          <div class="bc-space-toolbox__table">
+            <div class="bc-card-corner bc-card-corner--tl"></div>
+            <div class="bc-card-corner bc-card-corner--tr"></div>
+            <div class="bc-card-corner bc-card-corner--bl"></div>
+            <div class="bc-card-corner bc-card-corner--br"></div>
+
+            {spatialData.toolboxChamber.tools.map((t) => (
+              t.url ? (
+                <a
+                  href={t.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={`bc-space-toolbox__row bc-space-toolbox__row--link ${t.isPrimary ? 'is-primary' : ''}`}
+                >
+                  <div class="bc-space-toolbox__tool-name">
+                    {t.isPrimary && <span class="bc-cloud-pulse">❖ </span>}
+                    {t.name}
+                  </div>
+                  <div class="bc-space-toolbox__tool-desc">{t.desc}</div>
+                  <div class="bc-space-toolbox__action-col">
+                    <span class={`bc-space-toolbox__badge ${t.isPrimary ? 'is-highlight' : ''}`}>{t.badge}</span>
+                    <span class="bc-space-toolbox__launch-btn">{t.isPrimary ? '打开云盘 ➔' : (t.launchText || '探查项目 ➔')}</span>
+                  </div>
+                </a>
+              ) : (
+                <div class="bc-space-toolbox__row">
+                  <div class="bc-space-toolbox__tool-name">{t.name}</div>
+                  <div class="bc-space-toolbox__tool-desc">{t.desc}</div>
+                  <span class="bc-space-toolbox__badge">{t.badge}</span>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+  import { gsap } from 'gsap';
+  import Emitter from '../utils/Emitter';
+  import Ticker from '../utils/Ticker';
+
+  // 100% 纯正原版 Easing 数学公式 (无需外部 ESM 网络依赖，离线原生 120Hz 满帧运行)
+  const easingUtils = {
+    linear: (p: number) => p,
+    easeInExpo: (p: number) => (p === 0 ? 0 : Math.pow(2, 10 * (p - 1))),
+    easeOutCubic: (p: number) => 1 - Math.pow(1 - p, 3),
+    easeInOutCubic: (p: number) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2),
+  };
+
+  class BCSpatialPortalEngine {
+    container: HTMLElement;
+    webbyPortal: HTMLElement;
+    canvas: HTMLCanvasElement;
+    ctx: CanvasRenderingContext2D | null = null;
+    chamber: HTMLElement;
+    closeBtn: HTMLElement;
+    spaceIndicator: HTMLElement;
+    auraEl: HTMLElement | null = null;
+
+    // 奇点激波与高能闪光
+    shockwaveEl: HTMLElement | null = null;
+    flashEl: HTMLElement | null = null;
+
+    // 跃迁穿越 HUD 测速与状态仪表
+    transitHud: HTMLElement | null = null;
+    transitTargetEl: HTMLElement | null = null;
+    transitVelEl: HTMLElement | null = null;
+    transitFluxEl: HTMLElement | null = null;
+    transitBarFill: HTMLElement | null = null;
+
+    isOpen = false;
+    isClosing = false;
+    currentSpace: string | null = null;
+    animationFrameId: number | null = null;
+
+    // 保存进入时的视口滚动高度，退出时 100% 精准无感还原
+    savedScrollY = 0;
+
+    // 穿越原点与终点动态焦点 (连接感核心)
+    originCard: HTMLElement | null = null;
+    originX = 0;
+    originY = 0;
+    coreX = 0;
+    coreY = 0;
+    maxRadius = 2000;
+    warpStretch = 1.0; // 粒子流光拉伸比例 (1.0 = 常态微尘, 9.0 = 亚光速超空间激光束)
+    warpSpeed = 1.0;   // 跃迁环阵流转速度
+    transitTimeline: gsap.core.Timeline | null = null;
+
+    // 主题色彩动态同构 (彻底杜绝撕裂感)
+    themeColors = {
+      primary: '#f40c3f',
+      secondary: '#160000',
+      white: '#fff0eb',
+      isContrasted: false,
+    };
+
+    // 100% 官方原版 WbNLpNj 虫洞几何与粒子体系
+    render = { width: 0, height: 0, dpi: 1 };
+    rect = { width: 0, height: 0 };
+    startDisc = { x: 0, y: 0, w: 0, h: 0 };
+    endDisc = { x: 0, y: 0, w: 0, h: 0 };
+    discs: Array<{ x: number; y: number; w: number; h: number; p: number }> = [];
+    lines: Array<{ p0: { x: number; y: number }; p1: { x: number; y: number }; l: { x: number; y: number } }> = [];
+    particles: Array<{ lineIndex: number; p: number; v: number; l: number; a: number }> = [];
+
+    constructor() {
+      this.container = document.querySelector('.js-spatial-portal') as HTMLElement;
+      if (!this.container) return;
+
+      this.webbyPortal = this.container.querySelector('.bc-webby-portal') as HTMLElement;
+      this.auraEl = this.container.querySelector('.aura') as HTMLElement;
+      this.canvas = this.container.querySelector('.js-canvas') as HTMLCanvasElement;
+      if (this.canvas) {
+        this.ctx = this.canvas.getContext('2d');
+      }
+      this.chamber = this.container.querySelector('.js-portal-chamber') as HTMLElement;
+      this.closeBtn = this.container.querySelector('.js-portal-close') as HTMLElement;
+      this.spaceIndicator = this.container.querySelector('.js-space-indicator') as HTMLElement;
+
+      this.shockwaveEl = this.container.querySelector('.js-warp-shockwave') as HTMLElement;
+      this.flashEl = this.container.querySelector('.js-warp-flash') as HTMLElement;
+
+      this.transitHud = this.container.querySelector('.js-transit-hud') as HTMLElement;
+      this.transitTargetEl = this.container.querySelector('.js-transit-target') as HTMLElement;
+      this.transitVelEl = this.container.querySelector('.js-transit-vel') as HTMLElement;
+      this.transitFluxEl = this.container.querySelector('.js-transit-flux') as HTMLElement;
+      this.transitBarFill = this.container.querySelector('.js-transit-bar') as HTMLElement;
+
+      this.init();
+    }
+
+    init() {
+      this.updateThemeColors();
+      this.setSize();
+      this.setDiscs();
+      this.setLines();
+      this.setParticles();
+
+      window.addEventListener('resize', () => this.onResize());
+      window.addEventListener('themechange', () => this.updateThemeColors());
+      Emitter.on('contrastchange', () => this.updateThemeColors());
+
+      // 阻止鼠标滚轮穿透至底层网页
+      this.container.addEventListener('wheel', (e) => {
+        e.stopPropagation();
+      }, { passive: true });
+
+      // 绑定全局点击触发器 (任何带有 data-spatial-space 的卡片)
+      document.addEventListener('click', (e) => {
+        const target = (e.target as HTMLElement).closest('[data-spatial-space]') as HTMLElement;
+        if (target) {
+          const spaceId = target.dataset.spatialSpace;
+          if (spaceId) {
+            const rect = target.getBoundingClientRect();
+            this.open(spaceId, rect, target);
+          }
+        }
+      });
+
+      // 绑定返回现实按键
+      this.closeBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.close();
+      });
+
+      // 绑定键盘 ESC 快捷退出
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.isOpen && !this.isClosing) {
+          e.preventDefault();
+          this.close();
+        }
+      });
+
+      // 绑定案卷建议表单提交
+      this.initSuggestForm();
+
+      // 挂载到 window 方便调试与全局通信
+      (window as any).bcSpatialPortal = this;
+    }
+
+    updateThemeColors() {
+      const root = document.documentElement;
+      const isContrasted = root.classList.contains('theme-contrasted');
+      const style = getComputedStyle(root);
+      const primary = style.getPropertyValue('--color-primary').trim() || (isContrasted ? '#fff2ed' : '#f40c3f');
+      const secondary = style.getPropertyValue('--color-secondary').trim() || '#160000';
+      const white = style.getPropertyValue('--color-white').trim() || '#fff0eb';
+
+      this.themeColors = { primary, secondary, white, isContrasted };
+    }
+
+    onResize() {
+      this.setSize();
+      this.setDiscs();
+      this.setLines();
+      this.setParticles();
+    }
+
+    setSize() {
+      if (!this.canvas) return;
+      this.rect = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+
+      this.render = {
+        width: this.rect.width,
+        height: this.rect.height,
+        dpi: window.devicePixelRatio || 1,
+      };
+
+      this.canvas.width = this.render.width * this.render.dpi;
+      this.canvas.height = this.render.height * this.render.dpi;
+
+      if (!this.isOpen) {
+        this.coreX = this.rect.width * 0.5;
+        this.coreY = this.rect.height * 0.55;
+      }
+    }
+
+    /**
+     * 官方原版 WbNLpNj：初始化同心椭圆环阵 (Discs)
+     */
+    setDiscs() {
+      const { width, height } = this.rect;
+      this.discs = [];
+
+      const diag = Math.hypot(width, height);
+      const coreRadius = Math.min(width * 0.22, 150);
+
+      this.startDisc = {
+        x: width * 0.5,
+        y: height * 0.5,
+        w: diag * 0.55,
+        h: diag * 0.55,
+      };
+
+      this.endDisc = {
+        x: this.coreX || width * 0.5,
+        y: this.coreY || height * 0.55,
+        w: coreRadius,
+        h: coreRadius,
+      };
+
+      const totalDiscs = 20;
+      for (let i = 0; i < totalDiscs; i++) {
+        const p = i / totalDiscs;
+        const disc = this.tweenDisc({
+          x: 0,
+          y: 0,
+          w: 0,
+          h: 0,
+          p,
+        });
+        this.discs.push(disc);
+      }
+    }
+
+    /**
+     * 官方原版 WbNLpNj：初始化经纬透视线网 (Lines)
+     */
+    setLines() {
+      const { width, height } = this.rect;
+      this.lines = [];
+
+      const totalLines = 100;
+      const linesAngle = (Math.PI * 2) / totalLines;
+      const now = performance.now() * 0.0001;
+
+      const targetX = this.coreX || width * 0.5;
+      const targetY = this.coreY || height * 0.55;
+
+      for (let i = 0; i < totalLines; i++) {
+        const angle = (i * linesAngle + now) % (Math.PI * 2);
+
+        const p0 = {
+          x: width * 0.5 + Math.cos(angle) * this.startDisc.w,
+          y: height * 0.5 + Math.sin(angle) * this.startDisc.h,
+        };
+
+        const p1 = {
+          x: targetX + Math.cos(angle) * this.endDisc.w,
+          y: targetY + Math.sin(angle) * this.endDisc.h,
+        };
+
+        const l = {
+          x: p1.x - p0.x,
+          y: p1.y - p0.y,
+        };
+
+        this.lines.push({ p0, p1, l });
+      }
+    }
+
+    /**
+     * 官方原版 WbNLpNj：初始化 500 颗流动星尘粒子 (Particles)
+     */
+    setParticles() {
+      this.particles = [];
+      const totalParticles = 500;
+
+      for (let i = 0; i < totalParticles; i++) {
+        const particle = this.initParticle(true);
+        this.particles.push(particle);
+      }
+    }
+
+    initParticle(randomP = false) {
+      const lineIndex = Math.floor(Math.random() * (this.lines.length || 1));
+      const v = 0.005 + Math.random() * 0.005;
+      const l = 0.01 + Math.random() * 0.1;
+      const a = 0.08 + Math.random() * 0.25;
+
+      return {
+        lineIndex,
+        p: randomP ? Math.random() : 0,
+        v,
+        l,
+        a,
+      };
+    }
+
+    tweenValue(start: number, end: number, p: number, ease: string | boolean = false) {
+      const delta = end - start;
+      let easeFn = easingUtils.linear;
+      if (ease === 'inExpo') easeFn = easingUtils.easeInExpo;
+      else if (ease === 'outCubic') easeFn = easingUtils.easeOutCubic;
+      else if (ease === 'inOutCubic') easeFn = easingUtils.easeInOutCubic;
+
+      return start + delta * easeFn(p);
+    }
+
+    tweenDisc(disc: { x: number; y: number; w: number; h: number; p: number }) {
+      const targetX = this.coreX || this.rect.width * 0.5;
+      const targetY = this.coreY || this.rect.height * 0.55;
+
+      disc.x = this.tweenValue(this.startDisc.x, targetX, disc.p);
+      disc.y = this.tweenValue(this.startDisc.y, targetY, disc.p, 'inExpo');
+      disc.w = this.tweenValue(this.startDisc.w, this.endDisc.w, disc.p, 'outCubic');
+      disc.h = this.tweenValue(this.startDisc.h, this.endDisc.h, disc.p, 'outCubic');
+      return disc;
+    }
+
+    moveDiscs() {
+      const step = 0.001 * this.warpSpeed;
+      this.discs.forEach((disc) => {
+        disc.p = (disc.p + step) % 1;
+        if (disc.p < 0) disc.p += 1;
+        this.tweenDisc(disc);
+      });
+    }
+
+    moveParticles() {
+      const speedMult = Math.abs(this.warpSpeed);
+      this.particles.forEach((particle) => {
+        if (particle.p < 1) {
+          particle.p += particle.v * speedMult;
+        } else {
+          particle.p = 0;
+          particle.lineIndex = Math.floor(Math.random() * this.lines.length);
+        }
+      });
+    }
+
+    drawDiscs() {
+      if (!this.ctx) return;
+      const { ctx } = this;
+      const isContrasted = this.themeColors.isContrasted;
+
+      ctx.strokeStyle = isContrasted ? 'rgba(0, 0, 0, 0.35)' : 'rgba(255, 255, 255, 0.32)';
+      ctx.lineWidth = 1.8;
+
+      // Outer disc
+      const outerDisc = this.startDisc;
+      ctx.beginPath();
+      ctx.ellipse(outerDisc.x, outerDisc.y, outerDisc.w, outerDisc.h, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.closePath();
+
+      // Concentric Discs
+      this.discs.forEach((disc) => {
+        ctx.beginPath();
+        ctx.ellipse(disc.x, disc.y, disc.w, disc.h, 0, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.closePath();
+      });
+    }
+
+    drawLines() {
+      if (!this.ctx) return;
+      const { ctx, lines } = this;
+      const isContrasted = this.themeColors.isContrasted;
+
+      ctx.beginPath();
+      lines.forEach(({ p0, p1 }) => {
+        ctx.moveTo(p0.x, p0.y);
+        ctx.lineTo(p1.x, p1.y);
+      });
+
+      ctx.strokeStyle = isContrasted ? 'rgba(0, 0, 0, 0.18)' : 'rgba(255, 255, 255, 0.2)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    drawParticles() {
+      if (!this.ctx) return;
+      const { ctx, particles } = this;
+      const isContrasted = this.themeColors.isContrasted;
+
+      particles.forEach((particle) => {
+        const line = this.lines[particle.lineIndex];
+        if (!line) return;
+
+        const start = {
+          x: line.p0.x + line.l.x * particle.p,
+          y: line.p0.y + line.l.y * particle.p,
+        };
+
+        const p0 = { x: start.x, y: start.y };
+        // 核心突破：warpStretch 驱动亚光速星流拉伸
+        const stretchL = Math.min(1.0, particle.l * this.warpStretch);
+        const p1 = {
+          x: start.x + line.l.x * stretchL,
+          y: start.y + line.l.y * stretchL,
+        };
+
+        ctx.beginPath();
+        ctx.moveTo(p0.x, p0.y);
+        ctx.lineTo(p1.x, p1.y);
+
+        const alpha = Math.min(1, (particle.a * 2.8) * (0.8 + this.warpStretch * 0.2));
+        ctx.strokeStyle = isContrasted ? `rgba(0, 0, 0, ${alpha})` : `rgba(255, 255, 255, ${alpha})`;
+        ctx.lineWidth = Math.min(3.8, 1.8 + this.warpStretch * 0.28);
+        ctx.stroke();
+        ctx.closePath();
+      });
+    }
+
+    /**
+     * 官方原版 WbNLpNj：主渲染循环 (Tick)
+     */
+    tick() {
+      if (!this.isOpen && this.warpSpeed <= 0 && !this.isClosing) return;
+      this.animationFrameId = requestAnimationFrame(this.tick.bind(this));
+      if (!this.ctx || !this.canvas) return;
+
+      // 实时同步炫彩光晕中心到当前核心位置 (从卡片飞向中央)
+      if (this.auraEl) {
+        this.auraEl.style.left = `${this.coreX}px`;
+        this.auraEl.style.top = `${this.coreY}px`;
+      }
+
+      this.endDisc.x = this.coreX;
+      this.endDisc.y = this.coreY;
+
+      const { ctx } = this;
+      ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+      ctx.save();
+      ctx.scale(this.render.dpi, this.render.dpi);
+
+      this.moveDiscs();
+      this.moveParticles();
+      this.setLines();
+
+      this.drawDiscs();
+      this.drawLines();
+      this.drawParticles();
+
+      ctx.restore();
+    }
+
+    startAnimationLoop() {
+      if (this.animationFrameId) {
+        cancelAnimationFrame(this.animationFrameId);
+      }
+      this.animationFrameId = requestAnimationFrame(this.tick.bind(this));
+    }
+
+    stopAnimationLoop() {
+      if (this.animationFrameId) {
+        cancelAnimationFrame(this.animationFrameId);
+        this.animationFrameId = null;
+      }
+      if (this.ctx && this.canvas) {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      }
+    }
+
+    /**
+     * 虫洞超空间穿梭大片序列 (Hyperspace Transit Sequence)
+     * 彻底解决视觉冲击与色彩撕裂问题：
+     * 1. 底图重力吸入微陷，卡片激波环以主题色破空喷薄
+     * 2. 3D 摄像机光速纵深推进 (scale 2.8x + 旋转倾斜 + 强光过载)
+     * 3. 72.4 LY/S 极速飞掠，激光拉伸与瑞士极客 HUD 测速仪表
+     * 4. 减速脱离，机密舱重力锁紧对接浮现
+     */
+    open(spaceId: string, originRect?: DOMRect, targetEl?: HTMLElement) {
+      if (this.isOpen || this.isClosing) return;
+      this.isOpen = true;
+      this.isClosing = false;
+      this.currentSpace = spaceId;
+      this.originCard = targetEl || null;
+
+      // 实时同步当前主题色彩 (彻底根除撕裂感)
+      this.updateThemeColors();
+
+      // 1. 精准记录原网页 Lenis / Window 滚动高度
+      const lenis = (window as any).lenis;
+      this.savedScrollY = lenis?.scroll ?? window.scrollY ?? document.documentElement.scrollTop ?? 0;
+      if (lenis && typeof lenis.stop === 'function') {
+        lenis.stop();
+      }
+
+      this.onResize();
+
+      // 2. 计算卡片中心坐标 (穿越奇点起点)
+      const centerX = window.innerWidth * 0.5;
+      const centerY = window.innerHeight * 0.55;
+
+      if (originRect) {
+        this.originX = originRect.left + originRect.width * 0.5;
+        this.originY = originRect.top + originRect.height * 0.5;
+      } else {
+        this.originX = centerX;
+        this.originY = centerY;
+      }
+
+      // 计算全屏覆盖所需的最大光圈半径
+      this.maxRadius = Math.hypot(
+        Math.max(this.originX, window.innerWidth - this.originX),
+        Math.max(this.originY, window.innerHeight - this.originY)
+      );
+
+      // 起点卡片视觉充能高亮
+      if (this.originCard) {
+        this.originCard.classList.add('is-warping');
+      }
+
+      // 3. 初始状态设定：虫洞核心聚焦于卡片位置，光圈以 0 半径从卡片炸开
+      this.coreX = this.originX;
+      this.coreY = this.originY;
+
+      // 激活多维容器
+      this.container.classList.add('is-active');
+      this.container.setAttribute('aria-hidden', 'false');
+
+      // 准备空间视图
+      this.container.querySelectorAll('.bc-spatial-portal__view').forEach((view) => {
+        view.classList.add('u-hidden');
+      });
+      const activeView = this.container.querySelector(`.js-view-${spaceId}`);
+      if (activeView) {
+        activeView.classList.remove('u-hidden');
+      }
+
+      const titleMap: Record<string, string> = {
+        dev: 'CHAMBER // 01 · 密室案卷研发机密舱',
+        suggest: 'CHAMBER // 02 · 侦探参谋局 (CO-DEV)',
+        radar: 'CHAMBER // 03 · 今日本格热点雷达',
+        gems: 'CHAMBER // 04 · 神仙网站探索',
+        toolbox: 'CHAMBER // 05 · 极客实用工具箱',
+      };
+      const spaceTitle = titleMap[spaceId] || 'DIMENSION // UNKNOWN';
+      if (this.spaceIndicator) {
+        this.spaceIndicator.textContent = spaceTitle;
+      }
+      if (this.transitTargetEl) {
+        this.transitTargetEl.textContent = spaceTitle;
+      }
+
+      // 重置内容舱
+      if (this.chamber) {
+        this.chamber.scrollTop = 0;
+        this.chamber.style.opacity = '0';
+        this.chamber.style.pointerEvents = 'none';
+      }
+
+      // 启动虫洞物理循环
+      this.startAnimationLoop();
+
+      // GSAP 超震撼 3D 摄像机光速穿梭序列 (Hyperspace Transit Sequence)
+      if (this.transitTimeline) this.transitTimeline.kill();
+      gsap.killTweensOf(this);
+      gsap.killTweensOf(this.chamber);
+      gsap.killTweensOf(this.canvas);
+
+      this.warpSpeed = 0;
+      this.warpStretch = 1;
+
+      const clipState = { r: 0 };
+      const velState = { speed: 0 };
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          if (this.chamber) {
+            this.chamber.style.pointerEvents = 'auto';
+            this.chamber.style.opacity = '1';
+          }
+        }
+      });
+      this.transitTimeline = tl;
+
+      // [视觉冲击 1: 奇点时空激波环与高能闪光] (0.0s -> 0.65s)
+      if (this.shockwaveEl) {
+        this.shockwaveEl.style.left = `${this.originX}px`;
+        this.shockwaveEl.style.top = `${this.originY}px`;
+        tl.fromTo(
+          this.shockwaveEl,
+          { scale: 0.1, opacity: 1, borderWidth: '5px' },
+          { scale: 5.0, opacity: 0, borderWidth: '0px', duration: 0.65, ease: 'power3.out' },
+          0
+        );
+      }
+
+      if (this.flashEl) {
+        tl.fromTo(
+          this.flashEl,
+          { opacity: 0.75 },
+          { opacity: 0, duration: 0.45, ease: 'power2.out' },
+          0
+        );
+      }
+
+      // [视觉冲击 2: 奇点光圈破空撕裂，核心滑向中央] (0.0s -> 0.75s)
+      tl.to(clipState, {
+        r: this.maxRadius * 1.08,
+        duration: 0.75,
+        ease: 'power3.inOut',
+        onUpdate: () => {
+          this.container.style.clipPath = `circle(${clipState.r}px at ${this.originX}px ${this.originY}px)`;
+        },
+      }, 0);
+
+      tl.to(this, {
+        coreX: centerX,
+        coreY: centerY,
+        duration: 0.75,
+        ease: 'power3.out',
+      }, 0);
+
+      // [视觉冲击 3: 3D 摄像机极速纵深俯冲 + 亚光速激光暴走] (0.0s -> 0.75s)
+      tl.fromTo(
+        this.canvas,
+        {
+          scale: 0.88,
+          rotateZ: -6,
+          filter: 'brightness(1)',
+        },
+        {
+          scale: 2.2,
+          rotateZ: 20,
+          filter: 'brightness(2)',
+          duration: 0.7,
+          ease: 'power2.in',
+        },
+        0
+      );
+
+      tl.to(this, {
+        warpSpeed: 50,
+        warpStretch: 9.0,
+        duration: 0.65,
+        ease: 'power2.in',
+      }, 0);
+
+      // HUD 仪表浮现与测速飙升
+      if (this.transitHud) {
+        tl.to(this.transitHud, { opacity: 1, scale: 1, duration: 0.3, ease: 'power2.out' }, 0.1);
+        tl.to(this.transitHud, { opacity: 0, scale: 0.9, duration: 0.3, ease: 'power2.in' }, 0.75);
+      }
+      if (this.transitBarFill) {
+        tl.fromTo(this.transitBarFill, { width: '0%' }, { width: '100%', duration: 0.75, ease: 'power1.inOut' }, 0.1);
+      }
+
+      tl.to(velState, {
+        speed: 72.4,
+        duration: 0.65,
+        ease: 'power2.in',
+        onUpdate: () => {
+          if (this.transitVelEl) {
+            this.transitVelEl.textContent = `${velState.speed.toFixed(1)} LY/S`;
+          }
+        }
+      }, 0);
+
+      // [视觉冲击 4: 3D 摄像机平滑刹车到位] (0.7s -> 1.3s)
+      tl.to(
+        this.canvas,
+        {
+          scale: 1.0,
+          rotateZ: 0,
+          filter: 'brightness(1)',
+          duration: 0.65,
+          ease: 'power4.out',
+        },
+        0.7
+      );
+
+      tl.to(velState, {
+        speed: 1.0,
+        duration: 0.6,
+        ease: 'power3.out',
+        onUpdate: () => {
+          if (this.transitVelEl) {
+            this.transitVelEl.textContent = `${velState.speed.toFixed(1)} LY/S`;
+          }
+        }
+      }, 0.7);
+
+      tl.to(this, {
+        warpSpeed: 1,
+        warpStretch: 1,
+        duration: 0.65,
+        ease: 'power3.out',
+      }, 0.7);
+
+      // [视觉冲击 5: 空间舱平滑清晰落地] (0.65s 迅速显现，告别漫长空白)
+      tl.fromTo(
+        this.chamber,
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power2.out',
+        },
+        0.65
+      );
+
+      // 内部模块卡片阶梯入场
+      tl.call(() => {
+        if (activeView) {
+          const hero = activeView.querySelector(
+            '.bc-space-dev__hero, .bc-space-suggest__header, .bc-space-radar__header, .bc-space-gems__header, .bc-space-toolbox__header'
+          );
+          const cards = activeView.querySelectorAll(
+            '.bc-space-dev__card, .bc-space-suggest__form, .bc-space-radar__item, .bc-space-gems__card, .bc-space-toolbox__table, .bc-space-toolbox__row'
+          );
+
+          if (hero) {
+            gsap.fromTo(hero, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' });
+          }
+          if (cards && cards.length) {
+            gsap.fromTo(
+              cards,
+              { y: 24, opacity: 0 },
+              { y: 0, opacity: 1, duration: 0.45, stagger: 0.05, ease: 'power3.out' }
+            );
+          }
+        }
+      }, undefined, 0.72);
+    }
+
+    /**
+     * 点击返回：全流程逆向时空折叠返航 (Reverse Warp Return Sequence)
+     */
+    close() {
+      if (!this.isOpen || this.isClosing) return;
+      this.isClosing = true;
+
+      (document.activeElement as HTMLElement)?.blur();
+
+      if (this.transitTimeline) this.transitTimeline.kill();
+      gsap.killTweensOf(this);
+      gsap.killTweensOf(this.chamber);
+      gsap.killTweensOf(this.canvas);
+
+      if (this.chamber) {
+        this.chamber.style.pointerEvents = 'none';
+      }
+
+      const clipState = { r: this.maxRadius * 1.08 };
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          this.isOpen = false;
+          this.isClosing = false;
+          this.stopAnimationLoop();
+          this.container.classList.remove('is-active');
+          this.container.setAttribute('aria-hidden', 'true');
+          this.container.style.clipPath = '';
+
+          // 核心恢复：100% 精确恢复原先视口与 Lenis 滚动高度
+          const lenis = (window as any).lenis;
+          if (lenis && typeof lenis.start === 'function') {
+            lenis.start();
+            lenis.scrollTo(this.savedScrollY, { immediate: true });
+          }
+
+          window.scrollTo({ top: this.savedScrollY, behavior: 'instant' });
+
+          Ticker.nextTick(() => {
+            if (lenis && typeof lenis.scrollTo === 'function') {
+              lenis.scrollTo(this.savedScrollY, { immediate: true });
+            }
+            window.scrollTo({ top: this.savedScrollY, behavior: 'instant' });
+            Emitter.emit('scroll', this.savedScrollY);
+            Emitter.emit('updateViewport');
+          });
+
+          // 卡片着陆回弹反馈
+          if (this.originCard) {
+            this.originCard.classList.remove('is-warping');
+            this.originCard.classList.add('is-returned');
+            setTimeout(() => {
+              this.originCard?.classList.remove('is-returned');
+              this.originCard = null;
+            }, 800);
+          }
+        },
+      });
+      this.transitTimeline = tl;
+
+      // [返航 1: 空间舱快速淡出] (0.0s -> 0.25s)
+      tl.to(this.chamber, {
+        opacity: 0,
+        y: 16,
+        duration: 0.25,
+        ease: 'power2.in',
+      }, 0);
+
+      // [返航 2: 3D 摄像机倒拉 + 虫洞全速逆向倒流] (0.08s -> 0.6s)
+      tl.to(
+        this.canvas,
+        {
+          scale: 1.4,
+          rotateZ: -12,
+          duration: 0.35,
+          ease: 'power2.in',
+        },
+        0.08
+      );
+
+      tl.to(
+        this.canvas,
+        {
+          scale: 1.0,
+          rotateZ: 0,
+          duration: 0.25,
+          ease: 'power3.out',
+        },
+        0.42
+      );
+
+      tl.to(this, {
+        warpSpeed: -35,
+        warpStretch: 6.0,
+        duration: 0.35,
+        ease: 'power2.in',
+      }, 0.08);
+
+      // [返航 3: 奇点回归，虫洞圆环收敛缩小直降卡片] (0.2s -> 0.65s)
+      tl.to(this, {
+        coreX: this.originX,
+        coreY: this.originY,
+        duration: 0.45,
+        ease: 'power3.inOut',
+      }, 0.2);
+
+      tl.to(clipState, {
+        r: 0,
+        duration: 0.45,
+        ease: 'power3.inOut',
+        onUpdate: () => {
+          this.container.style.clipPath = `circle(${clipState.r}px at ${this.originX}px ${this.originY}px)`;
+        },
+      }, 0.2);
+    }
+
+    /**
+     * 案卷建议投递交互逻辑
+     */
+    initSuggestForm() {
+      const form = this.container.querySelector('.js-suggest-form') as HTMLFormElement;
+      const successBox = this.container.querySelector('.js-suggest-success') as HTMLElement;
+      const resetBtn = this.container.querySelector('.js-suggest-reset') as HTMLElement;
+      const contentEl = this.container.querySelector('.js-suggest-content') as HTMLTextAreaElement;
+      const authorEl = this.container.querySelector('.js-suggest-author') as HTMLInputElement;
+      const idEl = this.container.querySelector('.js-success-id') as HTMLElement;
+
+      if (!form) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const content = contentEl?.value.trim();
+        if (!content) return;
+
+        const author = authorEl?.value.trim() || '匿名侦探';
+        const typeEl = form.querySelector('input[name="suggest_type"]:checked') as HTMLInputElement;
+        const type = typeEl?.value || 'logic_critique';
+
+        // 生成专属案卷流水编号
+        const caseId = `#BC-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 900 + 100))}`;
+        if (idEl) idEl.textContent = caseId;
+
+        // 本地存储存档
+        const records = JSON.parse(localStorage.getItem('bc-suggest-cases') || '[]');
+        records.push({
+          id: caseId,
+          type,
+          content,
+          author,
+          time: new Date().toISOString(),
+        });
+        localStorage.setItem('bc-suggest-cases', JSON.stringify(records));
+
+        // 盖章成功反馈动效
+        form.classList.add('is-submitted');
+        if (successBox) successBox.classList.remove('u-hidden');
+      });
+
+      resetBtn?.addEventListener('click', () => {
+        form.reset();
+        form.classList.remove('is-submitted');
+        if (successBox) successBox.classList.add('u-hidden');
+      });
+    }
+  }
+
+  // 挂载引擎
+  if (typeof window !== 'undefined') {
+    new BCSpatialPortalEngine();
+  }
+</script>
+
+<style lang="scss">
+  .bc-spatial-portal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99; // 高于常规页面与播放器，提供全面沉浸感
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    user-select: none;
+    background: #141414;
+    color: var(--color-secondary);
+    overflow: hidden;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    // 0. 奇点激波脉冲与闪光 (冲击感核心)
+    .bc-warp-shockwave {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid var(--color-primary, #f40c3f);
+      box-shadow: 0 0 60px var(--color-primary, #f40c3f), inset 0 0 40px var(--color-primary, #f40c3f);
+      transform: translate(-50%, -50%) scale(0);
+      pointer-events: none;
+      z-index: 6;
+      opacity: 0;
+    }
+
+    .bc-warp-flash {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, var(--color-primary, #f40c3f) 0%, transparent 70%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      z-index: 7;
+      opacity: 0;
+    }
+
+    // 穿越 HUD 仪表浮层 (瑞士高精度空间仪器)
+    &__transit-hud {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 8;
+      pointer-events: none;
+      opacity: 0;
+      text-align: center;
+      width: min(92vw, 460px);
+    }
+
+    .bc-transit-gauge {
+      position: relative;
+      background: var(--color-secondary, #160000);
+      border: 1px solid var(--color-primary, #f40c3f);
+      box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary, #f40c3f) 25%, transparent),
+                  inset 0 0 25px color-mix(in srgb, var(--color-primary, #f40c3f) 12%, transparent);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 1.5rem 1.85rem;
+
+      @include mq(phone) {
+        padding: 1.15rem 1rem;
+      }
+    }
+
+    .bc-transit-corner {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-color: var(--color-primary, #f40c3f);
+      border-style: solid;
+
+      &--tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+      &--tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+      &--bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+      &--br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+    }
+
+    .bc-transit-header {
+      @include flex(row, center, space-between);
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid color-mix(in srgb, var(--color-primary, #f40c3f) 20%, transparent);
+      padding-bottom: 0.5rem;
+    }
+
+    .bc-transit-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary, #f40c3f);
+      box-shadow: 0 0 10px var(--color-primary, #f40c3f);
+      animation: transitPulse 0.5s infinite alternate;
+    }
+
+    @keyframes transitPulse {
+      from { opacity: 0.3; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1.3); }
+    }
+
+    .bc-transit-tag {
+      font: 700 10px / 1 font-family(fraktion);
+      letter-spacing: 0.16em;
+      color: var(--color-primary, #f40c3f);
+
+      @include mq(phone) {
+        font-size: 8.5px;
+        letter-spacing: 0.08em;
+      }
+    }
+
+    .bc-transit-status-badge {
+      font: 700 8px / 1 font-family(fraktion);
+      padding: 2px 5px;
+      background: var(--color-primary, #f40c3f);
+      color: var(--color-secondary, #160000);
+      letter-spacing: 0.1em;
+    }
+
+    .bc-transit-target-box {
+      margin-bottom: 1rem;
+    }
+
+    .bc-transit-target-label {
+      font: 600 9px / 1 font-family(fraktion);
+      opacity: 0.55;
+      letter-spacing: 0.15em;
+      color: var(--color-primary, #f40c3f);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .bc-transit-title {
+      font: 700 16px / 1.3 font-family(fraktion);
+      color: var(--color-primary, #f40c3f);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      @include mq(phone) {
+        font-size: 13.5px;
+      }
+    }
+
+    .bc-transit-metrics {
+      @include flex(row, center, space-between);
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      border-top: 1px solid color-mix(in srgb, var(--color-primary, #f40c3f) 15%, transparent);
+      padding-top: 0.75rem;
+
+      @include mq(phone) {
+        gap: 0.35rem;
+      }
+    }
+
+    .bc-transit-metric {
+      @include flex(column, flex-start, center);
+      gap: 0.25rem;
+
+      &-label {
+        font: 600 8px / 1 font-family(fraktion);
+        opacity: 0.5;
+        letter-spacing: 0.12em;
+        color: var(--color-primary, #f40c3f);
+
+        @include mq(phone) {
+          font-size: 7px;
+          letter-spacing: 0.05em;
+        }
+      }
+
+      &-val {
+        font: 700 12px / 1 font-family(fraktion);
+        letter-spacing: 0.05em;
+        color: var(--color-primary, #f40c3f);
+
+        @include mq(phone) {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .bc-transit-bar {
+      width: 100%;
+      height: 3px;
+      background: color-mix(in srgb, var(--color-primary, #f40c3f) 15%, transparent);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bc-transit-bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: var(--color-primary, #f40c3f);
+      box-shadow: 0 0 12px var(--color-primary, #f40c3f);
+    }
+
+    // 1. 100% 官方原版 WbNLpNj Webby Nominee 虫洞引力容器 (增强 3D 纵深推进)
+    .bc-webby-portal {
+      --badge-size: min(30vw, 20rem);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+      background: #141414;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+
+      // 1. 底层暗角渐变 (置于 canvas 底层，不遮挡线框与粒子)
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+
+        display: block;
+        width: 150%;
+        height: 140%;
+
+        background: radial-gradient(ellipse at 50% 55%, transparent 25%, #0c0c0c 80%);
+        transform: translate3d(-50%, -50%, 0);
+
+        content: "";
+      }
+
+      // 2. 官方原版虫洞几何与 500 流动光粒子 Canvas
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        display: block;
+        width: 100%;
+        height: 100%;
+        transform-origin: center center;
+        will-change: transform, filter;
+      }
+
+      // 3. 炫彩引力光晕 (置于中央核心)
+      .aura {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+
+        width: calc(var(--badge-size) * 1.35);
+        height: calc(var(--badge-size) * 1.35);
+
+        background: linear-gradient(
+            20deg,
+            #00f8f1,
+            #ffbd1e20 16.5%,
+            #fe848f 33%,
+            #fe848f20 49.5%,
+            #00f8f1 66%,
+            #00f8f160 85.5%,
+            #ffbd1e 100%
+          )
+          0 100% / 100% 200%;
+        border-radius: 0 0 100% 100%;
+        filter: blur(45px);
+        mix-blend-mode: plus-lighter;
+        opacity: 0.85;
+        transform: translate3d(-50%, -50%, 0);
+
+        animation: aura-glow 5s infinite linear;
+
+        pointer-events: none;
+      }
+
+      // 4. 官方原版主题氛围叠加 (mix-blend-mode: overlay)
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 4;
+
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        background: radial-gradient(
+          ellipse at 50% 75%,
+          var(--color-primary, #f40c3f) 28%,
+          transparent 75%
+        );
+        mix-blend-mode: overlay;
+        transform: translate3d(-50%, -50%, 0);
+
+        content: "";
+      }
+
+      @keyframes aura-glow {
+        0% {
+          background-position: 0 100%;
+        }
+        100% {
+          background-position: 0 300%;
+        }
+      }
+
+      // 5. 官方原版微细网格扫描线
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+
+        width: 100%;
+        height: 100%;
+
+        background: repeating-linear-gradient(
+          transparent,
+          transparent 1px,
+          rgba(255, 255, 255, 0.4) 1px,
+          rgba(255, 255, 255, 0.4) 2px
+        );
+        mix-blend-mode: overlay;
+        opacity: 0.22;
+
+        pointer-events: none;
+      }
+    }
+
+    // 2. 空间内容舱 (透明悬浮舱，直接透视底层 3D 虫洞动态背景)
+    &__chamber {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
+      opacity: 0;
+      transform-origin: center center;
+      z-index: 10;
+    }
+
+    // 顶栏 (精工毛玻璃悬浮)
+    &__header {
+      @include flex(row, center, space-between);
+      padding: 1.5rem 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(18, 18, 18, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      color: #ffffff;
+
+      @include mq(phone) {
+        padding: calc(0.75rem + env(safe-area-inset-top, 0px)) 1rem 0.75rem;
+      }
+
+      &-left {
+        @include flex(row, center, flex-start);
+        gap: 0.65rem;
+      }
+    }
+
+    &__badge {
+      font: 700 10px / 1 font-family(fraktion);
+      padding: 3px 6px;
+      background: #00f8f1;
+      color: #041424;
+      letter-spacing: 0.1em;
+
+      @include mq(phone) {
+        font-size: 8.5px;
+        padding: 2px 5px;
+      }
+    }
+
+    &__space-title {
+      font: 500 12px / 1 font-family(fraktion);
+      color: #ffffff;
+      letter-spacing: 0.05em;
+      opacity: 0.9;
+
+      @include mq(phone) {
+        font-size: 10.5px;
+      }
+    }
+
+    // 关闭按键 (纯粹、高级无赘余标签)
+    &__btn-close {
+      @include flex(row, center, center);
+      padding: 0.55rem 1.25rem;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      cursor: pointer;
+      font: 600 11px / 1 font-family(fraktion);
+      letter-spacing: 0.08em;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+      @include mq(phone) {
+        padding: 0.45rem 0.85rem;
+        font-size: 10.5px;
+        min-height: 36px;
+      }
+
+      &:hover {
+        background: #ffffff;
+        color: #0c0c0c;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    // 内容主体
+    &__body {
+      flex-grow: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3.5rem 2.5rem 5rem;
+
+      @include mq(phone) {
+        padding: 1.5rem 1rem calc(3.5rem + env(safe-area-inset-bottom, 0px));
+      }
+    }
+  }
+
+  .u-hidden {
+    display: none !important;
+  }
+
+  // 瑞士精密网格角落准星标尺 (Universal Precision Corner Brackets)
+  .bc-card-corner {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-color: rgba(255, 255, 255, 0.35);
+    border-style: solid;
+    pointer-events: none;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+    z-index: 2;
+
+    &--tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+    &--tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+    &--bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+    &--br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+  }
+
+  // 极客技术胶囊标签 (Tech Pills)
+  .bc-tech-pill {
+    font: 700 9px / 1 font-family(fraktion);
+    letter-spacing: 0.08em;
+    padding: 3px 7px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.75);
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #00f8f1;
+      color: #00f8f1;
+      background: rgba(0, 248, 241, 0.1);
+    }
+  }
+
+  // ==========================================
+  // 空间 1: 开发机密舱 (Dev Chamber)
+  // ==========================================
+  .bc-space-dev {
+    &__hero {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 2rem;
+    }
+
+    &__tag {
+      font: 600 11px / 1 font-family(fraktion);
+      color: #00f8f1;
+      opacity: 0.9;
+      letter-spacing: 0.08em;
+    }
+
+    &__title {
+      font: 200 3.25rem / 1.1 font-family(editorial);
+      color: #ffffff;
+      margin: 0.75rem 0 1.25rem;
+
+      @include mq(phone) {
+        font-size: clamp(1.6rem, 7vw, 2.25rem);
+      }
+    }
+
+    &__status-bar {
+      @include flex(row, center, flex-start);
+      gap: 0.6rem;
+      font: 500 12px / 1 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.05em;
+
+      @include mq(phone) {
+        font-size: 10.5px;
+        flex-wrap: wrap;
+      }
+    }
+
+    &__status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00e676;
+      box-shadow: 0 0 10px #00e676;
+      animation: bcPulseDot 1.5s infinite ease-in-out;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+
+      @include mq(phone) {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
+
+    &__card {
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 2rem 2.25rem 1.75rem;
+      background: linear-gradient(145deg, rgba(28, 28, 28, 0.75) 0%, rgba(12, 12, 12, 0.9) 100%);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.3s ease,
+                  box-shadow 0.3s ease,
+                  background 0.3s ease;
+      display: flex;
+      flex-direction: column;
+
+      @include mq(phone) {
+        padding: 1.35rem 1.15rem 1.25rem;
+      }
+
+      &:hover {
+        transform: translateY(-4px);
+        border-color: rgba(0, 248, 241, 0.6);
+        background: linear-gradient(145deg, rgba(35, 35, 35, 0.82) 0%, rgba(14, 14, 14, 0.94) 100%);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75),
+                    0 0 35px rgba(0, 248, 241, 0.16),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+        .bc-card-corner {
+          border-color: #00f8f1;
+        }
+
+        .bc-space-dev__num {
+          color: #00f8f1;
+          opacity: 0.85;
+          transform: scale(1.04);
+        }
+
+        .bc-space-dev__explore {
+          color: #00f8f1;
+          transform: translateX(4px);
+        }
+      }
+    }
+
+    &__card-top {
+      @include flex(row, center, space-between);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    &__ref {
+      font: 700 10px / 1 font-family(fraktion);
+      letter-spacing: 0.1em;
+
+      &-prefix {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      &-code {
+        color: #00f8f1;
+        margin-left: 0.35rem;
+      }
+    }
+
+    &__status-wrap {
+      @include flex(row, center, flex-end);
+      gap: 0.5rem;
+    }
+
+    &__pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+
+      &.is-done {
+        background: #00e676;
+        box-shadow: 0 0 8px #00e676;
+        animation: bcPulseDot 1.5s infinite ease-in-out;
+      }
+
+      &.is-active {
+        background: #00f8f1;
+        box-shadow: 0 0 8px #00f8f1;
+        animation: bcPulseDot 1.5s infinite ease-in-out;
+      }
+
+      &.is-testing {
+        background: #ffbd1e;
+        box-shadow: 0 0 8px #ffbd1e;
+        animation: bcPulseDot 1.5s infinite ease-in-out;
+      }
+    }
+
+    &__badge {
+      font: 700 9px / 1 font-family(fraktion);
+      letter-spacing: 0.08em;
+      padding: 3px 7px;
+
+      &.is-done {
+        border: 1px solid rgba(0, 230, 118, 0.45);
+        color: #00e676;
+        background: rgba(0, 230, 118, 0.08);
+      }
+
+      &.is-active {
+        border: 1px solid rgba(0, 248, 241, 0.45);
+        color: #00f8f1;
+        background: rgba(0, 248, 241, 0.08);
+      }
+
+      &.is-testing {
+        border: 1px solid rgba(255, 189, 30, 0.45);
+        color: #ffbd1e;
+        background: rgba(255, 189, 30, 0.08);
+      }
+    }
+
+    &__title-row {
+      @include flex(row, flex-start, space-between);
+      margin-bottom: 1.15rem;
+
+      @include mq(phone) {
+        margin-bottom: 0.85rem;
+      }
+    }
+
+    &__card-title {
+      font: 600 20px / 1.2 font-family(fraktion);
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.01em;
+
+      @include mq(phone) {
+        font-size: 16px;
+      }
+    }
+
+    &__card-sub {
+      display: block;
+      font: 600 9px / 1.4 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.42);
+      letter-spacing: 0.12em;
+      margin-top: 0.35rem;
+
+      @include mq(phone) {
+        font-size: 8px;
+        letter-spacing: 0.08em;
+      }
+    }
+
+    &__num {
+      font: 200 2.5rem / 0.9 font-family(editorial);
+      color: rgba(255, 255, 255, 0.22);
+      letter-spacing: -0.04em;
+      transition: color 0.3s ease, transform 0.3s ease;
+      margin-left: 0.5rem;
+
+      @include mq(phone) {
+        font-size: 1.75rem;
+      }
+    }
+
+    &__desc {
+      font: 400 13.5px / 1.7 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.78);
+      margin: 0 0 1.5rem;
+      flex-grow: 1;
+
+      @include mq(phone) {
+        font-size: 12.5px;
+        line-height: 1.6;
+        margin: 0 0 1.15rem;
+      }
+    }
+
+    &__specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 1.25rem;
+
+      @include mq(phone) {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+        padding: 0.75rem 0.85rem;
+      }
+
+      @include mq(phone-sm) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__spec-k {
+      display: block;
+      font: 700 8px / 1 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.35rem;
+
+      @include mq(phone) {
+        font-size: 7.5px;
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    &__spec-v {
+      display: block;
+      font: 500 11px / 1.25 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.92);
+
+      @include mq(phone) {
+        font-size: 10px;
+      }
+    }
+
+    &__card-foot {
+      @include flex(row, center, space-between);
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    &__barcode {
+      font: 700 10px / 1 font-family(fraktion);
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    &__explore {
+      font: 700 10px / 1 font-family(fraktion);
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.55);
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+  }
+
+  // ==========================================
+  // 空间 2: 侦探参谋局 (Suggest Bureau)
+  // ==========================================
+  .bc-space-suggest {
+    max-width: 780px;
+    margin: 0 auto;
+
+    &__header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    &__tag {
+      font: 600 11px / 1 font-family(fraktion);
+      color: #00f8f1;
+      opacity: 0.9;
+      letter-spacing: 0.1em;
+    }
+
+    &__title {
+      font: 200 2.85rem / 1.1 font-family(editorial);
+      color: #ffffff;
+      margin: 0.75rem 0 1rem;
+
+      @include mq(phone) {
+        font-size: 2rem;
+      }
+    }
+
+    &__desc {
+      font: 400 14px / 1.6 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 620px;
+      margin: 0 auto;
+
+      @include mq(phone) {
+        font-size: 12.5px;
+      }
+    }
+
+    &__form {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 2.5rem;
+      background: rgba(26, 26, 26, 0.82);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      position: relative;
+
+      @include mq(phone) {
+        padding: 1.25rem 1rem;
+      }
+
+      &.is-submitted {
+        .bc-space-suggest__tags,
+        .bc-space-suggest__field,
+        .bc-space-suggest__row,
+        .bc-space-suggest__submit-box {
+          display: none;
+        }
+      }
+    }
+
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+
+      @include mq(phone) {
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    &__tag-opt {
+      cursor: pointer;
+
+      input {
+        display: none;
+
+        &:checked + span {
+          background: #00f8f1;
+          color: #041424;
+          border-color: #00f8f1;
+          font-weight: 700;
+        }
+      }
+
+      span {
+        display: inline-block;
+        padding: 0.5rem 0.85rem;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        font: 500 12px / 1 font-family(fraktion);
+        color: rgba(255, 255, 255, 0.85);
+        transition: all 0.2s ease;
+
+        @include mq(phone) {
+          padding: 0.4rem 0.65rem;
+          font-size: 11px;
+        }
+
+        &:hover {
+          border-color: #00f8f1;
+          color: #ffffff;
+        }
+      }
+    }
+
+    &__field {
+      margin-bottom: 1.5rem;
+
+      @include mq(phone) {
+        margin-bottom: 1rem;
+      }
+
+      &--half {
+        flex: 1;
+      }
+    }
+
+    &__row {
+      display: flex;
+      gap: 1.5rem;
+
+      @include mq(phone) {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+
+    &__label {
+      display: block;
+      font: 600 11px / 1 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    &__textarea,
+    &__input {
+      width: 100%;
+      background: rgba(14, 14, 14, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      font: 400 14px / 1.6 font-family(fraktion);
+      padding: 0.85rem 1rem;
+      border-radius: 0;
+      outline: none;
+      transition: background 0.2s ease, border-color 0.2s ease;
+
+      @include mq(phone) {
+        font-size: 16px;
+        padding: 0.75rem 0.85rem;
+      }
+
+      &:focus {
+        background: rgba(20, 20, 20, 0.85);
+        border-color: #00f8f1;
+        box-shadow: 0 0 12px rgba(0, 248, 241, 0.25);
+      }
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.35);
+      }
+    }
+
+    &__submit-box {
+      margin-top: 2rem;
+
+      @include mq(phone) {
+        margin-top: 1.25rem;
+      }
+    }
+
+    &__btn-submit {
+      width: 100%;
+      @include flex(row, center, center);
+      gap: 0.75rem;
+      padding: 1.15rem;
+      background: #00f8f1;
+      color: #041424;
+      border: 1px solid #00f8f1;
+      cursor: pointer;
+      font: 700 13px / 1 font-family(fraktion);
+      letter-spacing: 0.1em;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+
+      @include mq(phone) {
+        padding: 0.95rem;
+        font-size: 12px;
+      }
+
+      &:hover {
+        background: #ffffff;
+        border-color: #ffffff;
+        box-shadow: 0 6px 20px rgba(0, 248, 241, 0.4);
+        transform: translateY(-1px);
+      }
+    }
+
+    // 盖章成功视图
+    &__success {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      animation: bcStampIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    &__seal {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 2.5rem;
+      border: 3px double #00f8f1;
+      margin-bottom: 1.5rem;
+      transform: rotate(-3deg);
+
+      span:first-child {
+        font: 800 22px / 1 font-family(fraktion);
+        letter-spacing: 0.2em;
+        color: #00f8f1;
+      }
+
+      &-id {
+        font: 700 12px / 1 font-family(fraktion);
+        margin: 0.4rem 0;
+        color: #ffffff;
+      }
+
+      &-sub {
+        font: 500 11px / 1 font-family(fraktion);
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    &__success-msg {
+      font: 400 15px / 1.6 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+
+    &__btn-reset {
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      padding: 0.6rem 1.25rem;
+      font: 500 12px / 1 font-family(fraktion);
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+
+  // ==========================================
+  // 空间 3: 今日雷达 (Radar)
+  // ==========================================
+  .bc-space-radar {
+    &__header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 1.5rem;
+    }
+
+    &__tag {
+      font: 600 11px / 1 font-family(fraktion);
+      color: #00f8f1;
+      opacity: 0.9;
+      letter-spacing: 0.08em;
+    }
+
+    &__title {
+      font: 200 3rem / 1.1 font-family(editorial);
+      color: #ffffff;
+      margin-top: 0.5rem;
+
+      @include mq(phone) {
+        font-size: clamp(1.6rem, 7vw, 2.25rem);
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+
+      @include mq(phone) {
+        gap: 1.25rem;
+      }
+    }
+
+    &__item {
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 2.25rem;
+      background: linear-gradient(145deg, rgba(28, 28, 28, 0.75) 0%, rgba(12, 12, 12, 0.9) 100%);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+
+      @include mq(phone) {
+        padding: 1.25rem 1rem;
+      }
+
+      &:hover {
+        border-color: rgba(0, 248, 241, 0.6);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(0, 248, 241, 0.16);
+        transform: translateY(-3px);
+
+        .bc-card-corner {
+          border-color: #00f8f1;
+        }
+
+        .bc-space-radar__read {
+          color: #ffffff;
+          transform: translateX(4px);
+        }
+      }
+
+      &-title {
+        font: 600 20px / 1.3 font-family(fraktion);
+        color: #ffffff;
+        margin: 0.75rem 0 1rem;
+
+        @include mq(phone) {
+          font-size: 16px;
+          margin: 0.5rem 0 0.75rem;
+        }
+      }
+
+      p {
+        font: 400 14px / 1.7 font-family(fraktion);
+        color: rgba(255, 255, 255, 0.78);
+        margin: 0 0 1.25rem;
+
+        @include mq(phone) {
+          font-size: 12.5px;
+          line-height: 1.6;
+          margin: 0 0 1rem;
+        }
+      }
+
+      &--link {
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    &__meta {
+      @include flex(row, center, space-between);
+      font: 700 10px / 1 font-family(fraktion);
+      color: #00f8f1;
+      letter-spacing: 0.08em;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.65rem;
+
+      @include mq(phone) {
+        font-size: 9px;
+      }
+    }
+
+    &__foot {
+      @include flex(row, center, space-between);
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+      @include mq(phone) {
+        padding-top: 0.75rem;
+      }
+    }
+
+    &__tag-spec {
+      font: 700 9px / 1 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.1em;
+    }
+
+    &__read {
+      font: 700 10px / 1 font-family(fraktion);
+      color: #00f8f1;
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+  }
+
+  // ==========================================
+  // 空间 4: 神仙网站 (Web Gems)
+  // ==========================================
+  .bc-space-gems {
+    &__header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 1.5rem;
+    }
+
+    &__tag {
+      font: 600 11px / 1 font-family(fraktion);
+      color: #00f8f1;
+      opacity: 0.9;
+      letter-spacing: 0.08em;
+    }
+
+    &__title {
+      font: 200 3rem / 1.1 font-family(editorial);
+      color: #ffffff;
+      margin-top: 0.5rem;
+
+      @include mq(phone) {
+        font-size: clamp(1.6rem, 7vw, 2.25rem);
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+
+      @include mq(phone) {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
+
+    &__card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 2.25rem 2.25rem 1.75rem;
+      text-decoration: none;
+      color: #ffffff;
+      background: linear-gradient(145deg, rgba(28, 28, 28, 0.75) 0%, rgba(12, 12, 12, 0.9) 100%);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+
+      @include mq(phone) {
+        padding: 1.25rem 1rem 1.15rem;
+      }
+
+      &:hover {
+        border-color: rgba(0, 248, 241, 0.6);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(0, 248, 241, 0.16);
+        transform: translateY(-4px);
+
+        .bc-card-corner {
+          border-color: #00f8f1;
+        }
+
+        .bc-space-gems__link {
+          color: #ffffff;
+          transform: translateX(4px);
+        }
+      }
+    }
+
+    &__top {
+      @include flex(row, center, space-between);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    &__card-badge {
+      font: 700 9px / 1 font-family(fraktion);
+      padding: 3px 8px;
+      letter-spacing: 0.08em;
+
+      &.is-webby {
+        border: 1px solid #00f8f1;
+        color: #00f8f1;
+        background: rgba(0, 248, 241, 0.08);
+      }
+
+      &.is-codepen {
+        border: 1px solid #ffbd1e;
+        color: #ffbd1e;
+        background: rgba(255, 189, 30, 0.08);
+      }
+    }
+
+    &__rank {
+      font: 700 9px / 1 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.1em;
+    }
+
+    &__title-row {
+      @include flex(row, center, space-between);
+      margin-bottom: 0.75rem;
+    }
+
+    &__site-title {
+      font: 600 20px / 1.2 font-family(fraktion);
+      color: #ffffff;
+      margin: 0;
+
+      @include mq(phone) {
+        font-size: 16px;
+      }
+    }
+
+    &__domain {
+      font: 600 11px / 1 font-family(fraktion);
+      color: #00f8f1;
+      opacity: 0.8;
+
+      @include mq(phone) {
+        font-size: 10px;
+      }
+    }
+
+    &__desc {
+      font: 400 13.5px / 1.65 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.78);
+      margin: 0 0 1.25rem;
+      flex-grow: 1;
+
+      @include mq(phone) {
+        font-size: 12.5px;
+        line-height: 1.6;
+        margin: 0 0 1rem;
+      }
+    }
+
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+
+      @include mq(phone) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__foot {
+      @include flex(row, center, space-between);
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    &__foot-label {
+      font: 700 9px / 1 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.1em;
+    }
+
+    &__link {
+      font: 700 10px / 1 font-family(fraktion);
+      color: #00f8f1;
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+  }
+
+  // ==========================================
+  // 空间 5: 极客工具 (Toolbox)
+  // ==========================================
+  .bc-space-toolbox {
+    &__header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 1.5rem;
+    }
+
+    &__tag {
+      font: 600 11px / 1 font-family(fraktion);
+      color: #00f8f1;
+      opacity: 0.9;
+      letter-spacing: 0.08em;
+    }
+
+    &__title {
+      font: 200 3rem / 1.1 font-family(editorial);
+      color: #ffffff;
+      margin-top: 0.5rem;
+
+      @include mq(phone) {
+        font-size: clamp(1.6rem, 7vw, 2.25rem);
+      }
+    }
+
+    &__table {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(145deg, rgba(28, 28, 28, 0.75) 0%, rgba(12, 12, 12, 0.9) 100%);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+      &:hover {
+        .bc-card-corner {
+          border-color: #00f8f1;
+        }
+      }
+    }
+
+    &__row {
+      @include flex(row, center, space-between);
+      padding: 1.5rem 1.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &--link {
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s ease;
+
+        &:hover {
+          background: rgba(0, 248, 241, 0.06);
+
+          .bc-space-toolbox__tool-name {
+            color: #00f8f1;
+          }
+
+          .bc-space-toolbox__launch-btn {
+            color: #00f8f1;
+            transform: translateX(4px);
+          }
+        }
+      }
+
+      &.is-primary {
+        background: linear-gradient(90deg, rgba(0, 248, 241, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
+        border-left: 3px solid #00f8f1;
+
+        &:hover {
+          background: linear-gradient(90deg, rgba(0, 248, 241, 0.18) 0%, rgba(255, 255, 255, 0.04) 100%);
+        }
+      }
+
+      @include mq(phone) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+        padding: 1.15rem 1rem;
+      }
+    }
+
+    &__action-col {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+
+      @include mq(phone) {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    &__launch-btn {
+      font: 600 12px / 1 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.7);
+      transition: transform 0.2s ease, color 0.2s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .bc-cloud-pulse {
+      display: inline-block;
+      color: #00f8f1;
+      margin-right: 4px;
+      animation: bcPulseDot 1.8s infinite ease-in-out;
+    }
+
+    &__tool-name {
+      font: 700 15px / 1.2 font-family(fraktion);
+      color: #ffffff;
+      width: 280px;
+      flex-shrink: 0;
+
+      @include mq(phone) {
+        width: 100%;
+        font-size: 14.5px;
+      }
+    }
+
+    &__tool-desc {
+      font: 400 13px / 1.5 font-family(fraktion);
+      color: rgba(255, 255, 255, 0.8);
+      flex-grow: 1;
+      padding: 0 1.5rem;
+
+      @include mq(phone) {
+        padding: 0;
+        font-size: 12px;
+      }
+    }
+
+    &__badge {
+      font: 700 9px / 1 font-family(fraktion);
+      padding: 3px 6px;
+      border: 1px solid #00f8f1;
+      color: #00f8f1;
+      letter-spacing: 0.08em;
+      flex-shrink: 0;
+    }
+  }
+
+  @keyframes bcPulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+
+  @keyframes bcStampIn {
+    0% {
+      opacity: 0;
+      transform: scale(1.3) rotate(-8deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(-3deg);
+    }
+  }
+
+  // 起点卡片穿梭光晕与回归震颤反馈 (极致连接感)
+  :global([data-spatial-space]) {
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  }
+
+  :global([data-spatial-space].is-warping) {
+    outline: 2px solid #00f8f1 !important;
+    box-shadow: 0 0 35px rgba(0, 248, 241, 0.75) !important;
+    transform: scale(0.96) !important;
+  }
+
+  :global([data-spatial-space].is-returned) {
+    animation: bcCardReturned 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes bcCardReturned {
+    0% {
+      box-shadow: 0 0 45px rgba(0, 248, 241, 0.9);
+      outline: 2px solid #00f8f1;
+      transform: scale(1.03);
+    }
+    100% {
+      box-shadow: 0 0 0px transparent;
+      outline: 2px solid transparent;
+      transform: scale(1);
+    }
+  }
+</style>

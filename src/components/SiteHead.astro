@@ -1,0 +1,1897 @@
+---
+const menu = [
+  {
+    id: 'work',
+    text: 'Mystery',
+    textZh: '剧本推理',
+    i18nKey: 'navMystery',
+  },
+  {
+    id: 'gems',
+    text: 'Web Gems',
+    textZh: '神仙网站',
+    i18nKey: 'navGems',
+  },
+  {
+    id: 'tools',
+    text: 'Geek Tools',
+    textZh: '极客工具',
+    i18nKey: 'navTools',
+  },
+  {
+    id: 'about',
+    text: 'About BC',
+    textZh: '关于 BC',
+    i18nKey: 'navAbout',
+  },
+]
+
+const themes = [
+  { id: 'default', name: '官方原版', nameEn: 'Wine Red', color: '#f40c3f' },
+  { id: 'cyber-cyan', name: '赛博青蓝', nameEn: 'Cyber Cyan', color: '#00d2f0' },
+  { id: 'sunset-gold', name: '落日熔金', nameEn: 'Sunset Gold', color: '#ff6a00' },
+  { id: 'swiss-red', name: '瑞士纯正', nameEn: 'Swiss Red', color: '#e60000' },
+  { id: 'acid-green', name: '酸性极客', nameEn: 'Acid Green', color: '#a3e635' },
+  { id: 'hermes-orange', name: '爱马仕橙', nameEn: 'Hermès Orange', color: '#f05a22' },
+  { id: 'royal-gold', name: '黑金殿堂', nameEn: 'Royal Gold', color: '#eab308' },
+];
+---
+
+<header class="site-head" data-intersect>
+  <div class="site-head__container">
+    <div class="sb-logo">
+      <a href="/">
+        <svg
+          class="js-logo"
+          width="280"
+          height="280"
+          viewBox="0 0 280 280"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 0h68a42 42 0 0 1 42 42v56a42 42 0 0 1-30 42 42 42 0 0 1 30 42v56a42 42 0 0 1-42 42H15V0zm32 28v98h28a20 20 0 0 0 20-20V48a20 20 0 0 0-20-20H47zm0 126v98h28a20 20 0 0 0 20-20v-58a20 20 0 0 0-20-20H47z"
+            fill="currentColor"
+            fill-rule="evenodd"
+          >
+          </path>
+          <path
+            d="M265 0h-62a48 48 0 0 0-48 48v184a48 48 0 0 0 48 48h62v-42h-50a30 30 0 0 1-30-30V72a30 30 0 0 1 30-30h50V0z"
+            fill="currentColor"
+          >
+          </path>
+        </svg>
+
+        <span class="u-sr-only">BC // 独立制作工坊</span>
+      </a>
+    </div><!-- .sb-logo -->
+
+    <div class="sb-console" role="presentation">
+      <div class="sb-console__inner js-console">
+      </div><!-- .sb-console__inner -->
+    </div><!-- .sb-console -->
+
+    <nav class="sb-menu">
+      <ul class="sb__list">
+        {
+          menu.map((item) => (
+            <li class="sb__item js-menu-item">
+              <a href={'#' + item.id} class="js-menu-link">
+                <span class="sb__bracket sb__bracket--left">[</span>
+                <span class="sb__text" data-i18n={item.i18nKey}>{item.textZh}</span>
+                <span class="sb__bracket sb__bracket--right">]</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav><!-- .sb-menu -->
+
+    <ul class="sb-socials">
+      <li class="sb__item">
+        <a href="https://codepen.io/wodniack" target="_blank" rel="noopener">
+          <span
+            class="sb__icon sb__icon--codepen"
+            style="--path: path('M19.3184 6.01751L10.4517 0.105976C10.3477 0.0365379 10.2254 -0.000518799 10.1002 -0.000518799C9.97513 -0.000518799 9.85282 0.0365379 9.74874 0.105976L0.882076 6.01751C0.795245 6.07529 0.724029 6.15362 0.674752 6.24555C0.625475 6.33747 0.599663 6.44014 0.599609 6.54444V12.456C0.599609 12.6675 0.706009 12.8651 0.882076 12.9829L9.74874 18.8944C9.85269 18.9636 9.97476 19.0005 10.0996 19.0005C10.2245 19.0005 10.3465 18.9636 10.4505 18.8944L19.3171 12.9829C19.404 12.9251 19.4752 12.8468 19.5245 12.7549C19.5737 12.6629 19.5996 12.5603 19.5996 12.456V6.54444C19.5996 6.44014 19.5737 6.33747 19.5245 6.24555C19.4752 6.15362 19.404 6.07529 19.3171 6.01751H19.3184ZM10.1009 11.6934L6.80881 9.49958L10.1009 7.30571L13.3929 9.49958L10.1009 11.6934ZM10.7342 6.20498V1.81598L17.8263 6.54318L14.5342 8.73704L10.7342 6.20371V6.20498ZM9.46754 6.20498L5.66754 8.73831L2.37548 6.54444L9.46754 1.81724V6.20498ZM4.52628 9.49958L1.86754 11.2716V7.72751L4.52628 9.49958ZM5.66754 10.2608L9.46754 12.7942V17.1832L2.37548 12.456L5.66754 10.2608ZM10.7342 12.7942L14.5342 10.2608L17.8263 12.4547L10.7342 17.1819V12.7942ZM15.6755 9.49958L18.3342 7.72751V11.2716L15.6755 9.49958Z');"
+          >
+          </span>
+
+          <span class="u-sr-only">Follow me on CodePen</span>
+        </a>
+      </li>
+
+      <li class="sb__item">
+        <a
+          href="https://www.linkedin.com/in/wodniack/"
+          target="_blank"
+          rel="noopener"
+        >
+          <span
+            class="sb__icon sb__icon--linkedin"
+            style="--path: path('M1.13025 14.9839H3.93671V4.6H1.13025V14.9839ZM2.53348 0.0161285C1.598 0.0161285 0.849609 0.764516 0.849609 1.7C0.849609 2.63548 1.598 3.38387 2.53348 3.38387C3.46896 3.38387 4.21735 2.63548 4.21735 1.7C4.21735 0.764516 3.46896 0.0161285 2.53348 0.0161285ZM8.70767 6.19032V4.6H5.90122V14.9839H8.70767V9.65161C8.70767 6.65806 12.5432 6.47097 12.5432 9.65161V14.9839H15.3496V8.62258C15.3496 3.57097 10.0174 3.75806 8.70767 6.19032Z');"
+          >
+          </span>
+
+          <span class="u-sr-only">Follow me on LinkedIn</span>
+        </a>
+      </li>
+    </ul><!-- .sb-socials -->
+
+    <button class="sb-contrast js-contrast" type="button">
+      <span
+        class="sb__icon"
+        style="--path: path('M10.0996 20C8.71628 20 7.41628 19.7373 6.19961 19.212C4.98294 18.6867 3.92461 17.9743 3.02461 17.075C2.12461 16.1757 1.41228 15.1173 0.887611 13.9C0.362944 12.6827 0.100277 11.3827 0.0996106 10C0.098944 8.61733 0.361611 7.31733 0.887611 6.1C1.41361 4.88267 2.12594 3.82433 3.02461 2.925C3.92328 2.02567 4.98161 1.31333 6.19961 0.788C7.41761 0.262667 8.71761 0 10.0996 0C11.4816 0 12.7816 0.262667 13.9996 0.788C15.2176 1.31333 16.2759 2.02567 17.1746 2.925C18.0733 3.82433 18.7859 4.88267 19.3126 6.1C19.8393 7.31733 20.1016 8.61733 20.0996 10C20.0976 11.3827 19.8349 12.6827 19.3116 13.9C18.7883 15.1173 18.0759 16.1757 17.1746 17.075C16.2733 17.9743 15.2149 18.687 13.9996 19.213C12.7843 19.739 11.4843 20.0013 10.0996 20ZM11.0996 17.925C13.0829 17.675 14.7456 16.804 16.0876 15.312C17.4296 13.82 18.1003 12.0493 18.0996 10C18.0989 7.95067 17.4279 6.18 16.0866 4.688C14.7453 3.196 13.0829 2.325 11.0996 2.075V17.925Z');"
+      >
+      </span>
+
+      <span class="u-sr-only">Change contrast</span>
+    </button><!-- .sb-contrast -->
+
+    <div class="sb-theme js-theme-dropdown">
+      <button class="sb-theme__trigger js-theme-trigger" type="button" title="选择配色方案 / Select Theme Palette" aria-expanded="false">
+        <svg class="sb-theme__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="13.5" cy="6.5" r=".8" fill="currentColor"/>
+          <circle cx="17.5" cy="10.5" r=".8" fill="currentColor"/>
+          <circle cx="8.5" cy="7.5" r=".8" fill="currentColor"/>
+          <circle cx="6.5" cy="12.5" r=".8" fill="currentColor"/>
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+        </svg>
+        <span class="u-sr-only">Color Themes</span>
+      </button>
+
+      <div class="sb-theme__menu js-theme-menu" role="menu">
+        <div class="sb-theme__header">
+          <span class="sb-theme__title" data-i18n="paletteTitle">COLOR PALETTES // 配色系列</span>
+        </div>
+        <div class="sb-theme__items">
+          {
+            themes.map((t, idx) => (
+              <button
+                type="button"
+                class="sb-theme__item js-theme-item"
+                data-theme={t.id}
+                role="menuitem"
+              >
+                <span class="sb-theme__preview" style={`--swatch-bg: ${t.color};`}>
+                  <span class="sb-theme__half sb-theme__half--color"></span>
+                  <span class="sb-theme__half sb-theme__half--white"></span>
+                </span>
+                <span class="sb-theme__num">0{idx + 1}</span>
+                <span class="sb-theme__name js-theme-name" data-name-zh={t.name} data-name-en={t.nameEn}>{t.name}</span>
+              </button>
+            ))
+          }
+        </div>
+      </div>
+    </div><!-- .sb-theme -->
+
+    <button class="sb-lang js-lang" type="button" title="当前：中文 (点击切换为英文 / Switch to EN)">
+      <span class="sb-lang__inner">
+        <span class="sb-lang__opt sb-lang__opt--zh js-lang-opt-zh is-active">中</span>
+        <span class="sb-lang__divider">/</span>
+        <span class="sb-lang__opt sb-lang__opt--en js-lang-opt-en">EN</span>
+      </span>
+      <span class="u-sr-only">Toggle Language</span>
+    </button><!-- .sb-lang -->
+
+    <aside class="sb-availability">
+      <p>
+        <span class="sb__line">
+          <span class="sb__text" data-i18n="location">剧本杀独立研发 // 灵感枢纽</span>
+        </span>
+
+        <span class="sb__line">
+          <span class="sb__text" data-i18n="availPrefix">新剧本试玩 · 交流合作 →</span>
+
+          <a href="mailto:hello@wodniack.dev" class="sb__link" data-i18n="hireMe">联系制作人 BC</a>
+        </span>
+      </p>
+    </aside><!-- .sb-availability -->
+
+    <a
+      href="mailto:hello@wodniack.dev"
+      class="sb-qr-code js-qr-code"
+      title="Contact me!"
+    >
+      <img src="/images/qr-code.svg" alt="QR Code" width="72" height="72" />
+    </a><!-- .sb-qr-code -->
+
+    <!-- 移动端专属导航触发键 (High-Tech Swiss Cyber Mobile Menu Trigger) -->
+    <button class="sb-mobile-btn js-mobile-btn" type="button" title="展开/收起移动端导航">
+      <span class="sb-mobile-btn__inner">
+        <span class="sb-mobile-btn__icon">
+          <span></span>
+          <span></span>
+        </span>
+        <span class="sb-mobile-btn__text">NAV</span>
+      </span>
+    </button>
+  </div><!-- .site-head__container -->
+
+  <!-- 移动端全屏滑出式悬浮舱抽屉 (Mobile Navigation Vault) -->
+  <div class="sb-mobile-drawer js-mobile-drawer" aria-hidden="true">
+    <div class="sb-mobile-drawer__backdrop js-mobile-drawer-close"></div>
+    <div class="sb-mobile-drawer__content">
+      <div class="sb-mobile-drawer__head">
+        <span class="sb-mobile-drawer__badge">[ BC // NAVIGATION DOCK ]</span>
+        <button type="button" class="sb-mobile-drawer__close js-mobile-drawer-close" title="关闭导航">✕</button>
+      </div>
+      <ul class="sb-mobile-drawer__menu">
+        {
+          menu.map((item, idx) => (
+            <li class="sb-mobile-drawer__item">
+              <a href={'#' + item.id} class="sb-mobile-drawer__link js-mobile-drawer-link">
+                <span class="sb-mobile-drawer__num">0{idx + 1}</span>
+                <span class="sb-mobile-drawer__title" data-i18n={item.i18nKey}>{item.textZh}</span>
+                <span class="sb-mobile-drawer__arrow">↳</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="sb-mobile-drawer__actions">
+        <div class="sb-mobile-drawer__action-label" data-i18n="portalActionLabel">DIMENSIONAL PORTALS // 时空快捷舱</div>
+        <div class="sb-mobile-drawer__portals">
+          <button type="button" class="sb-mobile-portal-btn js-mobile-drawer-close" data-spatial-space="dev">
+            <span data-i18n="portalDev">01 · 研发机密</span>
+          </button>
+          <button type="button" class="sb-mobile-portal-btn js-mobile-drawer-close" data-spatial-space="radar">
+            <span data-i18n="portalRadar">02 · 今日雷达</span>
+          </button>
+          <button type="button" class="sb-mobile-portal-btn js-mobile-drawer-close" data-spatial-space="gems">
+            <span data-i18n="portalGems">03 · 神仙网站</span>
+          </button>
+          <button type="button" class="sb-mobile-portal-btn js-mobile-drawer-close" data-spatial-space="suggest">
+            <span data-i18n="portalSuggest">04 · 案卷建议</span>
+          </button>
+          <button type="button" class="sb-mobile-portal-btn js-mobile-drawer-close" data-spatial-space="toolbox">
+            <span data-i18n="portalToolbox">05 · 极客工具</span>
+          </button>
+          <a
+            href="http://111.229.205.54:5244"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sb-mobile-portal-btn sb-mobile-portal-btn--cloud js-mobile-drawer-close"
+          >
+            <span>📁 个人云盘 ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  import Emitter from '../utils/Emitter'
+  import Ticker from '../utils/Ticker'
+
+  import { gsap } from 'gsap'
+  import { i18n } from '../utils/i18n'
+
+  declare global {
+    interface Window {
+      triggerWipeTransition?: (cb?: () => void) => void
+    }
+  }
+
+  const themeColorMap: Record<string, { color: string; contrasted: string }> = {
+    'default': { color: '#f40c3f', contrasted: '#faf4ef' },
+    'cyber-cyan': { color: '#00d2f0', contrasted: '#f4f9fd' },
+    'sunset-gold': { color: '#ff6a00', contrasted: '#faf4ec' },
+    'swiss-red': { color: '#e60000', contrasted: '#f5f6f8' },
+    'acid-green': { color: '#a3e635', contrasted: '#f6faee' },
+    'hermes-orange': { color: '#f05a22', contrasted: '#faf5ef' },
+    'royal-gold': { color: '#eab308', contrasted: '#faf7e8' },
+  }
+
+  class Section {
+    el: HTMLElement
+    contrastButton: HTMLElement
+    console: HTMLElement
+    contrastMask: HTMLElement
+    links: NodeListOf<HTMLElement>
+
+    themeTrigger: HTMLElement | null
+    themeMenu: HTMLElement | null
+    themeItems: NodeListOf<HTMLElement>
+    themeFamilyClasses: string[]
+    isTransitioning: boolean
+
+    messages: string[]
+    messagesZh: string[]
+    messagesEn: string[]
+    message: string
+    messageLineBreak: boolean
+    lastMessage: string
+    lastTypeTime: number
+    writeDelay: number
+    canWrite: boolean
+    isPaused: boolean
+
+    /**
+     * Constructor
+     */
+    constructor() {
+      // Elements
+      this.el = document.querySelector('.site-head')
+      this.contrastButton = document.querySelector('.js-contrast')
+      this.console = document.querySelector('.js-console')
+      this.contrastMask = document.querySelector('.js-contrast-mask')
+      this.links = this.el.querySelectorAll('.js-menu-link')
+
+      this.themeTrigger = this.el.querySelector('.js-theme-trigger')
+      this.themeMenu = this.el.querySelector('.js-theme-menu')
+      this.themeItems = this.el.querySelectorAll('.js-theme-item')
+      this.themeFamilyClasses = [
+        'theme-cyber-cyan',
+        'theme-sunset-gold',
+        'theme-swiss-red',
+        'theme-acid-green',
+        'theme-hermes-orange',
+        'theme-royal-gold',
+      ]
+      this.isTransitioning = false
+
+      // Properties - 剧本杀独立研发 + 每日热点雷达 + 神仙网站探索 + 极客软件箱
+      this.messagesZh = [
+        // [剧本杀研发手札 · 密室与物证]
+        '[DEVLOG] 正在编织第三幕密室杀人案的物理诡计与视线盲区…',
+        '[DEVLOG] 正在校验 6 位嫌疑人的不在场证明与时间线交叉矩阵…',
+        '[DEVLOG] 发现关键物证链闭环漏洞：修正凶器转移手法的隐蔽路径…',
+        '[DEVLOG] 剧本杀支线分叉重构：真相只有一个，但谎言有十二种说辞…',
+        '[DEVLOG] 正在绘制庄园雪夜案的证物拓扑图与人物动机关系网…',
+        '[DEVLOG] 尸检毒理报告推导完成：死亡时间与第一案发现场存在 40 分钟时间差…',
+        '[DEVLOG] 嫌疑人心理侧写算法已加载：识破伪证时的微表情动效就绪…',
+        '[DEVLOG] 搜证交互优化：放大镜下隐藏的血迹荧光反应测试通过…',
+        '[DEVLOG] 剧本杀试玩反馈整合：优化第四幕圆桌公投环节的辩论节奏…',
+        '[DEVLOG] 正在编写核心叙事谜题：看似无解的完美不在场证明…',
+        '[DEVLOG] 凶手自白书文稿校对：强化伏笔反转的情感冲击力…',
+        '[DEVLOG] 探案线索树校验：防止玩家因单点遗漏导致推理死局…',
+
+        // [每日热点雷达]
+        '[RADAR] 今日全球热点趋势捕获：AI 叙事引擎与多模态侦探逻辑演进…',
+        '[RADAR] 深度扫描行业动态：独立叙事游戏如何打造长效生命力…',
+        '[RADAR] 话题追踪：剧本杀如何通过沉浸式数字交互实现跨次元体验…',
+        '[RADAR] 每日思考碎片：所有的线索都已给出，真正的凶手正是偏见本身…',
+        '[RADAR] 行业前沿观察：当故事成为游戏核心机制，代码便是叙事的骨骼…',
+
+        // [神仙网站灵感库]
+        '[VAULT] 发现神仙级创意网站：解构其流体着色器与无缝转场逻辑…',
+        '[VAULT] 灵感收集：某法国独立工坊的瑞士网格排版简直令人拍案叫绝…',
+        '[VAULT] 正在拆解 Awwwards 年度最佳互动设计：60fps 丝滑滚动的秘诀…',
+        '[VAULT] 前端美学捕获：极简主义黑白线框与复古像素的绝妙碰撞…',
+        '[VAULT] 实验性动效剖析：探索贝塞尔曲线与弹性物理的黄金平衡点…',
+
+        // [极客软件与工具箱]
+        '[TOOLS] 极客软件箱今日更新：发掘一款纯本地离线运行的生产力神器…',
+        '[TOOLS] 效率利器推荐：这款独立开发者自研的灵感笔记工具彻底替代了传统备忘录…',
+        '[TOOLS] 叙事架构师工具链：用节点图谱构建复杂多分支推理解谜树…',
+        '[TOOLS] 极客工作流优化：代码自动化编译与素材批处理脚本运转正常…',
+        '[TOOLS] 本地大模型助手接入：辅助生成嫌疑人证词的悖论分支与伪装细节…',
+      ]
+
+      this.messagesEn = [
+        // [Indie Mystery DevLog]
+        '[DEVLOG] Weaving locked-room paradoxes and blind spots for Act III…',
+        '[DEVLOG] Validating alibi timelines and cross-examination matrices across 6 suspects…',
+        '[DEVLOG] Forensic clue chain verified: murder weapon transfer path resolved…',
+        '[DEVLOG] Narrative branch refactored: Truth is unique, but deceit has twelve faces…',
+        '[DEVLOG] Drawing evidence topology graph for the Snowbound Manor homicide…',
+        '[DEVLOG] Autopsy report deduced: 40-minute discrepancy detected at crime scene…',
+        '[DEVLOG] Suspect psychological profiling loaded: Micro-expression cue active…',
+        '[DEVLOG] Crime scene inspection tuned: Luminol blood spatter test passed…',
+        '[DEVLOG] Playtest feedback merged: Pacing tuned for the final roundtable deduction…',
+        '[DEVLOG] Crafting the master paradox: The airtight alibi that hides the killer…',
+        '[DEVLOG] Murderer confession draft reviewed: Elevating narrative resonance…',
+        '[DEVLOG] Evidence tree validated: Preventing dead-end narrative bottlenecks…',
+
+        // [Daily Trend Radar]
+        '[RADAR] Daily radar ping: AI narrative reasoning and multimodal deduction engines…',
+        '[RADAR] Industry pulse: How indie narrative games forge enduring emotional depth…',
+        '[RADAR] Reflection: All clues were present from page one; prejudice was the culprit…',
+        '[RADAR] Studio log: When story is the core mechanic, code becomes narrative bones…',
+
+        // [Web Gems Vault]
+        '[VAULT] Curating web gems: Deconstructing an ethereal Awwwards fluid shader…',
+        '[VAULT] Visual inspiration: Swiss typography meets kinetic brutalism…',
+        '[VAULT] Creative engineering: Smooth 60fps physics-driven page transitions…',
+        '[VAULT] Aesthetic discovery: Ultra-crisp monochrome grids and micro-interactions…',
+
+        // [Geek Toolbox]
+        '[TOOLS] Geek vault updated: Discovered a brilliant local-first productivity tool…',
+        '[TOOLS] Solo creator toolkit: Branching dialogue and evidence trees synced…',
+        '[TOOLS] Dev workflow healthy: Automated test suites and narrative linters passed…',
+        '[TOOLS] Local LLM integrated: Assisting in suspect testimony paradox generation…',
+      ]
+
+      const isZh = i18n.currentLang === 'zh'
+      this.messages = isZh ? this.messagesZh : this.messagesEn
+      this.message = ''
+      this.messageLineBreak = false
+      this.lastMessage = ''
+      this.lastTypeTime = 0
+      this.writeDelay = 0
+      this.canWrite = false
+      this.isPaused = true
+
+      // Init
+      Ticker.nextTick(this.init, this)
+    }
+
+    /**
+     * Init
+     */
+    init() {
+      window.triggerWipeTransition = (cb) => this.triggerWipe(cb)
+      this.bindEvents()
+    }
+
+    /**
+     * Bind events
+     */
+    bindEvents() {
+      const langBtn = document.querySelector('.js-lang')
+      const optZh = document.querySelector('.js-lang-opt-zh')
+      const optEn = document.querySelector('.js-lang-opt-en')
+
+      if (optZh) {
+        optZh.addEventListener('click', (e) => {
+          e.stopPropagation()
+          i18n.setLang('zh')
+        })
+      }
+      if (optEn) {
+        optEn.addEventListener('click', (e) => {
+          e.stopPropagation()
+          i18n.setLang('en')
+        })
+      }
+      if (langBtn) {
+        langBtn.addEventListener('click', () => {
+          i18n.toggle()
+        })
+      }
+      i18n.updateDOM()
+
+      const isZh = i18n.currentLang === 'zh'
+      this.el.querySelectorAll('.js-theme-name').forEach((el: any) => {
+        el.textContent = isZh ? el.dataset.nameZh : el.dataset.nameEn
+      })
+
+      if (this.themeTrigger && this.themeMenu) {
+        this.themeTrigger.addEventListener('click', (e) => {
+          e.stopPropagation()
+          const isOpen = this.themeMenu.classList.toggle('is-visible')
+          this.themeTrigger.classList.toggle('is-open', isOpen)
+          this.themeTrigger.setAttribute('aria-expanded', String(isOpen))
+        })
+
+        document.addEventListener('click', (e) => {
+          if (this.themeMenu && !this.themeMenu.contains(e.target as Node) && !this.themeTrigger.contains(e.target as Node)) {
+            this.closeThemeMenu()
+          }
+        })
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            this.closeThemeMenu()
+          }
+        })
+      }
+
+      this.themeItems.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation()
+          const themeId = btn.getAttribute('data-theme') || 'default'
+          const preview = btn.querySelector('.sb-theme__preview') as HTMLElement | null
+          const swatchBg = preview?.style.getPropertyValue('--swatch-bg')?.trim()
+          this.closeThemeMenu()
+          this.performWipe(() => {
+            this.applyThemeFamily(themeId)
+          }, swatchBg)
+        })
+      })
+
+      Emitter.on('langchange', () => {
+        const isZh = i18n.currentLang === 'zh'
+        this.el.querySelectorAll('.js-theme-name').forEach((el: any) => {
+          el.textContent = isZh ? el.dataset.nameZh : el.dataset.nameEn
+        })
+        this.messages = isZh ? this.messagesZh : this.messagesEn
+        this.message = ''
+        this.lastMessage = ''
+      })
+
+      const savedFamily = localStorage.getItem('selected-theme-family') || 'default'
+      this.applyThemeFamily(savedFamily)
+
+      this.contrastButton.addEventListener(
+        'click',
+        this.toggleContrast.bind(this),
+        { passive: true }
+      )
+
+      this.links.forEach((link) => {
+        link.addEventListener('click', this.moveToSection.bind(this))
+      })
+
+      // Mobile Navigation Drawer logic
+      const mobileBtn = this.el.querySelector('.js-mobile-btn')
+      const mobileDrawer = this.el.querySelector('.js-mobile-drawer')
+      const mobileCloseBtns = this.el.querySelectorAll('.js-mobile-drawer-close')
+      const mobileLinks = this.el.querySelectorAll('.js-mobile-drawer-link')
+
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => {
+          const isOpen = mobileDrawer.classList.toggle('is-open')
+          mobileBtn.classList.toggle('is-active', isOpen)
+          mobileDrawer.setAttribute('aria-hidden', String(!isOpen))
+          document.documentElement.classList.toggle('is-mobile-nav-open', isOpen)
+        })
+
+        mobileCloseBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            mobileDrawer.classList.remove('is-open')
+            mobileBtn.classList.remove('is-active')
+            mobileDrawer.setAttribute('aria-hidden', 'true')
+            document.documentElement.classList.remove('is-mobile-nav-open')
+          })
+        })
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener('click', (e) => {
+            mobileDrawer.classList.remove('is-open')
+            mobileBtn.classList.remove('is-active')
+            mobileDrawer.setAttribute('aria-hidden', 'true')
+            document.documentElement.classList.remove('is-mobile-nav-open')
+            this.moveToSection(e)
+          })
+        })
+      }
+
+      document.addEventListener('intro', this.intro.bind(this), { once: true })
+
+      this.el.addEventListener('intersect', this.onIntersect.bind(this), {
+        passive: true,
+      })
+    }
+
+    /**
+     * Intersect handler
+     */
+    onIntersect(e) {
+      this.isPaused = !e.detail.isIntersecting
+
+      if (this.isPaused) {
+        Emitter.off('tick', this.updateConsole, this)
+      } else {
+        Emitter.on('tick', this.updateConsole, this)
+      }
+    }
+
+    /**
+     * Intro
+     */
+    intro() {
+      const logo = this.el.querySelector('.js-logo')
+      const menuItems = this.el.querySelectorAll('.js-menu-item')
+      const qrCode = this.el.querySelector('.js-qr-code')
+
+      const items = [logo, ...menuItems]
+
+      const tl = gsap.timeline()
+
+      tl.set(this.el, {
+        opacity: 1,
+      })
+
+      tl.from(
+        this.el,
+        {
+          y: '-100%',
+          duration: 1.5,
+          ease: 'expo.inOut',
+        },
+        1
+      )
+
+      tl.from(
+        items,
+        {
+          y: '-100%',
+          duration: 1.5,
+          ease: 'expo.out',
+          stagger: 0.1,
+        },
+        1.5
+      )
+
+      tl.fromTo(
+        qrCode,
+        {
+          '--bg-p': '0%',
+        },
+        {
+          '--bg-p': '100%',
+          duration: 1.5,
+          ease: 'expo.out',
+        },
+        1.75
+      )
+
+      tl.call(
+        () => {
+          this.canWrite = true
+        },
+        null,
+        1.5
+      )
+    }
+
+    /**
+     * 极客机械卷帘转场 (60FPS Hardware Accelerated Shutter Wipe)
+     * - 物理遮罩以贝塞尔曲线向右扫过全屏 (-100% -> 0%)
+     * - 在视口 100% 被遮罩覆盖时执行状态切换（彻底杜绝瞬间闪屏刺眼）
+     * - 遮罩继续向右扫出视口 (0% -> 100%)，露出崭新配色
+     */
+    performWipe(callback: () => void, targetMaskColor?: string) {
+      if (!this.contrastMask) {
+        callback()
+        return
+      }
+
+      if (this.isTransitioning) return
+      this.isTransitioning = true
+
+      if (targetMaskColor) {
+        this.contrastMask.style.backgroundColor = targetMaskColor
+      }
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          gsap.set(this.contrastMask, { x: '-100%' })
+          this.contrastMask.style.transform = ''
+          this.contrastMask.style.backgroundColor = ''
+          this.isTransitioning = false
+        },
+      })
+
+      tl.fromTo(
+        this.contrastMask,
+        { x: '-100%' },
+        {
+          x: '0%',
+          duration: 0.38,
+          ease: 'power3.inOut',
+          onComplete: () => {
+            callback()
+          },
+        }
+      )
+
+      tl.to(
+        this.contrastMask,
+        {
+          x: '100%',
+          duration: 0.38,
+          ease: 'power3.inOut',
+        }
+      )
+    }
+
+    triggerWipe(swapCallback?: () => void) {
+      this.performWipe(swapCallback || (() => {}))
+    }
+
+    getActiveThemeId(): string {
+      const classList = document.documentElement.classList
+      for (const key of Object.keys(themeColorMap)) {
+        if (key !== 'default' && classList.contains(`theme-${key}`)) {
+          return key
+        }
+      }
+      return 'default'
+    }
+
+    /**
+     * 高反差明暗切换（物理卷帘转场）
+     */
+    toggleContrast() {
+      const isContrasted = document.documentElement.classList.contains('theme-contrasted')
+      const nextContrasted = !isContrasted
+      const themeId = this.getActiveThemeId()
+      const themeData = themeColorMap[themeId] || themeColorMap['default']
+      const targetMaskColor = nextContrasted ? themeData.contrasted : themeData.color
+
+      this.performWipe(() => {
+        if (nextContrasted) {
+          document.documentElement.classList.add('theme-contrasted')
+        } else {
+          document.documentElement.classList.remove('theme-contrasted')
+        }
+
+        Emitter.emit(
+          'contrastchange',
+          nextContrasted ? 'contrasted' : 'default'
+        )
+      }, targetMaskColor)
+    }
+
+    /**
+     * Move to section
+     */
+    closeThemeMenu() {
+      if (this.themeMenu) {
+        this.themeMenu.classList.remove('is-visible')
+      }
+      if (this.themeTrigger) {
+        this.themeTrigger.classList.remove('is-open')
+        this.themeTrigger.setAttribute('aria-expanded', 'false')
+      }
+    }
+
+    applyThemeFamily(themeId: string) {
+      document.documentElement.classList.remove(...this.themeFamilyClasses)
+
+      if (themeId && themeId !== 'default') {
+        document.documentElement.classList.add(`theme-${themeId}`)
+      }
+
+      this.themeItems.forEach((btn) => {
+        if (btn.getAttribute('data-theme') === themeId) {
+          btn.classList.add('is-active')
+        } else {
+          btn.classList.remove('is-active')
+        }
+      })
+
+      localStorage.setItem('selected-theme-family', themeId)
+      window.dispatchEvent(new CustomEvent('themechange', { detail: themeId }))
+      Emitter.emit('contrastchange')
+    }
+
+    moveToSection(e) {
+      e.preventDefault()
+
+      const id = e.currentTarget.getAttribute('href')
+      const target = document.querySelector(id) || document.querySelector('#work')
+
+      if (target && window.lenis) {
+        window.lenis.scrollTo(target, {
+          duration: 1.5,
+          easing: (t) =>
+            t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t,
+        })
+      }
+    }
+
+    /**
+     * Update console
+     */
+    updateConsole(time) {
+      if (!this.canWrite || time - this.lastTypeTime < this.writeDelay) {
+        return
+      }
+
+      if (this.message === '') {
+        this.message = this.getRandomMessage()
+        this.writeDelay = 2200
+      } else {
+        if (this.message === this.lastMessage || this.messageLineBreak) {
+          this.console.textContent += '\n'
+        }
+
+        const char = this.message.charAt(0)
+        this.message = this.message.substring(1)
+
+        if (char === ',') {
+          this.writeDelay = 100
+        } else if (char === ' ') {
+          this.writeDelay = 75
+        } else if (char === '') {
+          this.writeDelay = 200
+        } else if (char === '…' || char === '。' || char === '！') {
+          this.writeDelay = 380
+        } else if (char === '.') {
+          this.writeDelay = 380
+        } else {
+          this.writeDelay = 25
+        }
+
+        this.console.textContent += char
+
+        if (char === '…' || char === '。') {
+          this.messageLineBreak = true
+        } else {
+          this.messageLineBreak = false
+        }
+      }
+
+      this.console.textContent = this.console.textContent
+        .split('\n')
+        .slice(-5)
+        .join('\n')
+
+      this.lastTypeTime = time
+    }
+
+    /**
+     * Get random message
+     */
+    getRandomMessage() {
+      const isZh = i18n.currentLang === 'zh'
+      const pool = isZh ? this.messagesZh : this.messagesEn
+      let message = pool[Math.floor(Math.random() * pool.length)]
+
+      if (message === this.lastMessage && pool.length > 1) {
+        message = this.getRandomMessage()
+      }
+
+      this.lastMessage = message
+
+      return message
+    }
+  }
+
+  new Section()
+</script>
+
+<style lang="scss">
+  .site-head {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+
+    border-bottom: 1px solid color(secondary);
+    opacity: 0;
+
+    &__container {
+      @include flex(row, stretch, space-between);
+
+      width: 100%;
+      height: 6rem;
+
+      @include mq(phone) {
+        height: 4rem;
+      }
+    }
+
+    .sb-logo {
+      padding: 1.5rem;
+      width: 6rem;
+      height: 6rem;
+
+      border-right: 1px solid color(secondary);
+
+      @include mq(tablet) {
+        order: 1;
+      }
+
+      @include mq(phone) {
+        padding: 1rem;
+        width: 4rem;
+        height: 4rem;
+      }
+
+      svg {
+        width: 3rem;
+        height: 3rem;
+
+        @include mq(phone) {
+          width: 1.875rem;
+          height: 1.875rem;
+        }
+      }
+    }
+
+    .sb-console {
+      @include flex(column, flex-start, flex-end);
+
+      margin: 0 auto 0 0;
+      padding: 1.5rem;
+
+      font: 400 8px / 1.4 font-family(fraktion);
+      text-transform: uppercase;
+      white-space: pre-line;
+
+      @include mq(tablet) {
+        order: 2;
+      }
+
+      @include mq(tablet-sm) {
+        display: none;
+      }
+
+      @keyframes site-head-caret {
+        0%,
+        100% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0;
+        }
+      }
+
+      &__inner {
+        @include flex(column, flex-start, flex-end);
+
+        height: 5.6em;
+
+        overflow: hidden;
+      }
+    }
+
+    .sb-menu {
+      border-left: 1px solid color(secondary);
+      flex-shrink: 0;
+
+      @include mq(desktop-xs) {
+        padding: 0 0.5rem;
+      }
+
+      @include mq(tablet) {
+        display: none;
+      }
+
+      .sb__list {
+        @include flex(row, center, flex-start);
+
+        margin: 0;
+        padding: 0;
+        height: 100%;
+
+        list-style: none;
+      }
+
+      .sb__item {
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
+      }
+
+      .sb__bracket {
+        display: inline-block;
+        font-family: font-family(fraktion);
+        font-weight: 300;
+        opacity: 0.35;
+        transition: opacity 0.25s ease, transform 0.25s ease, color 0.25s ease;
+        user-select: none;
+
+        &--left {
+          margin-right: 4px;
+        }
+
+        &--right {
+          margin-left: 4px;
+        }
+      }
+
+      .sb__text {
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        word-break: keep-all;
+      }
+
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0 1.25rem 0 1.85rem;
+        height: 6rem;
+        white-space: nowrap;
+
+        color: color(secondary);
+        font: 500 13px / 1 font-family(fraktion);
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        // 经典箭头指示器：置于 [ ] 括号外部左侧，保持 12px 独立呼吸间距，绝不遮挡
+        &:before {
+          position: absolute;
+          top: calc(50% - 3px);
+          left: 0.8rem;
+
+          border-top: 3px solid transparent;
+          border-left: 5px solid currentcolor;
+          border-bottom: 3px solid transparent;
+          opacity: 0;
+
+          content: '';
+        }
+
+        @include mq(desktop-sm) {
+          padding: 0 0.85rem 0 1.45rem;
+
+          &:before {
+            left: 0.6rem;
+          }
+        }
+
+        @include mq(desktop-xs) {
+          padding: 0 0.5rem 0 1.15rem;
+          font-size: 11px;
+
+          &:before {
+            left: 0.45rem;
+          }
+        }
+
+        @keyframes blink-in {
+          0%,
+          30%,
+          60% {
+            opacity: 0;
+          }
+
+          15%,
+          45%,
+          75%,
+          100% {
+            opacity: 1;
+          }
+        }
+
+        &:hover,
+        &.is-active {
+          text-shadow: 0 0 1px currentcolor;
+
+          &:before {
+            animation: blink-in 0.3s ease(in-out-expo) forwards;
+          }
+
+          .sb__bracket {
+            opacity: 1;
+            color: color(secondary);
+          }
+
+          .sb__bracket--left {
+            transform: translateX(-1px);
+          }
+
+          .sb__bracket--right {
+            transform: translateX(1px);
+          }
+        }
+      }
+    }
+
+    .sb-socials {
+      margin: 0;
+      padding: 0;
+
+      background: linear-gradient(
+        0deg,
+        transparent calc(50% - 1px),
+        color(secondary) calc(50% - 1px),
+        color(secondary) 50%,
+        transparent 50%
+      );
+      border-left: 1px solid color(secondary);
+      list-style: none;
+
+      @include mq(tablet) {
+        order: 4;
+      }
+
+      @include mq(phone) {
+        @include flex(row, center, center);
+
+        order: 3;
+
+        margin-left: auto;
+
+        background: none;
+        border-left: 0;
+      }
+
+      .sb__item {
+        margin: 0;
+        padding: 0;
+
+        @include mq(phone) {
+          @include flex(column, center, center);
+
+          height: 100%;
+
+          border-left: 1px solid color(secondary);
+        }
+      }
+
+      .sb__icon {
+        background: color(secondary);
+
+        clip-path: var(--path);
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          background: color(primary);
+          scale: 0 1;
+          transform-origin: 0 50%;
+
+          content: '';
+        }
+
+        &--codepen {
+          width: 20px;
+          height: 19px;
+        }
+
+        &--linkedin {
+          width: 16px;
+          height: 15px;
+        }
+      }
+
+      a {
+        @include flex(row, center, center);
+
+        position: relative;
+
+        width: 48px;
+        height: 48px;
+
+        @include mq(phone) {
+          height: 100%;
+        }
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 100%;
+
+          background: color(secondary);
+          scale: 0 1;
+          transform-origin: 0 50%;
+
+          content: '';
+        }
+
+        &:hover {
+          &:before {
+            scale: 1 1;
+          }
+
+          .sb__icon {
+            &:before {
+              scale: 1 1;
+            }
+          }
+        }
+      }
+
+      a:before,
+      .sb__icon:before {
+        transition: scale 0.3s ease(in-out-expo);
+      }
+    }
+
+    .sb-contrast {
+      @include flex(row, center, center);
+
+      position: relative;
+
+      width: 48px;
+      height: 96px;
+
+      appearance: none;
+      background: none;
+      border: 0;
+      border-left: 1px solid color(secondary);
+      border-radius: 0;
+      cursor: pointer;
+
+      @include mq(tablet) {
+        order: 5;
+      }
+
+      @include mq(phone) {
+        height: 100%;
+      }
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: color(secondary);
+        scale: 0 1;
+        transform-origin: 0 50%;
+
+        content: '';
+      }
+
+      .sb__icon {
+        width: 20px;
+        height: 20px;
+
+        background: color(secondary);
+        clip-path: var(--path);
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          background: color(primary);
+          scale: 0 1;
+          transform-origin: 0 50%;
+
+          content: '';
+        }
+      }
+
+      &:hover {
+        &:before {
+          scale: 1 1;
+        }
+
+        .sb__icon {
+          &:before {
+            scale: 1 1;
+          }
+        }
+      }
+
+      &:before,
+      .sb__icon:before {
+        transition: scale 0.3s ease(in-out-expo);
+      }
+    }
+
+    .sb-theme {
+      position: relative;
+      height: 96px;
+
+      @include mq(tablet) {
+        order: 5;
+      }
+
+      @include mq(phone) {
+        height: 100%;
+      }
+
+      &__trigger {
+        @include flex(row, center, center);
+
+        position: relative;
+
+        width: 52px;
+        height: 100%;
+
+        appearance: none;
+        background: none;
+        border: 0;
+        border-left: 1px solid color(secondary);
+        border-radius: 0;
+        cursor: pointer;
+        color: color(secondary);
+
+        @include mq(phone) {
+          width: 44px;
+        }
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 100%;
+
+          background: color(secondary);
+          scale: 0 1;
+          transform-origin: 0 50%;
+          transition: scale 0.3s ease(in-out-expo);
+
+          content: '';
+        }
+
+        .sb-theme__icon {
+          position: relative;
+          z-index: 2;
+          width: 18px;
+          height: 18px;
+          transition: color 0.25s ease;
+        }
+
+        &:hover,
+        &.is-open {
+          &:before {
+            scale: 1 1;
+          }
+
+          .sb-theme__icon {
+            color: color(primary);
+          }
+        }
+      }
+
+      &__menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 1000;
+
+        width: 210px;
+        padding: 0.5rem;
+
+        background: color(primary);
+        border: 1px solid color(secondary);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+
+        display: none;
+        flex-direction: column;
+        gap: 0.2rem;
+
+        &.is-visible {
+          display: flex;
+          animation: sbThemeMenuFade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      }
+
+      &__header {
+        padding: 0.2rem 0.35rem 0.35rem;
+        border-bottom: 1px solid color(secondary);
+        font: 700 10px / 1 var(--font-family-fraktion, monospace);
+        color: color(secondary);
+        letter-spacing: 0.06em;
+      }
+
+      &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        padding-top: 0.2rem;
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.5rem;
+
+        background: none;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        cursor: pointer;
+        text-align: left;
+        color: color(secondary);
+        font: 500 12px / 1.2 var(--font-family-fraktion, monospace);
+        transition: all 0.15s ease;
+
+        &:hover {
+          background: color(secondary);
+          color: color(primary);
+
+          .sb-theme__preview {
+            border-color: color(primary);
+          }
+        }
+
+        &.is-active {
+          border-color: color(secondary);
+          font-weight: 700;
+        }
+      }
+
+      &__preview {
+        display: flex;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid color(secondary);
+        flex-shrink: 0;
+
+        .sb-theme__half--color {
+          width: 50%;
+          height: 100%;
+          background: var(--swatch-bg);
+        }
+
+        .sb-theme__half--white {
+          width: 50%;
+          height: 100%;
+          background: #ffffff;
+        }
+      }
+
+      &__num {
+        font-size: 10px;
+        opacity: 0.6;
+      }
+
+      &__name {
+        flex-grow: 1;
+        font-size: 11px;
+      }
+    }
+
+    @keyframes sbThemeMenuFade {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .sb-lang {
+      @include flex(row, center, center);
+
+      position: relative;
+
+      width: 64px;
+      height: 96px;
+
+      appearance: none;
+      background: none;
+      border: 0;
+      border-left: 1px solid color(secondary);
+      border-radius: 0;
+      cursor: pointer;
+      font: 700 12px / 1 var(--font-family-fraktion, monospace);
+      color: color(secondary);
+      letter-spacing: 0.05em;
+
+      @include mq(tablet) {
+        order: 6;
+      }
+
+      @include mq(phone) {
+        height: 100%;
+        width: 52px;
+      }
+
+      .sb-lang__inner {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        padding: 4px 6px;
+        border: 1px solid color(secondary);
+        border-radius: 4px;
+        transition: all 0.25s ease;
+      }
+
+      .sb-lang__opt {
+        transition: all 0.2s ease;
+        opacity: 0.45;
+        font-weight: 500;
+
+        &.is-active {
+          opacity: 1;
+          font-weight: 800;
+        }
+      }
+
+      .sb-lang__divider {
+        opacity: 0.35;
+        font-size: 10px;
+      }
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: color(secondary);
+        scale: 0 1;
+        transform-origin: 0 50%;
+        transition: scale 0.3s ease(in-out-expo);
+        content: '';
+      }
+
+      &:hover {
+        &:before {
+          scale: 1 1;
+        }
+
+        .sb-lang__inner {
+          color: color(primary);
+          border-color: color(primary);
+        }
+
+        .sb-lang__opt {
+          color: color(primary);
+        }
+
+        .sb-lang__divider {
+          color: color(primary);
+        }
+      }
+    }
+
+    .sb-availability {
+      background: linear-gradient(
+        0deg,
+        transparent calc(50% - 1px),
+        color(secondary) calc(50% - 1px),
+        color(secondary) 50%,
+        transparent 50%
+      );
+      border-left: 1px solid color(secondary);
+
+      font: 200 1.25rem / 48px font-family(editorial);
+      overflow: hidden;
+
+      @include mq(tablet) {
+        order: 3;
+      }
+
+      @include mq(tablet-sm) {
+        flex-grow: 1;
+
+        border-left: 0;
+      }
+
+      @include mq(phone) {
+        @include flex(column, center, center);
+
+        flex-grow: 0;
+
+        background: none;
+        border-left: 1px solid color(secondary);
+        order: 3;
+      }
+
+      p {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .sb__line {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        height: 48px;
+        padding: 0 1.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+
+        :global(.is-lang-zh) & {
+          font: 400 0.95rem / 48px font-family(editorial);
+        }
+      }
+
+      .sb__text {
+        @include mq(phone) {
+          display: none;
+        }
+      }
+
+      a {
+        position: relative;
+
+        display: inline-block;
+
+        color: color(secondary);
+        font-weight: 400;
+        text-decoration: none;
+
+        &:before {
+          position: absolute;
+          bottom: calc(50% - 0.5em);
+          left: 0;
+
+          width: 100%;
+          height: 1px;
+
+          background: currentcolor;
+          scale: 0 1;
+          transform-origin: 100% 50%;
+
+          transition: scale 0.3s ease(in-out-expo);
+
+          content: '';
+        }
+
+        &:hover {
+          &:before {
+            scale: 1 1;
+            transform-origin: 0 50%;
+          }
+        }
+      }
+    }
+
+    .sb-qr-code {
+      --bg-p: 0%;
+
+      position: relative;
+
+      display: block;
+      padding: 0.75rem;
+
+      border-left: 1px solid color(secondary);
+
+      @include mq(desktop-sm) {
+        display: none;
+      }
+
+      &:before {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        bottom: 0.75rem;
+        left: 0.75rem;
+
+        background: linear-gradient(
+            180deg,
+            transparent,
+            transparent var(--bg-p),
+            color(secondary) var(--bg-p),
+            color(secondary)
+          )
+          top / 100% 12.5% repeat;
+
+        content: '';
+      }
+    }
+
+    // 移动端专用导航按键
+    .sb-mobile-btn {
+      display: none;
+
+      @include mq(tablet) {
+        @include flex(row, center, center);
+        position: relative;
+        width: 54px;
+        height: 100%;
+        background: none;
+        border: 0;
+        border-left: 1px solid color(secondary);
+        border-radius: 0;
+        cursor: pointer;
+        color: color(secondary);
+        order: 7;
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: color(secondary);
+          scale: 0 1;
+          transform-origin: 0 50%;
+          transition: scale 0.3s ease(in-out-expo);
+          content: '';
+        }
+
+        &:hover,
+        &.is-active {
+          &:before {
+            scale: 1 1;
+          }
+
+          .sb-mobile-btn__inner {
+            color: color(primary);
+          }
+        }
+      }
+
+      &__inner {
+        position: relative;
+        z-index: 2;
+        @include flex(column, center, center);
+        gap: 4px;
+        transition: color 0.2s ease;
+      }
+
+      &__icon {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        width: 16px;
+
+        span {
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: currentColor;
+          transition: transform 0.25s ease;
+        }
+      }
+
+      &__text {
+        font: 700 8.5px / 1 font-family(fraktion);
+        letter-spacing: 0.08em;
+      }
+    }
+
+    // 移动端全屏滑出式悬浮舱抽屉 (Mobile Drawer)
+    .sb-mobile-drawer {
+      display: none;
+
+      @include mq(tablet) {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &.is-open {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+
+          .sb-mobile-drawer__content {
+            transform: translateY(0);
+          }
+        }
+
+        &__backdrop {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.65);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+        }
+
+        &__content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          max-height: 85vh;
+          background: color(primary);
+          border-bottom: 2px solid color(secondary);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          padding: calc(1rem + env(safe-area-inset-top, 0px)) 1.25rem 1.75rem;
+          transform: translateY(-100%);
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          overflow-y: auto;
+        }
+
+        &__head {
+          @include flex(row, center, space-between);
+          margin-bottom: 1.5rem;
+          padding-bottom: 0.75rem;
+          border-bottom: 1px solid color(secondary);
+        }
+
+        &__badge {
+          font: 700 10px / 1 font-family(fraktion);
+          color: color(secondary);
+          letter-spacing: 0.12em;
+        }
+
+        &__close {
+          background: none;
+          border: 1px solid color(secondary);
+          color: color(secondary);
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          font: 600 13px / 1 font-family(fraktion);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &__menu {
+          list-style: none;
+          margin: 0 0 1.75rem;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.35rem;
+        }
+
+        &__link {
+          @include flex(row, center, space-between);
+          padding: 0.85rem 1rem;
+          border: 1px solid color(secondary);
+          text-decoration: none;
+          color: color(secondary);
+          font: 500 14px / 1.2 font-family(fraktion);
+          transition: background 0.15s ease, color 0.15s ease;
+
+          &:active,
+          &:hover {
+            background: color(secondary);
+            color: color(primary);
+          }
+        }
+
+        &__num {
+          font: 700 11px / 1 font-family(fraktion);
+          opacity: 0.6;
+        }
+
+        &__title {
+          font: 600 15px / 1.2 font-family(fraktion);
+          letter-spacing: 0.04em;
+        }
+
+        &__arrow {
+          font-size: 14px;
+        }
+
+        &__actions {
+          border-top: 1px dashed color(secondary);
+          padding-top: 1.25rem;
+        }
+
+        &__action-label {
+          font: 700 9px / 1 font-family(fraktion);
+          color: color(secondary);
+          opacity: 0.7;
+          letter-spacing: 0.1em;
+          margin-bottom: 0.85rem;
+        }
+
+        &__portals {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+        }
+
+        .sb-mobile-portal-btn {
+          padding: 0.65rem 0.5rem;
+          background: none;
+          border: 1px solid color(secondary);
+          color: color(secondary);
+          font: 600 11px / 1 font-family(fraktion);
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.15s ease, color 0.15s ease;
+
+          &--cloud {
+            border-style: dashed;
+            opacity: 0.9;
+          }
+
+          &:active,
+          &:hover {
+            background: color(secondary);
+            color: color(primary);
+          }
+        }
+      }
+    }
+  }
+</style>

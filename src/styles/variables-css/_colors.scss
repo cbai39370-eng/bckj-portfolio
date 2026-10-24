@@ -1,0 +1,40 @@
+/**
+ * Colors variables
+ * 自动生成每个主题在 [默认/深色态] 与 [反转/浅色态 .theme-contrasted] 下的 CSS 变量映射
+ */
+@use "sass:map";
+@use "../variables-scss/colors" as *;
+
+/* 默认主题 (Default Theme) */
+:root {
+  @each $variable, $color in map.get($theme-colors, 'default', 'default') {
+    --color-#{"" + $variable}: #{$color};
+  }
+  --color-mask-bg: #{map.get($theme-colors, 'default', 'default', 'primary')};
+}
+
+.theme-contrasted {
+  @each $variable, $color in map.get($theme-colors, 'default', 'contrasted') {
+    --color-#{"" + $variable}: #{$color};
+  }
+  --color-mask-bg: #{map.get($theme-colors, 'default', 'default', 'primary')};
+}
+
+/* 扩展主题（每个配色方案均支持一键对比切换两种颜色） */
+@each $theme, $modes in $theme-colors {
+  @if $theme != 'default' {
+    .theme-#{$theme} {
+      @each $variable, $color in map.get($modes, 'default') {
+        --color-#{"" + $variable}: #{$color};
+      }
+      --color-mask-bg: #{map.get($modes, 'default', 'primary')};
+    }
+
+    .theme-#{$theme}.theme-contrasted {
+      @each $variable, $color in map.get($modes, 'contrasted') {
+        --color-#{"" + $variable}: #{$color};
+      }
+      --color-mask-bg: #{map.get($modes, 'default', 'primary')};
+    }
+  }
+}

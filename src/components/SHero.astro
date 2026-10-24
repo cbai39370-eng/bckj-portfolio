@@ -1,0 +1,1057 @@
+---
+import AWaves from './AWaves.astro'
+import ASeparator from './ASeparator.astro'
+import { getDailyMotto } from '../data/daily-mottos'
+
+const today = getDailyMotto()
+---
+
+<div class="s-hero" data-intersect>
+  <AWaves class="s__waves" />
+
+  <div class="s__content js-content">
+    <ASeparator
+      class="s__separator js-separator"
+      strings={['B', 'C', '·', 'S', 'T', 'U', 'D', 'I', 'O']}
+    />
+
+    <div class="s__title-box js-title-box">
+      <!-- 粘性流体引擎画布 (Theme-Adaptive Gooey Fluid Engine with Text Mask) -->
+      <svg class="s__fluid-svg js-fluid-svg" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <filter id="hero-gooey" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+            <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+
+          <mask id="hero-text-mask">
+            <g class="s__mask-words">
+              <text class="s__mask-text js-mask-creative" fill="#ffffff" text-anchor="middle" dominant-baseline="central">CREATIVE</text>
+              <text class="s__mask-text js-mask-developer" fill="#ffffff" text-anchor="middle" dominant-baseline="central">DEVELOPER</text>
+            </g>
+          </mask>
+        </defs>
+        <g filter="url(#hero-gooey)" mask="url(#hero-text-mask)" class="js-fluid-wrapper"></g>
+      </svg>
+
+      <h1 class="s__title">
+        <span class="s__title__word js-word">Creative</span>
+        <img
+          class="s__title__asset js-star"
+          src="/images/asset-star.svg"
+          alt=""
+          width="48"
+          height="48"
+        />
+        <span class="s__title__word js-word">Developer</span>
+      </h1>
+    </div>
+
+    <div class="s__slogan js-slogan">
+      <div class="s__slogan__inner">
+        <span class="s__slogan__badge js-slogan-badge" title="每日自动更新 · 点击轮换下一部经典电影名台词 // Daily auto-update · Click to cycle motto">
+          {today.badge}
+        </span>
+        <div class="s__slogan__body">
+          <p class="s__slogan__line s__slogan__line--zh">
+            <span class="s__slogan__text js-slogan-zh">{today.quoteZh}</span>
+          </p>
+          <p class="s__slogan__line s__slogan__line--en">
+            <span class="s__slogan__en js-slogan-en">{today.quoteEn}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <ASeparator
+      class="s__separator js-separator"
+      strings={['G', 'O', 'O', 'D', '·', 'N', 'I', 'G', 'H', 'T']}
+    />
+  </div>
+
+  <div class="s__border js-border"></div>
+</div><!-- .s-hero -->
+
+<script>
+  import Emitter from '../utils/Emitter'
+  import Ticker from '../utils/Ticker'
+  import { i18n } from '../utils/i18n'
+
+  import { gsap } from 'gsap'
+  import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+  import { SplitText } from 'gsap/SplitText'
+  gsap.registerPlugin(DrawSVGPlugin, SplitText)
+
+  class HeroFluidParticle {
+    x: number;
+    y: number;
+    vx: number;
+    vy: number;
+    size: number;
+    seed: number;
+    freq: number;
+    amplitude: number;
+    el: SVGCircleElement;
+
+    constructor(x: number, y: number, vx: number, vy: number, size: number, color: string) {
+      this.size = Math.min(Math.max(size, 12), 40);
+      this.x = x;
+      this.y = y;
+      this.vx = vx;
+      this.vy = vy;
+      this.seed = Math.random() * 1000;
+      this.freq = (0.5 + Math.random() * 1) * 0.01;
+      this.amplitude = (1 - Math.random() * 2) * 0.6;
+
+      this.el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      this.el.setAttribute('cx', String(this.x));
+      this.el.setAttribute('cy', String(this.y));
+      this.el.setAttribute('r', String(this.size));
+      this.el.setAttribute('fill', color);
+    }
+
+    render(time: number): boolean {
+      this.x += Math.cos((time + this.seed) * this.freq) * this.amplitude + this.vx;
+      this.y += Math.sin((time + this.seed) * this.freq) * this.amplitude + this.vy;
+
+      this.vx *= 0.94;
+      this.vy *= 0.94;
+
+      this.size += Math.hypot(this.vx, this.vy) * 0.25;
+      this.size *= 0.965;
+
+      this.el.setAttribute('cx', this.x.toFixed(1));
+      this.el.setAttribute('cy', this.y.toFixed(1));
+      this.el.setAttribute('r', Math.max(this.size, 0).toFixed(1));
+
+      return this.size > 2.0;
+    }
+
+    kill() {
+      this.el.remove();
+    }
+  }
+
+  class HeroFluidEngine {
+    container: HTMLElement;
+    svg: SVGSVGElement;
+    wrapper: SVGGElement;
+    width = 0;
+    height = 0;
+    particles: HeroFluidParticle[] = [];
+    particleCnt = 0;
+    frameCnt = 0;
+
+    mouse = {
+      x: 0,
+      y: 0,
+      smoothX: 0,
+      smoothY: 0,
+      vx: 0,
+      vy: 0,
+      smoothVx: 0,
+      smoothVy: 0,
+      diff: 0,
+      isHovering: false,
+    };
+
+    head = {
+      x: 0,
+      y: 0,
+      vx: 0,
+      vy: 0,
+    };
+
+    palette: string[] = [];
+
+    constructor(container: HTMLElement) {
+      this.container = container;
+      this.svg = container.querySelector('.js-fluid-svg') as SVGSVGElement;
+      this.wrapper = container.querySelector('.js-fluid-wrapper') as SVGGElement;
+      if (!this.svg || !this.wrapper) return;
+
+      this.updatePalette();
+      this.onResize();
+      this.head.x = this.width * 0.5;
+      this.head.y = this.height * 0.5;
+      this.mouse.x = this.width * 0.5;
+      this.mouse.y = this.height * 0.5;
+      this.mouse.smoothX = this.head.x;
+      this.mouse.smoothY = this.head.y;
+      this.bindEvents();
+
+      if ('fonts' in document) {
+        (document as any).fonts.ready.then(() => {
+          this.syncTextMask();
+        });
+      }
+      setTimeout(() => this.syncTextMask(), 150);
+      setTimeout(() => this.syncTextMask(), 600);
+    }
+
+    updatePalette() {
+      const docClass = document.documentElement.classList;
+      const isContrasted = docClass.contains('theme-contrasted');
+
+      if (docClass.contains('theme-cyber-cyan')) {
+        this.palette = isContrasted
+          ? ['#007799', '#0284c7', '#0369a1', '#0f172a', '#0891b2']
+          : ['#00f8f1', '#38bdf8', '#a7f3d0', '#ffffff', '#00b4d8'];
+      } else if (docClass.contains('theme-sunset-gold')) {
+        this.palette = isContrasted
+          ? ['#c2410c', '#b45309', '#9a3412', '#431407', '#ea580c']
+          : ['#ff6a00', '#ffaa00', '#ffd166', '#ffffff', '#ff3d00'];
+      } else if (docClass.contains('theme-royal-gold')) {
+        this.palette = isContrasted
+          ? ['#854d0e', '#713f12', '#a16207', '#3f2c00', '#ca8a04']
+          : ['#ffd700', '#facc15', '#fef08a', '#ffffff', '#eab308'];
+      } else if (docClass.contains('theme-acid-green')) {
+        this.palette = isContrasted
+          ? ['#4d7c0f', '#3f6212', '#166534', '#14532d', '#65a30d']
+          : ['#ccff00', '#a3e635', '#ffffff', '#84cc16', '#bef264'];
+      } else if (docClass.contains('theme-hermes-orange')) {
+        this.palette = isContrasted
+          ? ['#c2410c', '#9a3412', '#7c2d12', '#431407', '#ea580c']
+          : ['#ff6b35', '#ff9f1c', '#ffbf69', '#ffffff', '#ff5722'];
+      } else if (docClass.contains('theme-swiss-red')) {
+        this.palette = isContrasted
+          ? ['#991b1b', '#7f1d1d', '#b91c1c', '#450a0a', '#dc2626']
+          : ['#ffffff', '#ff4d4f', '#ff7875', '#fff1f0', '#ffc53d'];
+      } else {
+        // 官方原版 Wine Red 主题 (字体笔画内流动的熔金流体与红宝石珠光)
+        this.palette = isContrasted
+          ? ['#f40c3f', '#ff1a53', '#e11d48', '#ff6b8b', '#ffd700']
+          : ['#ffd700', '#ffea79', '#ffaa00', '#ffffff', '#ff6b8b', '#fff0eb'];
+      }
+    }
+
+    bindEvents() {
+      window.addEventListener('resize', () => this.onResize());
+      window.addEventListener('themechange', () => this.updatePalette());
+      Emitter.on('contrastchange', () => this.updatePalette());
+
+      const heroEl = (this.container.closest('.s__hero') as HTMLElement) || this.container;
+
+      heroEl.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = this.container.getBoundingClientRect();
+        const curX = e.clientX - rect.left;
+        const curY = e.clientY - rect.top;
+
+        this.mouse.vx += (this.mouse.x - curX) * 0.5;
+        this.mouse.vy += (this.mouse.y - curY) * 0.5;
+
+        this.mouse.x = curX;
+        this.mouse.y = curY;
+        this.mouse.isHovering = true;
+      });
+
+      heroEl.addEventListener('mouseenter', () => {
+        this.mouse.isHovering = true;
+      });
+
+      heroEl.addEventListener('mouseleave', () => {
+        this.mouse.isHovering = false;
+      });
+
+      // Mobile touch support
+      const handleTouch = (e: TouchEvent) => {
+        if (!e.touches.length) return;
+        const rect = this.container.getBoundingClientRect();
+        const touch = e.touches[0];
+        const curX = touch.clientX - rect.left;
+        const curY = touch.clientY - rect.top;
+
+        this.mouse.vx += (this.mouse.x - curX) * 0.5;
+        this.mouse.vy += (this.mouse.y - curY) * 0.5;
+
+        this.mouse.x = curX;
+        this.mouse.y = curY;
+        this.mouse.isHovering = true;
+      };
+
+      heroEl.addEventListener('touchstart', handleTouch, { passive: true });
+      heroEl.addEventListener('touchmove', handleTouch, { passive: true });
+      heroEl.addEventListener('touchend', () => {
+        this.mouse.isHovering = false;
+      }, { passive: true });
+    }
+
+    onResize() {
+      const rect = this.container.getBoundingClientRect();
+      this.width = rect.width || window.innerWidth;
+      this.height = rect.height || 160;
+
+      this.svg.setAttribute('viewBox', `0 0 ${this.width} ${this.height}`);
+      this.svg.style.width = this.width + 'px';
+      this.svg.style.height = this.height + 'px';
+
+      this.syncTextMask();
+    }
+
+    syncTextMask() {
+      const words = this.container.querySelectorAll('.js-word');
+      const maskCreative = this.svg.querySelector('.js-mask-creative') as SVGTextElement;
+      const maskDeveloper = this.svg.querySelector('.js-mask-developer') as SVGTextElement;
+      if (!words || words.length < 2 || !maskCreative || !maskDeveloper) return;
+
+      const containerRect = this.container.getBoundingClientRect();
+      const r0 = words[0].getBoundingClientRect();
+      const r1 = words[1].getBoundingClientRect();
+
+      const style0 = window.getComputedStyle(words[0]);
+      const style1 = window.getComputedStyle(words[1]);
+
+      const x0 = (r0.left - containerRect.left + r0.width / 2).toFixed(1);
+      const y0 = (r0.top - containerRect.top + r0.height / 2).toFixed(1);
+      maskCreative.setAttribute('x', x0);
+      maskCreative.setAttribute('y', y0);
+      maskCreative.style.font = style0.font;
+      maskCreative.style.fontSize = style0.fontSize;
+      maskCreative.style.fontFamily = style0.fontFamily;
+      maskCreative.style.fontWeight = '700';
+      maskCreative.style.letterSpacing = style0.letterSpacing;
+
+      const x1 = (r1.left - containerRect.left + r1.width / 2).toFixed(1);
+      const y1 = (r1.top - containerRect.top + r1.height / 2).toFixed(1);
+      maskDeveloper.setAttribute('x', x1);
+      maskDeveloper.setAttribute('y', y1);
+      maskDeveloper.style.font = style1.font;
+      maskDeveloper.style.fontSize = style1.fontSize;
+      maskDeveloper.style.fontFamily = style1.fontFamily;
+      maskDeveloper.style.fontWeight = '700';
+      maskDeveloper.style.letterSpacing = style1.letterSpacing;
+    }
+
+    emitParticle(time: number) {
+      if (this.particles.length > 60) return;
+
+      let x = 0;
+      let y = 0;
+      let vx = 0;
+      let vy = 0;
+      let size = 0;
+
+      if (this.mouse.isHovering && this.mouse.diff > 0.05) {
+        x = this.mouse.smoothX;
+        y = this.mouse.smoothY;
+        vx = this.mouse.smoothVx * -0.22;
+        vy = this.mouse.smoothVy * -0.22;
+        size = Math.min(this.mouse.diff * 0.4 + 20, 48);
+      } else {
+        // 自动巡航流体游弋
+        x = this.head.x;
+        y = this.head.y;
+        vx = this.head.vx * 0.4 + (Math.random() - 0.5) * 1.5;
+        vy = this.head.vy * 0.4 + (Math.random() - 0.5) * 1.5;
+        size = 24 + Math.sin(time * 0.003) * 12;
+      }
+
+      const color = this.palette[this.particleCnt % this.palette.length];
+      this.particleCnt++;
+
+      const particle = new HeroFluidParticle(x, y, vx, vy, size, color);
+      this.particles.push(particle);
+      this.wrapper.appendChild(particle.el);
+    }
+
+    tick(time: number) {
+      if (this.width === 0 || this.height === 0) return;
+      this.frameCnt++;
+
+      // 平滑鼠标跟踪
+      this.mouse.smoothX += (this.mouse.x - this.mouse.smoothX) * 0.14;
+      this.mouse.smoothY += (this.mouse.y - this.mouse.smoothY) * 0.14;
+
+      this.mouse.smoothVx += (this.mouse.vx - this.mouse.smoothVx) * 0.14;
+      this.mouse.smoothVy += (this.mouse.vy - this.mouse.smoothVy) * 0.14;
+
+      this.mouse.vx *= 0.85;
+      this.mouse.vy *= 0.85;
+
+      this.mouse.diff = Math.hypot(this.mouse.x - this.mouse.smoothX, this.mouse.y - this.mouse.smoothY);
+
+      // 自动漫游巡航轨迹 (双重 Lissajous 穿梭于大号标语笔画之间)
+      const headX = this.width * 0.5 + this.width * 0.44 * Math.sin(time * 0.0011);
+      const headY = this.height * 0.5 + this.height * 0.36 * Math.cos(time * 0.0022);
+
+      this.head.vx = (headX - this.head.x) * 0.3;
+      this.head.vy = (headY - this.head.y) * 0.3;
+
+      this.head.x = headX;
+      this.head.y = headY;
+
+      // 发射粒子（交互时全速发射，空闲时每2帧发射一枚）
+      if (this.mouse.isHovering || this.frameCnt % 2 === 0) {
+        this.emitParticle(time);
+      }
+
+      // 更新与回收粒子
+      for (let i = this.particles.length - 1; i >= 0; i--) {
+        const p = this.particles[i];
+        const isAlive = p.render(time);
+        if (!isAlive) {
+          p.kill();
+          this.particles.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  class Section {
+    el: HTMLElement
+    words: NodeListOf<HTMLElement>
+    fluidEngine: HeroFluidEngine | null = null
+
+    isPaused: boolean
+    isWaiting: boolean
+    st: SplitText
+
+    /**
+     * Constructor
+     */
+    constructor() {
+      // Elements
+      this.el = document.querySelector('.s-hero')
+      this.words = this.el.querySelectorAll('.js-word')
+
+      // Properties
+      this.isPaused = true
+      this.isWaiting = true
+
+      // Init
+      if (document.readyState === 'complete') {
+        Ticker.nextTick(this.init, this)
+      } else {
+        Emitter.once('siteLoaded', this.init, this)
+      }
+    }
+
+    /**
+     * Init
+     */
+    init() {
+      this.splitWords()
+
+      const titleBox = this.el.querySelector('.js-title-box') as HTMLElement
+      if (titleBox) {
+        this.fluidEngine = new HeroFluidEngine(titleBox)
+      }
+
+      this.bindEvents()
+    }
+
+    /**
+     * Bind events
+     */
+    bindEvents() {
+      Emitter.on('resize', this.onResize, this)
+
+      const sloganBadge = this.el.querySelector('.js-slogan-badge')
+      if (sloganBadge) {
+        sloganBadge.addEventListener('click', () => {
+          gsap.fromTo(
+            sloganBadge,
+            { scale: 0.92 },
+            { scale: 1, duration: 0.35, ease: 'back.out(2)' }
+          )
+          i18n.nextMotto()
+        })
+      }
+
+      document.addEventListener('intro', this.intro.bind(this), { once: true })
+
+      this.el.addEventListener('intersect', this.onIntersect.bind(this), {
+        passive: true,
+      })
+
+      Emitter.on('tick', this.tick, this)
+    }
+
+    /**
+     * Intersect handler
+     */
+    onIntersect(e) {
+      this.isPaused = !e.detail.isIntersecting
+
+      if (this.isPaused) {
+        Emitter.off('tick', this.tick, this)
+      } else {
+        Emitter.on('tick', this.tick, this)
+      }
+    }
+
+    /**
+     * Resize handler
+     */
+    onResize() {
+      this.splitWords()
+    }
+
+    /**
+     * Intro
+     */
+    intro() {
+      const waves = this.el.querySelector('a-waves')
+      const lines = waves.querySelectorAll('.js-line')
+      const content = this.el.querySelector('.js-content')
+      const border = this.el.querySelector('.js-border')
+      const chars = content.querySelectorAll('.char__inner')
+      const separators = content.querySelectorAll('.js-separator')
+      const star = content.querySelector('.js-star')
+
+      const tl = gsap.timeline()
+
+      tl.fromTo(
+        lines,
+        {
+          drawSVG: '100% 100%',
+        },
+        {
+          drawSVG: '0% 100%',
+          duration: 3,
+          ease: 'expo.out',
+          stagger: {
+            amount: 0.5,
+            from: 'edges',
+            ease: 'power3.inOut',
+          },
+        },
+        0.5
+      )
+
+      tl.call(() => {
+        waves.dispatchEvent(new CustomEvent('introend'))
+      }, null, '-=1')
+
+      tl.set(
+        this.el,
+        {
+          opacity: 1,
+        },
+        0
+      )
+
+      tl.to(
+        border,
+        {
+          scaleY: 0.025,
+          y: -content.clientHeight,
+          duration: 1,
+          ease: 'expo.inOut',
+        },
+        0
+      )
+
+      tl.from(
+        waves,
+        {
+          y: '100%',
+          duration: 1.35,
+          ease: 'expo.out',
+        },
+        0
+      )
+
+      tl.fromTo(
+        content,
+        {
+          clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
+        },
+        {
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+          duration: 1,
+          ease: 'expo.inOut',
+        },
+        1
+      )
+
+      tl.to(
+        border,
+        {
+          scaleY: 1,
+          y: 0,
+          duration: 1,
+          ease: 'expo.inOut',
+        },
+        1
+      )
+
+      tl.from(
+        star,
+        {
+          rotate: 90,
+          duration: 2,
+          ease: 'expo.out',
+        },
+        1.5
+      )
+
+      tl.fromTo(
+        chars,
+        {
+          y: '-200%',
+        },
+        {
+          y: '-100%',
+          duration: 2,
+          ease: 'expo.inOut',
+          stagger: 0.02,
+        },
+        0.45
+      )
+
+      tl.from(
+        separators,
+        {
+          y: (index) => (index % 2 === 0 ? '-100%' : '100%'),
+          duration: 1.5,
+          ease: 'expo.inOut',
+        },
+        0.75
+      )
+
+      const slogan = content.querySelector('.js-slogan')
+      if (slogan) {
+        tl.from(
+          slogan,
+          {
+            opacity: 0,
+            y: 15,
+            duration: 1.2,
+            ease: 'expo.out',
+          },
+          1.1
+        )
+      }
+
+      tl.call(() => {
+        this.isWaiting = false
+      })
+    }
+
+    /**
+     * Split words
+     */
+    splitWords() {
+      if (this.st) {
+        this.st.revert()
+      }
+
+      this.st = new SplitText(this.words, {
+        type: 'words,chars',
+        charsClass: 'char',
+        wordsClass: 'word',
+      })
+
+      this.st.chars.forEach((char: HTMLElement, index) => {
+        const letter = char.textContent
+
+        char.classList.add('char--' + letter)
+
+        const inner = document.createElement('span')
+        inner.classList.add('char__inner')
+
+        inner.dataset.letter = letter.toUpperCase()
+        inner.innerHTML = letter
+
+        char.innerHTML = inner.outerHTML
+      })
+    }
+
+    /**
+     * Animate char
+     */
+    animateChar() {
+      if (this.isWaiting || Math.random() > 0.01) return
+
+      const char =
+        this.st.chars[Math.floor(Math.random() * this.st.chars.length)]
+
+      if (
+        char.classList.contains('to-top') ||
+        char.classList.contains('to-right') ||
+        char.classList.contains('to-bottom') ||
+        char.classList.contains('to-left')
+      )
+        return
+
+      const direction = Math.floor(Math.random() * 4)
+
+      const className = 'to-' + ['bottom', 'left', 'top', 'right'][direction]
+
+      char.classList.add(className)
+
+      setTimeout(() => {
+        char.classList.remove(className)
+      }, 2000)
+    }
+
+    /**
+     * Tick
+     */
+    tick(time: number) {
+      this.animateChar()
+      if (this.fluidEngine && !this.isPaused) {
+        this.fluidEngine.tick(time || performance.now())
+      }
+    }
+  }
+
+  new Section()
+</script>
+
+<style lang="scss">
+  .s-hero {
+    @include flex(column, stretch, stretch);
+
+    position: relative;
+    z-index: 4;
+
+    min-height: calc(100svh - 7rem - 1px);
+
+    opacity: 0;
+    overflow: hidden;
+
+    @include mq(phone) {
+      min-height: calc(100svh - 4.5rem - 1px);
+    }
+
+    .s__waves {
+      width: 100%;
+      height: 100%;
+
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+
+    .s__border {
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      width: 100%;
+      height: 40 * 1rem;
+
+      background: color(secondary);
+      transform-origin: 50% 0;
+
+      @include mq(phone) {
+        height: 40 * 0.5rem;
+      }
+    }
+
+    .s__content {
+      position: relative;
+
+      overflow: hidden;
+      transform-origin: 50% 100%;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 1px;
+
+        background: color(secondary);
+
+        content: '';
+      }
+    }
+
+    .s__title,
+    .s__slogan,
+    .s__separator {
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    .s__slogan {
+      position: relative;
+      width: 100%;
+      border-top: 1px solid color(secondary);
+      border-bottom: 1px solid color(secondary);
+      padding: 0.85rem 1.5rem;
+      background: rgba(0, 0, 0, 0.02);
+
+      @include mq(phone) {
+        padding: 0.65rem 0.75rem;
+      }
+
+      &__inner {
+        @include flex(row, center, center);
+        gap: 1.5rem;
+
+        @include mq(tablet) {
+          flex-direction: column;
+          gap: 0.5rem;
+          text-align: center;
+        }
+      }
+
+      &__badge {
+        flex-shrink: 0;
+        display: inline-block;
+        padding: 0.25rem 0.65rem;
+        font: 700 9px / 1.2 font-family(fraktion);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid color(secondary);
+        background: color(secondary);
+        color: color(primary);
+        align-self: center;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+
+        &:hover {
+          opacity: 0.88;
+          transform: translateY(-1px);
+        }
+
+        &:active {
+          transform: translateY(1px);
+        }
+      }
+
+      &__body {
+        @include flex(column, flex-start, flex-start);
+        gap: 0.25rem;
+
+        @include mq(tablet) {
+          align-items: center;
+        }
+      }
+
+      &__line {
+        margin: 0;
+        padding: 0;
+
+        &--zh {
+          font: 400 1.2rem / 1.35 font-family(editorial);
+          letter-spacing: 0.03em;
+          color: color(secondary);
+
+          @include mq(phone) {
+            font-size: 0.95rem;
+          }
+        }
+
+        &--en {
+          font: 400 0.95rem / 1.3 font-family(editorial);
+          font-style: italic;
+          letter-spacing: 0.02em;
+          color: color(secondary);
+          opacity: 0.75;
+
+          @include mq(phone) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .s__title-box {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .s__fluid-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0.98;
+      mix-blend-mode: normal;
+    }
+
+    .s__mask-text {
+      fill: #ffffff;
+      text-anchor: middle;
+      dominant-baseline: central;
+      text-transform: uppercase;
+    }
+
+    .s__title {
+      position: relative;
+      z-index: 2;
+      @include flex(row, center, center);
+
+      margin: 0;
+      padding: 1.5rem 0;
+
+      cursor: default;
+
+      font: 700 min(15vw, 18.5rem) / 0.8 font-family(bigger);
+      text-transform: uppercase;
+
+      @include mq(desktop-xs) {
+        font-size: 14vw;
+      }
+
+      @include mq(tablet) {
+        padding: 1rem;
+        // align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        font-size: calc(31vw - 1rem);
+      }
+
+      @include mq(phone) {
+        font-size: calc(31vw - 0.75rem);
+      }
+
+      &__word {
+        position: relative;
+
+        display: block;
+        height: 0.7975em;
+
+        @include mq(tablet) {
+          flex-grow: 0;
+          flex-shrink: 0;
+        }
+
+        @include mq(phone) {
+          height: 0.825em;
+        }
+      }
+
+      &__asset {
+        display: block;
+        margin: 0 2rem;
+
+        @include mq(tablet) {
+          // display: none;
+          margin: 0 0 0 auto;
+          width: 0.375em;
+          height: auto;
+        }
+      }
+
+      @keyframes s-hero-move-to-left {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+          transform: translate3d(100%, 0, 0);
+        }
+      }
+
+      @keyframes s-hero-move-to-right {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+
+      @keyframes s-hero-move-to-top {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+
+      @keyframes s-hero-move-to-bottom {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+          transform: translate3d(0, 100%, 0);
+        }
+      }
+
+      :global(.char) {
+        clip-path: inset(0 0.005em);
+
+        color: transparent;
+      }
+
+      :global(.char__inner) {
+        position: relative;
+        top: 0.0725em;
+
+        display: block;
+
+        color: transparent;
+
+        will-change: transform;
+
+        @at-root {
+          :global(.is-windows) &,
+          :global(.is-android) & {
+            top: 0.1025em;
+
+            @include mq(phone) {
+              top: 0.105em;
+            }
+          }
+
+          :global(.is-firefox) & {
+            top: 0.1015em;
+          }
+        }
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 50%;
+
+          transform: translate3d(-50%, 0, 0);
+
+          color: color(secondary);
+
+          content: attr(data-letter) attr(data-letter) attr(data-letter);
+        }
+
+        &:after {
+          position: absolute;
+          top: 50%;
+          left: 0;
+
+          transform: translate3d(0, -50%, 0);
+
+          color: color(secondary);
+          word-break: break-all;
+
+          content: attr(data-letter) attr(data-letter) attr(data-letter);
+        }
+      }
+
+      :global(.char--t) {
+        margin-left: -0.035em;
+      }
+
+      :global(.to-top .char__inner) {
+        animation: s-hero-move-to-top 1s ease(in-out-quint) 1 forwards;
+      }
+
+      :global(.to-right .char__inner) {
+        animation: s-hero-move-to-right 1s ease(in-out-quint) 1 forwards;
+      }
+
+      :global(.to-bottom .char__inner) {
+        animation: s-hero-move-to-bottom 1s ease(in-out-quint) 1 forwards;
+      }
+
+      :global(.to-left .char__inner) {
+        animation: s-hero-move-to-left 1s ease(in-out-quint) 1 forwards;
+      }
+    }
+  }
+</style>

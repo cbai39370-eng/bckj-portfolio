@@ -1,0 +1,60 @@
+name: Daily Tech Radar & Open-Source Vault Intel
+
+on:
+  schedule:
+    # 每天北京时间早上 08:00 (UTC 00:00) 准时执行
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # 支持在 GitHub 网页控制台手动一键点击【Run workflow】立即执行
+
+permissions:
+  contents: write
+
+jobs:
+  sync-intelligence:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出仓库代码 (Checkout Repository)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 配置 Python 环境 (Setup Python 3.11)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 运行 AI 自动化雷达与开源影音采集系统 (Execute Daily Intel Bot)
+        env:
+          # 在 GitHub 仓库 Settings -> Secrets and variables -> Actions 中配置
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/daily_radar_ai.py
+
+      - name: 提交并推送到主分支 (Commit & Push to Main)
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # 检查是否有数据变更
+          if git diff --quiet src/data/spatial-chambers.json; then
+            echo "今日数据未发生变化，跳过提交。"
+          else
+            git add src/data/spatial-chambers.json
+            git commit -m "🤖 [AUTO] 每日科技雷达 & 开源影音武器库数据同步 ($(date +'%Y-%m-%d'))"
+            git push origin main
+            echo "已成功提交并推送到 main 分支！"
+          fi
+
+      - name: 触发 Cloudflare Pages 自动热部署 (Optional Deploy Hook)
+        if: env.CLOUDFLARE_DEPLOY_HOOK != ''
+        env:
+          CLOUDFLARE_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: |
+          echo "正在向 Cloudflare 发送部署触发信号..."
+          curl -X POST -s "$CLOUDFLARE_DEPLOY_HOOK"
+          echo "Cloudflare Pages 部署钩子已触发成功！"

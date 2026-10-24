@@ -1,0 +1,57 @@
+<footer class="site-foot">
+  <div class="site-foot__logo">
+    <a href="/">
+      <svg
+        width="280"
+        height="280"
+        viewBox="0 0 280 280"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 0h68a42 42 0 0 1 42 42v56a42 42 0 0 1-30 42 42 42 0 0 1 30 42v56a42 42 0 0 1-42 42H15V0zm32 28v98h28a20 20 0 0 0 20-20V48a20 20 0 0 0-20-20H47zm0 126v98h28a20 20 0 0 0 20-20v-58a20 20 0 0 0-20-20H47z"
+          fill="currentColor"
+          fill-rule="evenodd"
+        >
+        </path>
+        <path
+          d="M265 0h-62a48 48 0 0 0-48 48v184a48 48 0 0 0 48 48h62v-42h-50a30 30 0 0 1-30-30V72a30 30 0 0 1 30-30h50V0z"
+          fill="currentColor"
+        >
+        </path>
+      </svg>
+
+      <span class="u-sr-only">BC // 独立制作工坊</span>
+    </a>
+  </div><!-- .site-foot__logo -->
+</footer>
+
+<style lang="scss">
+  .site-foot {
+    @include flex(row, center, center);
+
+    position: relative;
+    z-index: 3;
+
+    padding: 1.5rem;
+
+    border-top: 1px solid color(secondary);
+
+    @include mq(phone) {
+      padding: 1rem;
+    }
+
+    &__logo {
+      svg {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+
+        @include mq(phone) {
+          width: 1.875rem;
+          height: 1.875rem;
+        }
+      }
+    }
+  }
+</style>

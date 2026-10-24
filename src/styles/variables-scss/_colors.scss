@@ -1,0 +1,121 @@
+/**
+ * Colors variables - Every theme has [default] and [contrasted] modes
+ * 深度对齐瑞士网格设计：每个配色方案均为 [高饱和主色态] 与 [高反差浅色态] 双向切换
+ * 核心机理：转场遮罩采用 60FPS 极客机械卷帘（Solid Shutter Curtain），切换时精准注入目标色态遮罩
+ * 划过视口时作为物理遮帘平滑遮蔽/显现，杜绝 blend-mode 滤镜导致的同色隐形与黑条穿帮问题
+ */
+@use 'sass:map';
+
+$theme-colors: (
+  // 1. 官方原版 (Wine Red & Cream White)
+  default: (
+    default: (
+      primary: #f40c3f,
+      secondary: #160000,
+      shadow: #540000,
+      white: #fff0eb,
+    ),
+    contrasted: (
+      primary: #faf4ef,
+      secondary: #160000,
+      shadow: #4d4040,
+      white: #fff0eb,
+    ),
+  ),
+
+  // 2. 赛博青蓝 (Cyber Cyan & Ice White)
+  cyber-cyan: (
+    default: (
+      primary: #00d2f0,
+      secondary: #041424,
+      shadow: #004b57,
+      white: #e0f7fa,
+    ),
+    contrasted: (
+      primary: #f4f9fd,
+      secondary: #041424,
+      shadow: #bae6fd,
+      white: #082f49,
+    ),
+  ),
+
+  // 3. 落日熔金 (Sunset Gold & Warm Ivory)
+  sunset-gold: (
+    default: (
+      primary: #ff6a00,
+      secondary: #240a02,
+      shadow: #521901,
+      white: #fff6eb,
+    ),
+    contrasted: (
+      primary: #faf4ec,
+      secondary: #240a02,
+      shadow: #fed7aa,
+      white: #431407,
+    ),
+  ),
+
+  // 4. 瑞士纯正 (Swiss Red & Paper White)
+  swiss-red: (
+    default: (
+      primary: #e60000,
+      secondary: #111111,
+      shadow: #590000,
+      white: #f8fafc,
+    ),
+    contrasted: (
+      primary: #f5f6f8,
+      secondary: #111111,
+      shadow: #cbd5e1,
+      white: #0a0a0a,
+    ),
+  ),
+
+  // 5. 酸性极客 (Acid Lime & Lime Milk) - 经过柔光色温校准，保留极客锐利度的同时杜绝强光晃眼
+  acid-green: (
+    default: (
+      primary: #a3e635,
+      secondary: #0f1c04,
+      shadow: #3b5400,
+      white: #f7fee7,
+    ),
+    contrasted: (
+      primary: #f6faee,
+      secondary: #0f1c04,
+      shadow: #d9f99d,
+      white: #14532d,
+    ),
+  ),
+
+  // 6. 爱马仕橙 (Hermès Orange & Cashmere Cream)
+  hermes-orange: (
+    default: (
+      primary: #f05a22,
+      secondary: #221004,
+      shadow: #591e07,
+      white: #faf5ef,
+    ),
+    contrasted: (
+      primary: #faf5ef,
+      secondary: #221004,
+      shadow: #fed7aa,
+      white: #111827,
+    ),
+  ),
+
+  // 7. 黑金殿堂 (Royal Gold & Warm Linen)
+  royal-gold: (
+    default: (
+      primary: #eab308,
+      secondary: #1c1303,
+      shadow: #594200,
+      white: #fefce8,
+    ),
+    contrasted: (
+      primary: #faf7e8,
+      secondary: #1c1303,
+      shadow: #fef08a,
+      white: #422006,
+    ),
+  ),
+);

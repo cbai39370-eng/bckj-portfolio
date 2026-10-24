@@ -1,0 +1,75 @@
+/**
+ * Global selectors and body/html rules
+ */
+
+@use "../helpers/colors" as *;
+@use "../helpers/fonts" as *;
+
+::selection {
+  background: color(secondary);
+
+  color: color(primary);
+  text-shadow: none;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  @include t(base);
+
+  background-color: color(secondary);
+  scrollbar-width: none;
+
+  color: color(secondary);
+
+  &.is-scroll-blocked {
+    &,
+    body {
+      height: 100lvh;
+      overflow: hidden;
+    }
+  }
+}
+
+body {
+  background-color: color(primary);
+
+  overflow-x: hidden;
+  overflow-y: visible;
+
+  font-family: inherit;
+}
+
+/* 平滑柔光过渡体系（彻底消灭切色瞬间的暴闪刺眼，赋予丝绸般温润的色温流动） */
+:root {
+  --theme-transition-duration: 0.45s;
+  --theme-transition-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html,
+body,
+.site-wrapper,
+.site-head,
+.site-foot,
+.s__hero,
+.s__about,
+.s__work,
+.s__my-way,
+.s__cta,
+.bc-audio-player,
+.bc-spatial-portal,
+.site-contrast-mask {
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-ease),
+              border-color var(--theme-transition-duration) var(--theme-transition-ease),
+              color 0.35s ease;
+}
+
+/* 现代化浏览器原生 View Transitions 电影级柔光融合（GPU 加速平滑淡入淡出） */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}

@@ -1,0 +1,1207 @@
+---
+interface Props {
+  playlistId?: string;
+}
+
+const { playlistId = '18514515150' } = Astro.props;
+---
+
+<div class="bc-audio-player js-bc-audio" data-playlist={playlistId}>
+  <!-- 迷你收起状态徽章（30s 后智能弹性收纳） -->
+  <div class="bc-audio__dock js-audio-dock" title="BC 工坊声学播放器">
+    <button type="button" class="bc-audio__dock-btn js-audio-expand" title="点击展开 BC 工坊声学控制舱">
+      <!-- 30s 自动收纳倒计时微进度线 -->
+      <span class="bc-audio__dock-timer js-dock-timer" title="30秒后自适应微缩收纳"></span>
+
+      <!-- 1. 左侧标识徽章 -->
+      <span class="bc-audio__dock-tag">LX</span>
+
+      <!-- 2. 中间弹性舒展曲目区 (30s 后平滑折叠收拢，悬停时向左舒展) -->
+      <span class="bc-audio__dock-body">
+        <span class="bc-audio__dock-title js-dock-title">Head In The Clouds - Hayd</span>
+      </span>
+
+      <!-- 3. 右侧声波与控制区 (始终完整显露，永不截断) -->
+      <span class="bc-audio__dock-actions">
+        <span class="bc-audio__mini-bars js-mini-bars" title="实时声学律动">
+          <span class="bc-audio__mini-bar"></span>
+          <span class="bc-audio__mini-bar"></span>
+          <span class="bc-audio__mini-bar"></span>
+          <span class="bc-audio__mini-bar"></span>
+        </span>
+
+        <span class="bc-audio__dock-icon js-dock-toggle-play" title="播放 / 暂停">
+          <svg class="js-dock-icon-play" width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <svg class="js-dock-icon-pause u-hidden" width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+        </span>
+      </span>
+    </button>
+  </div>
+
+  <!-- 展开状态工坊控制舱 -->
+  <div class="bc-audio__panel js-audio-panel">
+    <!-- 面板顶栏 -->
+    <div class="bc-audio__header">
+      <div class="bc-audio__header-left">
+        <span class="bc-audio__badge">AUDIO VAULT // LX-SOURCE</span>
+        <span class="bc-audio__source-status">
+          <span class="bc-audio__live-dot"></span>
+          <span>NETEASE · 洛雪源直连</span>
+        </span>
+      </div>
+      <button type="button" class="bc-audio__btn-minimize js-audio-minimize" title="收起播放器">
+        <span>—</span>
+      </button>
+    </div>
+
+    <!-- 实时声学示波器频谱 Canvas -->
+    <div class="bc-audio__visualizer-box">
+      <canvas class="bc-audio__canvas js-audio-canvas" width="300" height="42"></canvas>
+      <div class="bc-audio__canvas-grid"></div>
+    </div>
+
+    <!-- 歌曲信息区 -->
+    <div class="bc-audio__meta">
+      <div class="bc-audio__cover-box">
+        <img class="bc-audio__cover js-audio-cover" src="/images/asset-star.svg" alt="Album Cover" width="40" height="40" />
+      </div>
+      <div class="bc-audio__info">
+        <div class="bc-audio__track-name js-track-name">Head In The Clouds</div>
+        <div class="bc-audio__artist-name js-artist-name">Hayd</div>
+      </div>
+      <div class="bc-audio__time js-audio-time">00:00 // 00:00</div>
+    </div>
+
+    <!-- 进度条 -->
+    <div class="bc-audio__progress-wrap js-progress-wrap">
+      <div class="bc-audio__progress-bar js-progress-bar">
+        <div class="bc-audio__progress-current js-progress-current" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- 控制按键区 -->
+    <div class="bc-audio__controls">
+      <div class="bc-audio__controls-left">
+        <button type="button" class="bc-audio__ctrl-btn js-audio-prev" title="上一曲 (Previous)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="19 20 9 12 19 4 19 20"></polygon>
+            <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2"></line>
+          </svg>
+        </button>
+
+        <button type="button" class="bc-audio__ctrl-btn bc-audio__ctrl-btn--play js-audio-play-toggle" title="播放 / 暂停 (Play/Pause)">
+          <svg class="js-ctrl-icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <svg class="js-ctrl-icon-pause u-hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+        </button>
+
+        <button type="button" class="bc-audio__ctrl-btn js-audio-next" title="下一曲 (Next)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 4 15 12 5 20 5 4"></polygon>
+            <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="bc-audio__controls-right">
+        <button type="button" class="bc-audio__ctrl-btn js-audio-mute" title="静音切换 (Mute)">
+          <svg class="js-icon-unmuted" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg class="js-icon-muted u-hidden" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <button type="button" class="bc-audio__ctrl-btn bc-audio__ctrl-btn--list js-audio-playlist-toggle" title="展开网易云歌单曲目">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <circle cx="3.5" cy="6" r="1.5" fill="currentColor"></circle>
+            <circle cx="3.5" cy="12" r="1.5" fill="currentColor"></circle>
+            <circle cx="3.5" cy="18" r="1.5" fill="currentColor"></circle>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 网易云曲目抽屉列表 -->
+    <div class="bc-audio__playlist js-audio-playlist u-hidden">
+      <div class="bc-audio__playlist-header">
+        <span>PLAYLIST // 网易云同步歌单 (<span class="js-song-count">1</span>)</span>
+      </div>
+      <div class="bc-audio__playlist-items js-playlist-items">
+        <!-- 动态渲染歌曲项 -->
+      </div>
+    </div>
+  </div>
+
+  <audio class="js-audio-element" src="/audio/bgm.mp3" preload="auto"></audio>
+</div>
+
+<script>
+  interface Song {
+    name: string;
+    artist: string;
+    url: string;
+    pic: string;
+    lrc?: string;
+  }
+
+  class BCAudioEngine {
+    container: HTMLElement;
+    audio: HTMLAudioElement;
+    dock: HTMLElement;
+    panel: HTMLElement;
+    canvas: HTMLCanvasElement;
+    ctx: CanvasRenderingContext2D | null;
+
+    playlistId: string;
+    songs: Song[] = [];
+    currentIndex = 0;
+    isPlaying = false;
+    isMuted = false;
+    isExpanded = false;
+    isTucked = false;
+    autoDockTimer: number | null = null;
+    lxCache: Map<string, string> = new Map();
+
+    // Web Audio / Visualizer
+    audioContext: AudioContext | null = null;
+    analyser: AnalyserNode | null = null;
+    dataArray: Uint8Array | null = null;
+    sourceNode: MediaElementAudioSourceNode | null = null;
+    simulatedPhase = 0;
+
+    constructor() {
+      this.container = document.querySelector('.js-bc-audio') as HTMLElement;
+      if (!this.container) return;
+
+      this.playlistId = this.container.dataset.playlist || '18514515150';
+      this.audio = this.container.querySelector('.js-audio-element') as HTMLAudioElement;
+      this.dock = this.container.querySelector('.js-audio-dock') as HTMLElement;
+      this.panel = this.container.querySelector('.js-audio-panel') as HTMLElement;
+      this.canvas = this.container.querySelector('.js-audio-canvas') as HTMLCanvasElement;
+      if (this.canvas) {
+        this.ctx = this.canvas.getContext('2d');
+      }
+
+      this.init();
+    }
+
+    async init() {
+      this.bindEvents();
+      this.startVisualizerLoop();
+      this.startAutoDockCountdown(30000);
+
+      // 1. 本地高保真无损 BGM 默认就绪（绝对零延迟，页面加载即拥有音频源）
+      this.songs = [
+        {
+          name: 'Head In The Clouds',
+          artist: 'Hayd',
+          url: '/audio/bgm.mp3',
+          pic: '/images/asset-star.svg',
+        },
+      ];
+      this.renderPlaylistDOM();
+      this.loadSong(0, true);
+
+      // 2. 异步补充网易云歌单
+      this.fetchPlaylist();
+    }
+
+    async fetchPlaylist() {
+      const apiUrls = [
+        `https://api.injahow.cn/meting/?type=playlist&id=${this.playlistId}`,
+        `https://meting.qier222.com/api?server=netease&type=playlist&id=${this.playlistId}`,
+      ];
+
+      for (const url of apiUrls) {
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            this.songs = data.map((d: any) => {
+              if (d.name && d.name.toLowerCase().includes('head in the clouds')) {
+                return {
+                  ...d,
+                  url: '/audio/bgm.mp3', // 替换本地完整高音质母带，保障首发秒播且不被截断
+                };
+              }
+              return d;
+            });
+            this.renderPlaylistDOM();
+            return;
+          }
+        } catch (e) {
+          console.warn('Meting endpoint fallback...', e);
+        }
+      }
+    }
+
+    async resolveLxMusicSource(song: Song): Promise<string> {
+      let songId = '';
+      if ((song as any).id) {
+        songId = String((song as any).id);
+      } else if (song.url) {
+        const m = song.url.match(/id=(\d+)/);
+        if (m) songId = m[1];
+      }
+
+      if (!songId) return song.url;
+
+      // 优先从内存缓存中取
+      if (this.lxCache.has(songId)) {
+        return this.lxCache.get(songId)!;
+      }
+
+      // 请求洛雪音乐源 (OIAPI 溯音 163 节点)
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 3500);
+        const res = await fetch(`https://oiapi.net/api/Music_163?id=${songId}`, {
+          signal: controller.signal,
+        });
+        clearTimeout(timeout);
+
+        if (res.ok) {
+          const json = await res.json();
+          if (json?.code === 0 && Array.isArray(json?.data) && json.data[0]?.url) {
+            const highQualityUrl = json.data[0].url.replace(/^http:/, 'https:');
+            this.lxCache.set(songId, highQualityUrl);
+            return highQualityUrl;
+          }
+        }
+      } catch (err) {
+        console.warn('LX Music Source resolve fallback:', err);
+      }
+
+      // 降级回退到默认源
+      return song.url;
+    }
+
+    async loadSong(index: number, autoPlay = true) {
+      if (!this.songs || this.songs.length === 0) return;
+
+      this.currentIndex = (index + this.songs.length) % this.songs.length;
+      const song = this.songs[this.currentIndex];
+
+      // 更新界面信息
+      const titleEl = this.container.querySelector('.js-track-name');
+      const artistEl = this.container.querySelector('.js-artist-name');
+      const dockTitleEl = this.container.querySelector('.js-dock-title');
+      const coverEl = this.container.querySelector('.js-audio-cover') as HTMLImageElement;
+      const statusTextEl = this.container.querySelector('.bc-audio__source-status span:last-child');
+
+      if (titleEl) titleEl.textContent = song.name;
+      if (artistEl) artistEl.textContent = song.artist;
+      if (dockTitleEl) dockTitleEl.textContent = `${song.name} - ${song.artist}`;
+      if (coverEl && song.pic) coverEl.src = song.pic;
+
+      // 刷新列表高亮
+      this.container.querySelectorAll('.js-playlist-item').forEach((item, idx) => {
+        item.classList.toggle('is-current', idx === this.currentIndex);
+      });
+
+      // 本地音源立即播放，绝对无需任何网络等待
+      if (song.url.startsWith('/') || song.url.startsWith('./')) {
+        this.audio.src = song.url;
+        if (statusTextEl) {
+          statusTextEl.textContent = 'LOCAL · 高保真无损直出';
+        }
+        if (autoPlay) {
+          this.play();
+        }
+        return;
+      }
+
+      // 外部音源直接赋值并立即尝试播放（保持用户交互手势时效）
+      this.audio.src = song.url;
+      if (autoPlay) {
+        this.play();
+      }
+
+      // 异步解析洛雪 VIP 完整音源
+      const resolvedUrl = await this.resolveLxMusicSource(song);
+      if (this.songs[this.currentIndex] === song && resolvedUrl !== song.url) {
+        const wasPlaying = this.isPlaying;
+        const curTime = this.audio.currentTime;
+        this.audio.src = resolvedUrl;
+        this.audio.currentTime = curTime;
+        if (statusTextEl) {
+          statusTextEl.textContent = 'NETEASE · 洛雪 VIP 无损直连';
+        }
+        if (wasPlaying) {
+          this.play();
+        }
+      }
+    }
+
+    initWebAudio() {
+      // 直通系统原生硬件音频管道，杜绝 Web Audio 在未交互时 suspended 导致的静音锁死
+    }
+
+    play() {
+      this.audio.muted = false;
+
+      const p = this.audio.play();
+      if (p !== undefined) {
+        p.then(() => {
+          this.isPlaying = true;
+          this.audio.muted = false;
+          this.updatePlayStateUI();
+        }).catch((e) => {
+          console.warn('Direct unmuted play blocked by browser autoplay policy, arming gesture unlock:', e);
+          this.handleAutoplayPolicy();
+        });
+      }
+    }
+
+    /**
+     * 针对现代浏览器安全策略的双重自适应唤醒：
+     * 1. 尝试静音后台预载流，拟真声波与进度条即刻运转；
+     * 2. 挂载首次用户交互监听（严格限制在标准激活事件：点击、触摸、按键，剔除无效的 scroll/wheel），
+     *    用户只要在页面任意位置点击、触摸一次，立刻无感解除静音开声！
+     */
+    handleAutoplayPolicy() {
+      // 步骤 1：静音试播（绕过浏览器 autoplay 限制开始缓冲并跑动进度条）
+      this.audio.muted = true;
+      this.audio
+        .play()
+        .then(() => {
+          this.isPlaying = true;
+          this.updatePlayStateUI();
+        })
+        .catch(() => {});
+
+      // 步骤 2：注册高优先级真实手势激活监听（绝不能包含 scroll，否则滑屏会消耗掉一次监听却无法开声）
+      const validGestures = ['click', 'pointerdown', 'touchstart', 'touchend', 'keydown'];
+
+      const unlockAndSound = () => {
+        this.audio.muted = false;
+        this.audio
+          .play()
+          .then(() => {
+            this.isPlaying = true;
+            this.audio.muted = false;
+            this.updatePlayStateUI();
+            // 只有成功出声后才移除全局监听
+            validGestures.forEach((evt) => {
+              window.removeEventListener(evt, unlockAndSound, true);
+            });
+          })
+          .catch((err) => {
+            console.warn('Playback gesture retry deferred:', err);
+          });
+      };
+
+      validGestures.forEach((evt) => {
+        window.addEventListener(evt, unlockAndSound, { capture: true, passive: true });
+      });
+    }
+
+    pause() {
+      this.audio.pause();
+      this.isPlaying = false;
+      this.updatePlayStateUI();
+    }
+
+    togglePlay() {
+      if (this.isPlaying) {
+        this.pause();
+      } else {
+        this.play();
+      }
+    }
+
+    prev() {
+      this.loadSong(this.currentIndex - 1, true);
+    }
+
+    next() {
+      this.loadSong(this.currentIndex + 1, true);
+    }
+
+    updatePlayStateUI() {
+      this.container.classList.toggle('is-playing', this.isPlaying);
+
+      // Dock 图标切换
+      const dockPlay = this.container.querySelector('.js-dock-icon-play');
+      const dockPause = this.container.querySelector('.js-dock-icon-pause');
+      if (dockPlay && dockPause) {
+        dockPlay.classList.toggle('u-hidden', this.isPlaying);
+        dockPause.classList.toggle('u-hidden', !this.isPlaying);
+      }
+
+      // Panel 控制区图标切换
+      const ctrlPlay = this.container.querySelector('.js-ctrl-icon-play');
+      const ctrlPause = this.container.querySelector('.js-ctrl-icon-pause');
+      if (ctrlPlay && ctrlPause) {
+        ctrlPlay.classList.toggle('u-hidden', this.isPlaying);
+        ctrlPause.classList.toggle('u-hidden', !this.isPlaying);
+      }
+    }
+
+    startAutoDockCountdown(durationMs = 30000) {
+      const timerEl = this.container.querySelector('.js-dock-timer') as HTMLElement;
+      if (timerEl) {
+        timerEl.style.transition = 'none';
+        timerEl.style.width = '100%';
+        void timerEl.offsetHeight; // trigger reflow
+        timerEl.style.transition = `width ${durationMs}ms linear, opacity 0.4s ease`;
+        timerEl.style.width = '0%';
+      }
+
+      this.autoDockTimer = window.setTimeout(() => {
+        this.tuck();
+      }, durationMs);
+    }
+
+    cancelAutoDockCountdown() {
+      if (this.autoDockTimer) {
+        clearTimeout(this.autoDockTimer);
+        this.autoDockTimer = null;
+      }
+      const timerEl = this.container.querySelector('.js-dock-timer') as HTMLElement;
+      if (timerEl) {
+        timerEl.style.opacity = '0';
+      }
+    }
+
+    tuck() {
+      this.cancelAutoDockCountdown();
+      this.isTucked = true;
+      this.dock.classList.add('is-tucked');
+    }
+
+    untuck() {
+      this.cancelAutoDockCountdown();
+      this.isTucked = false;
+      this.dock.classList.remove('is-tucked');
+    }
+
+    toggleExpand(expanded?: boolean) {
+      this.cancelAutoDockCountdown();
+      this.isExpanded = expanded !== undefined ? expanded : !this.isExpanded;
+      this.panel.classList.toggle('is-visible', this.isExpanded);
+      this.dock.classList.toggle('is-minimized', this.isExpanded);
+
+      // 当面板关闭时，自动进入贴边收纳状态，避免遮挡页面内容
+      if (!this.isExpanded) {
+        this.tuck();
+      }
+    }
+
+    renderPlaylistDOM() {
+      const listEl = this.container.querySelector('.js-playlist-items');
+      const countEl = this.container.querySelector('.js-song-count');
+      if (!listEl) return;
+
+      if (countEl) countEl.textContent = String(this.songs.length);
+
+      listEl.innerHTML = this.songs
+        .map(
+          (song, idx) => `
+          <button type="button" class="bc-audio__playlist-item js-playlist-item ${idx === this.currentIndex ? 'is-current' : ''}" data-index="${idx}">
+            <span class="bc-audio__pl-num">${String(idx + 1).padStart(2, '0')}</span>
+            <span class="bc-audio__pl-name">${song.name}</span>
+            <span class="bc-audio__pl-artist">${song.artist}</span>
+          </button>
+        `
+        )
+        .join('');
+
+      listEl.querySelectorAll('.js-playlist-item').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const idx = parseInt((e.currentTarget as HTMLElement).dataset.index || '0', 10);
+          this.loadSong(idx, true);
+        });
+      });
+    }
+
+    startVisualizerLoop() {
+      const render = () => {
+        requestAnimationFrame(render);
+        if (!this.ctx || !this.canvas) return;
+
+        const width = this.canvas.width;
+        const height = this.canvas.height;
+        this.ctx.clearRect(0, 0, width, height);
+
+        const barCount = 20;
+        const barWidth = 3;
+        const gap = (width - barCount * barWidth) / (barCount - 1);
+
+        // 获取整站当前 secondary 颜色
+        const themeColor = getComputedStyle(document.documentElement).getPropertyValue('--color-secondary').trim() || '#160000';
+
+        this.ctx.fillStyle = themeColor;
+
+        let hasDirectData = false;
+        if (this.analyser && this.dataArray && this.isPlaying) {
+          try {
+            this.analyser.getByteFrequencyData(this.dataArray);
+            hasDirectData = this.dataArray.some((val) => val > 0);
+          } catch (e) {
+            hasDirectData = false;
+          }
+        }
+
+        this.simulatedPhase += this.isPlaying ? 0.08 : 0.01;
+
+        for (let i = 0; i < barCount; i++) {
+          let magnitude = 0;
+
+          if (this.isPlaying) {
+            if (hasDirectData && this.dataArray) {
+              const dataIndex = Math.floor((i / barCount) * (this.dataArray.length * 0.7));
+              magnitude = (this.dataArray[dataIndex] / 255) * (height * 0.85);
+            } else {
+              // 拟真律动示波算法：物理正弦阻尼与随机节奏共振，保证 60fps 细腻跳动
+              const harmonic1 = Math.sin(this.simulatedPhase * 1.5 + i * 0.45);
+              const harmonic2 = Math.cos(this.simulatedPhase * 0.8 + i * 0.2);
+              const noise = Math.abs(harmonic1 * 0.6 + harmonic2 * 0.4);
+              magnitude = 4 + noise * (height * 0.75);
+            }
+          } else {
+            // 静止时呈现微弱待机脉冲 (2px 像素呼吸)
+            magnitude = 2 + Math.sin(this.simulatedPhase + i * 0.3) * 1.5;
+          }
+
+          magnitude = Math.max(2, Math.min(height - 2, magnitude));
+
+          const x = i * (barWidth + gap);
+          const y = height - magnitude;
+
+          this.ctx.fillRect(x, y, barWidth, magnitude);
+        }
+      };
+
+      render();
+    }
+
+    formatTime(sec: number): string {
+      if (isNaN(sec)) return '00:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    bindEvents() {
+      // 鼠标悬停到 Dock 时取消自动收起倒计时，避免在访客阅读或交互时突然缩走
+      this.dock.addEventListener('mouseenter', () => {
+        this.cancelAutoDockCountdown();
+      });
+
+      // 展开 / 收起
+      this.container.querySelector('.js-audio-expand')?.addEventListener('click', (e) => {
+        this.cancelAutoDockCountdown();
+        // 如果点击的是播放小图标则只切换播放
+        if ((e.target as HTMLElement).closest('.js-dock-toggle-play')) {
+          this.togglePlay();
+          return;
+        }
+        this.toggleExpand(true);
+      });
+
+      this.container.querySelector('.js-audio-minimize')?.addEventListener('click', () => {
+        this.toggleExpand(false);
+      });
+
+      // 播放 / 暂停
+      this.container.querySelector('.js-audio-play-toggle')?.addEventListener('click', () => {
+        this.cancelAutoDockCountdown();
+        this.togglePlay();
+      });
+
+      // 上下首
+      this.container.querySelector('.js-audio-prev')?.addEventListener('click', () => {
+        this.cancelAutoDockCountdown();
+        this.prev();
+      });
+
+      this.container.querySelector('.js-audio-next')?.addEventListener('click', () => {
+        this.cancelAutoDockCountdown();
+        this.next();
+      });
+
+      // 歌单抽屉切换
+      const playlistDrawer = this.container.querySelector('.js-audio-playlist');
+      this.container.querySelector('.js-audio-playlist-toggle')?.addEventListener('click', () => {
+        if (playlistDrawer) {
+          playlistDrawer.classList.toggle('u-hidden');
+        }
+      });
+
+      // 静音切换
+      const unmutedIcon = this.container.querySelector('.js-icon-unmuted');
+      const mutedIcon = this.container.querySelector('.js-icon-muted');
+      this.container.querySelector('.js-audio-mute')?.addEventListener('click', () => {
+        this.isMuted = !this.isMuted;
+        this.audio.muted = this.isMuted;
+        if (unmutedIcon && mutedIcon) {
+          unmutedIcon.classList.toggle('u-hidden', this.isMuted);
+          mutedIcon.classList.toggle('u-hidden', !this.isMuted);
+        }
+      });
+
+      // 音频时间更新与进度条
+      const timeEl = this.container.querySelector('.js-audio-time');
+      const currentBar = this.container.querySelector('.js-progress-current') as HTMLElement;
+      const progressWrap = this.container.querySelector('.js-progress-wrap') as HTMLElement;
+
+      this.audio.addEventListener('timeupdate', () => {
+        const cur = this.audio.currentTime || 0;
+        const dur = this.audio.duration || 0;
+        if (timeEl) {
+          timeEl.textContent = `${this.formatTime(cur)} // ${this.formatTime(dur)}`;
+        }
+        if (currentBar && dur > 0) {
+          const pct = (cur / dur) * 100;
+          currentBar.style.width = `${pct}%`;
+        }
+      });
+
+      this.audio.addEventListener('ended', () => {
+        this.next();
+      });
+
+      // 点击进度条跳转
+      if (progressWrap) {
+        progressWrap.addEventListener('click', (e) => {
+          const rect = progressWrap.getBoundingClientRect();
+          const clickPos = (e.clientX - rect.left) / rect.width;
+          if (this.audio.duration) {
+            this.audio.currentTime = clickPos * this.audio.duration;
+          }
+        });
+      }
+    }
+  }
+
+  // 挂载引擎
+  if (typeof window !== 'undefined') {
+    new BCAudioEngine();
+  }
+</script>
+
+<style lang="scss">
+  .bc-audio-player {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 15;
+
+    font-family: font-family(fraktion);
+    user-select: none;
+
+    @include mq(phone) {
+      right: max(0.75rem, env(safe-area-inset-right, 0px));
+      bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
+  .u-hidden {
+    display: none !important;
+  }
+
+  // 1. 迷你收起徽章 (Dock) - 弹性自收纳设计
+  .bc-audio__dock {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    transition: opacity 0.3s ease;
+
+    &.is-minimized {
+      display: none;
+    }
+
+    &-btn {
+      position: relative;
+      @include flex(row, center, flex-end);
+      gap: 0.55rem;
+      padding: 0.45rem 0.75rem;
+      background: color(primary);
+      border: 1px solid color(secondary);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      cursor: pointer;
+      color: color(secondary);
+      font: 500 11px / 1 font-family(fraktion);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        background: color(secondary);
+        color: color(primary);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+        transition: background 0.15s ease, color 0.15s ease;
+
+        .bc-audio__dock-tag {
+          border-color: color(primary);
+          color: color(primary);
+        }
+
+        .bc-audio__mini-bar {
+          background: color(primary);
+        }
+      }
+    }
+
+    // 30s 倒计时微进度线
+    &-timer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: color(secondary);
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    // 左侧徽章
+    &-tag {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 5px;
+      border: 1px solid color(secondary);
+      letter-spacing: 0.08em;
+      opacity: 0.95;
+      flex-shrink: 0;
+    }
+
+    // 中间弹性舒展曲目区 (核心丝滑折叠机制)
+    &-body {
+      display: inline-flex;
+      align-items: center;
+      max-width: 240px;
+      opacity: 1;
+      transform: scaleX(1);
+      transform-origin: right center;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: max-width 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  margin 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+      @include mq(phone) {
+        max-width: min(150px, 42vw);
+      }
+    }
+
+    &-title {
+      font-size: 11px;
+      letter-spacing: 0.02em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    // 右侧声波与控制区 (始终完整可见，永不截断)
+    &-actions {
+      @include flex(row, center, center);
+      gap: 0.55rem;
+      flex-shrink: 0;
+    }
+
+    &-icon {
+      @include flex(row, center, center);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+  }
+
+  // 处于收拢状态时（30s 后）：曲目文字折叠收起，胶囊自适应缩小为精密小徽章
+  .bc-audio__dock.is-tucked {
+    .bc-audio__dock-body {
+      max-width: 0;
+      opacity: 0;
+      transform: scaleX(0.65);
+      margin: 0;
+      transition-delay: 0.45s; // 鼠标移走后延迟 0.45 秒优雅收拢
+    }
+
+    // 当用户悬停或焦点处于胶囊上时，0ms 立即向左顺滑舒展全貌
+    &:hover,
+    &:focus-within {
+      .bc-audio__dock-body {
+        max-width: 240px;
+        opacity: 1;
+        transform: scaleX(1);
+        margin: 0 0.15rem;
+        transition-delay: 0s;
+
+        @include mq(phone) {
+          max-width: min(150px, 42vw);
+        }
+      }
+    }
+  }
+
+  // 迷你声波光柱
+  .bc-audio__mini-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 10px;
+
+    .bc-audio__mini-bar {
+      width: 2px;
+      height: 3px;
+      background: color(secondary);
+      transition: height 0.15s ease;
+    }
+  }
+
+  .bc-audio-player.is-playing .bc-audio__mini-bar {
+    animation: bcMiniPulse 0.8s infinite ease-in-out alternate;
+
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.3s; }
+    &:nth-child(3) { animation-delay: 0.2s; }
+    &:nth-child(4) { animation-delay: 0.4s; }
+  }
+
+  @keyframes bcMiniPulse {
+    0% { height: 2px; }
+    100% { height: 10px; }
+  }
+
+  // 2. 展开状态面板 (Panel)
+  .bc-audio__panel {
+    display: none;
+    width: 320px;
+    background: color(primary);
+    border: 1px solid color(secondary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    flex-direction: column;
+
+    &.is-visible {
+      display: flex;
+      animation: bcPanelIn 0.3s ease(out-cubic) forwards;
+    }
+
+    @include mq(phone) {
+      width: calc(100vw - 1.5rem);
+      max-width: 360px;
+      max-height: calc(100vh - 2.5rem - env(safe-area-inset-bottom, 0px));
+      overflow-y: auto;
+    }
+  }
+
+  @keyframes bcPanelIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  // 面板顶栏
+  .bc-audio__header {
+    @include flex(row, center, space-between);
+    padding: 0.6rem 0.85rem;
+    border-bottom: 1px solid color(secondary);
+    background: rgba(0, 0, 0, 0.02);
+
+    &-left {
+      @include flex(row, center, flex-start);
+      gap: 0.6rem;
+    }
+  }
+
+  .bc-audio__badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 5px;
+    background: color(secondary);
+    color: color(primary);
+    letter-spacing: 0.08em;
+  }
+
+  .bc-audio__source-status {
+    @include flex(row, center, flex-start);
+    gap: 4px;
+    font-size: 9px;
+    opacity: 0.6;
+    letter-spacing: 0.05em;
+  }
+
+  .bc-audio__live-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #00e676;
+    animation: bcDotBlink 1.5s infinite ease-in-out;
+  }
+
+  @keyframes bcDotBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .bc-audio__btn-minimize {
+    appearance: none;
+    background: none;
+    border: 0;
+    color: color(secondary);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // 示波器 Canvas 容器
+  .bc-audio__visualizer-box {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    padding: 0.3rem 0.85rem;
+    border-bottom: 1px solid color(secondary);
+    background: rgba(0, 0, 0, 0.015);
+  }
+
+  .bc-audio__canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .bc-audio__canvas-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 95%, rgba(0, 0, 0, 0.05) 100%),
+                linear-gradient(to right, transparent 95%, rgba(0, 0, 0, 0.03) 100%);
+    background-size: 10px 10px;
+    opacity: 0.4;
+  }
+
+  // 歌曲信息区
+  .bc-audio__meta {
+    @include flex(row, center, flex-start);
+    gap: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    border-bottom: 1px solid color(secondary);
+  }
+
+  .bc-audio__cover-box {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border: 1px solid color(secondary);
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.05);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .bc-audio__info {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  .bc-audio__track-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: color(secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.02em;
+  }
+
+  .bc-audio__artist-name {
+    font-size: 10px;
+    opacity: 0.6;
+    color: color(secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bc-audio__time {
+    font-size: 9px;
+    opacity: 0.65;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  // 进度条
+  .bc-audio__progress-wrap {
+    padding: 0.5rem 0.85rem 0;
+    cursor: pointer;
+  }
+
+  .bc-audio__progress-bar {
+    width: 100%;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bc-audio__progress-current {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: color(secondary);
+    transition: width 0.1s linear;
+  }
+
+  // 控制按键
+  .bc-audio__controls {
+    @include flex(row, center, space-between);
+    padding: 0.6rem 0.85rem;
+
+    &-left,
+    &-right {
+      @include flex(row, center, flex-start);
+      gap: 0.4rem;
+    }
+  }
+
+  .bc-audio__ctrl-btn {
+    @include flex(row, center, center);
+    width: 28px;
+    height: 28px;
+    appearance: none;
+    background: none;
+    border: 1px solid color(secondary);
+    color: color(secondary);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+
+    &:hover {
+      background: color(secondary);
+      color: color(primary);
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    &--play {
+      width: 32px;
+      height: 32px;
+      background: color(secondary);
+      color: color(primary);
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  // 播放列表抽屉
+  .bc-audio__playlist {
+    border-top: 1px solid color(secondary);
+    max-height: 160px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.02);
+
+    &-header {
+      padding: 0.35rem 0.85rem;
+      font-size: 9px;
+      font-weight: 700;
+      opacity: 0.6;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      letter-spacing: 0.05em;
+    }
+
+    &-items {
+      overflow-y: auto;
+      max-height: 130px;
+    }
+
+    &-item {
+      @include flex(row, center, flex-start);
+      gap: 0.6rem;
+      width: 100%;
+      padding: 0.4rem 0.85rem;
+      border: 0;
+      background: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      cursor: pointer;
+      text-align: left;
+      color: color(secondary);
+      font: 400 11px / 1.2 font-family(fraktion);
+      transition: background 0.15s ease;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      &.is-current {
+        font-weight: 700;
+        background: color(secondary);
+        color: color(primary);
+
+        .bc-audio__pl-artist,
+        .bc-audio__pl-num {
+          color: color(primary);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .bc-audio__pl-num {
+    font-size: 9px;
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  .bc-audio__pl-name {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .bc-audio__pl-artist {
+    font-size: 9px;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+</style>
