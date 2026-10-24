@@ -115,25 +115,25 @@
     "items": [
       {
         "category": "GLOBAL TECH // 海外前沿聚焦",
-        "time": "TODAY // 07:41 UTC",
+        "time": "TODAY // 08:40 UTC",
         "title": "OBS Studio 33",
-        "summary": "HackerNews 社区热榜头条（得分 72）。该项目引发全网架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ SOURCE: HACKERNEWS #72★ ]",
+        "summary": "HackerNews 社区热榜头条（得分 102）。该项目引发全网架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ SOURCE: HACKERNEWS #102★ ]",
         "linkText": "READ INTEL // 展开内参 ↳",
         "url": "https://github.com/obsproject/obs-studio/releases/tag/33.0.0"
       },
       {
         "category": "DEV ECOSYSTEM // 国内极客观察",
-        "time": "TODAY // 07:41 UTC",
-        "title": "做了个 Mac 小工具，在屏幕边上看 Codex / Claude Code 还剩多少额度",
-        "summary": "来自国内开发者社区的热点思潮（讨论度 68 节点：分享创造）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ RADAR FREQ: V2EX 68 REPLIES ]",
+        "time": "TODAY // 08:40 UTC",
+        "title": "为什么很多人都把 DeepSeek 神化了，看不起国内豆包和其它 LLM？",
+        "summary": "来自国内开发者社区的热点思潮（讨论度 60 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ RADAR FREQ: V2EX 60 REPLIES ]",
         "linkText": "READ INTEL // 展开内参 ↳",
-        "url": "https://www.v2ex.com/t/1251299"
+        "url": "https://www.v2ex.com/t/1251402"
       },
       {
         "category": "AI & NARRATIVE // 逻辑与密室推演",
-        "time": "TODAY // 07:41 UTC",
+        "time": "TODAY // 08:40 UTC",
         "title": "多模态推演能否构建真正的“物理闭环密室”？",
         "summary": "实测最新前沿大模型在多重伪解答架构中的表现：虽然能瞬间生成海量障眼法，但在微观物理材质力学与时间线交叉口供的精确剪裁上，人类本格心机依然是不可替代的胜负手。",
         "specTag": "[ INTEL: DUAL-CHAMBER LOGIC ]",
