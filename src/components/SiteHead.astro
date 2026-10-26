@@ -628,11 +628,26 @@ const themes = [
       )
     }
 
+    hexToRgb(hex: string): { r: number; g: number; b: number } | null {
+      if (!hex) return null
+      let cleanHex = hex.trim().replace('#', '')
+      if (cleanHex.length === 3) {
+        cleanHex = cleanHex.split('').map((c) => c + c).join('')
+      }
+      if (cleanHex.length !== 6) return null
+      const num = parseInt(cleanHex, 16)
+      return {
+        r: (num >> 16) & 255,
+        g: (num >> 8) & 255,
+        b: num & 255,
+      }
+    }
+
     /**
-     * 极客机械卷帘转场 (60FPS Hardware Accelerated Shutter Wipe)
-     * - 物理遮罩以贝塞尔曲线向右扫过全屏 (-100% -> 0%)
-     * - 在视口 100% 被遮罩覆盖时执行状态切换（彻底杜绝瞬间闪屏刺眼）
-     * - 遮罩继续向右扫出视口 (0% -> 100%)，露出崭新配色
+     * 极客半透明磨砂玻璃转场 (Hardware-Accelerated Frosted Glass Translucent Transition)
+     * - 采用半透明透光渐变 + 实时背景高斯模糊（backdrop-filter），底层文字/卡片全程清晰透射
+     * - 配合柔和的激光边缘与光晕（box-shadow），彻底告别实体遮挡板
+     * - 在视口中线平滑切换配色，结合 CSS 变量平滑过渡体系，呈现电影级流光变色
      */
     performWipe(callback: () => void, targetMaskColor?: string) {
       if (!this.contrastMask) {
@@ -643,15 +658,24 @@ const themes = [
       if (this.isTransitioning) return
       this.isTransitioning = true
 
+      // 根据目标配色动态生成半透明透光渐变体系
       if (targetMaskColor) {
-        this.contrastMask.style.backgroundColor = targetMaskColor
+        const rgb = this.hexToRgb(targetMaskColor)
+        if (rgb) {
+          const { r, g, b } = rgb
+          this.contrastMask.style.background = `linear-gradient(90deg, rgba(${r}, ${g}, ${b}, 0.02) 0%, rgba(${r}, ${g}, ${b}, 0.12) 35%, rgba(${r}, ${g}, ${b}, 0.24) 75%, rgba(${r}, ${g}, ${b}, 0.38) 100%)`
+          this.contrastMask.style.boxShadow = `0 0 35px rgba(${r}, ${g}, ${b}, 0.45), -15px 0 25px rgba(255, 255, 255, 0.15) inset`
+          this.contrastMask.style.borderRight = `1.5px solid rgba(${r}, ${g}, ${b}, 0.85)`
+        }
       }
 
       const tl = gsap.timeline({
         onComplete: () => {
           gsap.set(this.contrastMask, { x: '-100%' })
           this.contrastMask.style.transform = ''
-          this.contrastMask.style.backgroundColor = ''
+          this.contrastMask.style.background = ''
+          this.contrastMask.style.boxShadow = ''
+          this.contrastMask.style.borderRight = ''
           this.isTransitioning = false
         },
       })
@@ -661,7 +685,7 @@ const themes = [
         { x: '-100%' },
         {
           x: '0%',
-          duration: 0.38,
+          duration: 0.42,
           ease: 'power3.inOut',
           onComplete: () => {
             callback()
@@ -673,7 +697,7 @@ const themes = [
         this.contrastMask,
         {
           x: '100%',
-          duration: 0.38,
+          duration: 0.42,
           ease: 'power3.inOut',
         }
       )
