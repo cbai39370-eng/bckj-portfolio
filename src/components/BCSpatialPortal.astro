@@ -152,12 +152,12 @@ import spatialData from '../data/spatial-chambers.json'
             <div class="bc-card-corner bc-card-corner--br"></div>
 
             <!-- 建议类型切换标签 -->
-            <span class="bc-space-suggest__tag">[ 侦探参谋共研立案局 // CO-DEV BUREAU ]</span>
-            <span class="bc-space-suggest__tag">[ 侦探参谋共研立案局 // CO-DEV BUREAU ]</span>
+            <div class="bc-space-suggest__types">
+              <label class="bc-space-suggest__tag-opt">
                 <input type="radio" name="suggest_type" value="logic_critique" checked />
                 <span>[ 剧本逻辑挑刺 ]</span>
               </label>
-            <span class="bc-space-suggest__tag">[ 侦探参谋共研立案局 // CO-DEV BUREAU ]</span>
+              <label class="bc-space-suggest__tag-opt">
                 <input type="radio" name="suggest_type" value="trick_idea" />
                 <span>[ 密室诡计脑洞 ]</span>
               </label>
@@ -612,6 +612,7 @@ import spatialData from '../data/spatial-chambers.json'
     constructor() {
       this.container = document.querySelector('.js-spatial-portal') as HTMLElement;
       if (!this.container) return;
+      (window as any).bcSpatialPortal = this;
 
       this.webbyPortal = this.container.querySelector('.bc-webby-portal') as HTMLElement;
       this.auraEl = this.container.querySelector('.aura') as HTMLElement;
@@ -1063,9 +1064,28 @@ import spatialData from '../data/spatial-chambers.json'
       this.container.querySelectorAll('.bc-spatial-portal__view').forEach((view) => {
         view.classList.add('u-hidden');
       });
-      const activeView = this.container.querySelector(`.js-view-${spaceId}`);
+      const activeView = this.container.querySelector(`.js-view-${spaceId}`) as HTMLElement;
       if (activeView) {
         activeView.classList.remove('u-hidden');
+
+        // 状态归位：恢复全选分类、清除任何历史隐藏态、重置为当期精选主轨道
+        activeView.querySelectorAll('.js-filterable-card').forEach((c: any) => {
+          c.classList.remove('u-filtered-out');
+          c.style.opacity = '1';
+          c.style.transform = '';
+        });
+        activeView.querySelectorAll('.js-cat-pill').forEach((p: any) => {
+          if (p.dataset.category === 'all') p.classList.add('is-active');
+          else p.classList.remove('is-active');
+        });
+        const currTrack = activeView.querySelector('.js-track-current');
+        const archTrack = activeView.querySelector('.js-track-archive');
+        if (currTrack) currTrack.classList.remove('u-hidden');
+        if (archTrack) archTrack.classList.add('u-hidden');
+        activeView.querySelectorAll('.js-track-toggle').forEach((btn: any) => {
+          if (btn.dataset.track === 'current') btn.classList.add('is-active');
+          else btn.classList.remove('is-active');
+        });
       }
 
       const titleMap: Record<string, string> = {
@@ -1110,6 +1130,25 @@ import spatialData from '../data/spatial-chambers.json'
           if (this.chamber) {
             this.chamber.style.pointerEvents = 'auto';
             this.chamber.style.opacity = '1';
+            this.chamber.scrollTop = 0;
+          }
+          if (activeView) {
+            const hero = activeView.querySelector(
+              '.bc-space-dev__hero, .bc-space-suggest__header, .bc-space-radar__header, .bc-space-gems__header, .bc-space-toolbox__header'
+            ) as HTMLElement;
+            if (hero) {
+              hero.style.opacity = '1';
+              hero.style.transform = 'none';
+            }
+            const cards = activeView.querySelectorAll(
+              '.bc-space-dev__card, .bc-space-suggest__form, .bc-space-radar__item, .bc-space-gems__card, .bc-space-toolbox__table, .bc-space-toolbox__row'
+            );
+            cards.forEach((c: any) => {
+              if (!c.classList.contains('u-filtered-out')) {
+                c.style.opacity = '1';
+                c.style.transform = 'none';
+              }
+            });
           }
         }
       });
@@ -1256,8 +1295,10 @@ import spatialData from '../data/spatial-chambers.json'
           const hero = activeView.querySelector(
             '.bc-space-dev__hero, .bc-space-suggest__header, .bc-space-radar__header, .bc-space-gems__header, .bc-space-toolbox__header'
           );
-          const cards = activeView.querySelectorAll(
-            '.bc-space-dev__card, .bc-space-suggest__form, .bc-space-radar__item, .bc-space-gems__card, .bc-space-toolbox__table, .bc-space-toolbox__row'
+          const activeTrack = activeView.querySelector('.js-track-archive:not(.u-hidden)') ? '.js-track-archive' : '.js-track-current';
+          const container = activeView.querySelector(activeTrack) || activeView;
+          const cards = container.querySelectorAll(
+            '.bc-space-dev__card, .bc-space-suggest__form, .bc-space-radar__item, .bc-space-gems__card:not(.u-filtered-out), .bc-space-toolbox__table, .bc-space-toolbox__row:not(.u-filtered-out)'
           );
 
           if (hero) {
@@ -1267,7 +1308,7 @@ import spatialData from '../data/spatial-chambers.json'
             gsap.fromTo(
               cards,
               { y: 24, opacity: 0 },
-              { y: 0, opacity: 1, duration: 0.45, stagger: 0.05, ease: 'power3.out' }
+              { y: 0, opacity: 1, duration: 0.45, stagger: 0.04, ease: 'power3.out' }
             );
           }
         }

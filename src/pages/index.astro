@@ -292,11 +292,19 @@ import '../styles/global.scss'
           observer.observe(el)
         })
 
-        // Site loaded event
-        if (document.readyState === 'complete') {
+        // Site loaded event: do NOT block on large audio or slow network resources
+        const fireSiteLoaded = () => {
+          if ((window as any).__bcSiteLoadedFired) return
+          ;(window as any).__bcSiteLoadedFired = true
           this.siteLoaded()
+        }
+
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+          setTimeout(fireSiteLoaded, 50)
         } else {
-          window.addEventListener('load', this.siteLoaded, { once: true })
+          document.addEventListener('DOMContentLoaded', fireSiteLoaded, { once: true })
+          window.addEventListener('load', fireSiteLoaded, { once: true })
+          setTimeout(fireSiteLoaded, 800)
         }
 
         this.onScroll()
@@ -482,6 +490,7 @@ import '../styles/global.scss'
 
         tl.call(
           () => {
+            ;(window as any).hasIntroPlayed = true
             document.dispatchEvent(new CustomEvent('intro'))
           },
           null,
