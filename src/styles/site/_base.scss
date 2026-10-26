@@ -67,9 +67,17 @@ body,
               color 0.35s ease;
 }
 
-/* 现代化浏览器原生 View Transitions 电影级柔光融合（GPU 加速平滑淡入淡出） */
+/* 现代化原生 View Transitions 圆形水波纹扩散动效体系 (Circular Ripple Theme Transition) */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.45s;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
 }
