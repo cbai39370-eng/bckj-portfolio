@@ -67,7 +67,7 @@ body,
               color 0.35s ease;
 }
 
-/* 现代化原生 View Transitions 圆形水波纹扩散动效体系 (Circular Ripple Theme Transition) */
+/* 现代化原生 View Transitions 水波纹涟漪扩散体系 (Organic Water Ripple Theme Transition) */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -80,4 +80,7 @@ body,
 
 ::view-transition-new(root) {
   z-index: 9999;
+  /* 水波前缘波峰发光 (Wave Crest Water Glow) */
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.95))
+          drop-shadow(0 0 45px rgba(0, 210, 240, 0.5));
 }

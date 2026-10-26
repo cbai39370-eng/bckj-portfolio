@@ -625,9 +625,68 @@ const themes = [
     }
 
     /**
-     * 现代原生水波纹圆形扩散动效 (View Transitions API Circular Ripple Reveal)
-     * - 以用户点击位置 (x, y) 为圆心，像透明水波般向全屏圆形扩散展开新配色
-     * - 彻底告别方形移动实体遮罩，呈现丝滑纯净的现代化水波扩散
+     * 激发真实多重同心水波涟漪光环 (Concentric Water Ripple Echo Rings)
+     * - 伴随点击点产生主波峰光环、第二重回声环、第三重微澜水晕
+     */
+    spawnWaterRippleRings(x: number, y: number, maxRadius: number, themeColor: string) {
+      if (typeof document === 'undefined') return
+
+      const layer = document.createElement('div')
+      layer.className = 'bc-water-ripple-dock'
+      layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9999999;overflow:hidden;'
+
+      // 3 重同心扩散水波涟漪（主波峰环、回声涟漪、外圈微澜）
+      const rippleConfigs = [
+        { scale: 2.2, duration: 1050, delay: 0, border: '2.5px solid rgba(255,255,255,0.95)', shadow: `0 0 35px ${themeColor}, inset 0 0 15px rgba(255,255,255,0.6)` },
+        { scale: 1.8, duration: 950, delay: 130, border: `2px solid ${themeColor}`, shadow: `0 0 22px ${themeColor}` },
+        { scale: 1.4, duration: 850, delay: 260, border: '1.5px solid rgba(255,255,255,0.5)', shadow: `0 0 15px ${themeColor}` },
+      ]
+
+      rippleConfigs.forEach((cfg) => {
+        const ring = document.createElement('div')
+        ring.style.cssText = `position:absolute;left:${x}px;top:${y}px;border-radius:50%;transform:translate(-50%,-50%);width:0;height:0;pointer-events:none;border:${cfg.border};box-shadow:${cfg.shadow};`
+        layer.appendChild(ring)
+
+        ring.animate(
+          [
+            { width: '0px', height: '0px', opacity: 1 },
+            { width: `${maxRadius * cfg.scale}px`, height: `${maxRadius * cfg.scale}px`, opacity: 0 },
+          ],
+          {
+            duration: cfg.duration,
+            delay: cfg.delay,
+            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            fill: 'forwards',
+          }
+        )
+      })
+
+      // 水滴落水微光晕
+      const splash = document.createElement('div')
+      splash.style.cssText = `position:absolute;left:${x}px;top:${y}px;width:12px;height:12px;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle, #fff 0%, ${themeColor} 70%, transparent 100%);pointer-events:none;`
+      layer.appendChild(splash)
+      splash.animate(
+        [
+          { transform: 'translate(-50%,-50%) scale(0.5)', opacity: 1 },
+          { transform: 'translate(-50%,-50%) scale(5)', opacity: 0 },
+        ],
+        {
+          duration: 400,
+          easing: 'ease-out',
+          fill: 'forwards',
+        }
+      )
+
+      document.body.appendChild(layer)
+      setTimeout(() => {
+        layer.remove()
+      }, 1400)
+    }
+
+    /**
+     * 现代水波纹涟漪扩散动效 (View Transitions API Organic Ripple Reveal)
+     * - 时长从 520ms 延展至 1000ms，配合 cubic-bezier(0.4, 0, 0.2, 1) 流体舒缓曲线，告别太快闪过
+     * - 伴随三重同心水波涟漪环（主波纹、回声环、水色微澜），呈现极具水韵的逼真涟漪感
      */
     async executeThemeTransition(
       triggerOrigin?: MouseEvent | HTMLElement | { clientX: number; clientY: number } | null,
@@ -662,7 +721,6 @@ const themes = [
         !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
       if (!hasViewTransition) {
-        // 优雅降级：直接执行回调，配合 CSS 平滑色彩过渡
         cb()
         return
       }
@@ -675,6 +733,11 @@ const themes = [
         Math.max(y, window.innerHeight - y)
       )
 
+      // 4. 激活多重同心水波涟漪光环
+      const activeTheme = this.getActiveThemeId()
+      const themeColor = (themeColorMap[activeTheme] || themeColorMap['default']).color
+      this.spawnWaterRippleRings(x, y, endRadius, themeColor)
+
       try {
         const transition = (document as any).startViewTransition(() => {
           cb()
@@ -682,7 +745,7 @@ const themes = [
 
         await transition.ready
 
-        // 4. 执行 GPU 硬件加速圆形水波纹展开动效 (Circle Clip-Path)
+        // 5. 执行优雅舒缓的流体波纹扩散 (1000ms 舒缓流体阻尼)
         const anim = document.documentElement.animate(
           {
             clipPath: [
@@ -691,8 +754,8 @@ const themes = [
             ],
           },
           {
-            duration: 520,
-            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+            duration: 1000,
+            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
             pseudoElement: '::view-transition-new(root)',
           }
         )
