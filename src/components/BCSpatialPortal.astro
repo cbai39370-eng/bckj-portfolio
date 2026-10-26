@@ -27,26 +27,26 @@ import spatialData from '../data/spatial-chambers.json'
 
       <div class="bc-transit-header">
         <span class="bc-transit-pulse"></span>
-        <span class="bc-transit-tag">BC // HYPERDRIVE WARP NAVIGATOR</span>
-        <span class="bc-transit-status-badge">LOCKING</span>
+        <span class="bc-transit-tag">BC // 超空间时空跃迁导航仪 · WARP NAVIGATOR</span>
+        <span class="bc-transit-status-badge">时空信标锁定</span>
       </div>
 
       <div class="bc-transit-target-box">
-        <span class="bc-transit-target-label">DESTINATION CHAMBER</span>
+        <span class="bc-transit-target-label">跃迁目标舱室 // DESTINATION</span>
         <div class="bc-transit-title js-transit-target">DIMENSION // 01 · 研发机密舱</div>
       </div>
 
       <div class="bc-transit-metrics">
         <div class="bc-transit-metric">
-          <span class="bc-transit-metric-label">WARP VELOCITY</span>
-          <span class="bc-transit-metric-val js-transit-vel">0.0 LY/S</span>
+          <span class="bc-transit-metric-label">跃迁航速 · VELOCITY</span>
+          <span class="bc-transit-metric-val js-transit-vel">0.0 光年/秒</span>
         </div>
         <div class="bc-transit-metric">
-          <span class="bc-transit-metric-label">SINGULARITY FLUX</span>
+          <span class="bc-transit-metric-label">奇点能流 · FLUX</span>
           <span class="bc-transit-metric-val js-transit-flux">99.8%</span>
         </div>
         <div class="bc-transit-metric">
-          <span class="bc-transit-metric-label">STABILITY</span>
+          <span class="bc-transit-metric-label">时空稳定度 · STABILITY</span>
           <span class="bc-transit-metric-val">1.414 × 10⁸</span>
         </div>
       </div>
@@ -62,7 +62,7 @@ import spatialData from '../data/spatial-chambers.json'
     <!-- 顶栏状态条 -->
     <header class="bc-spatial-portal__header">
       <div class="bc-spatial-portal__header-left">
-        <span class="bc-spatial-portal__badge">BC // SPATIAL CHAMBER</span>
+        <span class="bc-spatial-portal__badge">BC // 时空舱</span>
         <span class="bc-spatial-portal__space-title js-space-indicator">DIMENSION // 01</span>
       </div>
 
@@ -77,11 +77,11 @@ import spatialData from '../data/spatial-chambers.json'
       <section class="bc-spatial-portal__view js-view-dev u-hidden" data-view="dev" data-lenis-prevent>
         <div class="bc-space-dev">
           <div class="bc-space-dev__hero">
-            <span class="bc-space-dev__tag">[ NARRATIVE ROADMAP // 本格推理新作 ]</span>
+            <span class="bc-space-dev__tag">[ 研发机密舱路线图 // NARRATIVE ROADMAP ]</span>
             <h1 class="bc-space-dev__title">2025 独立推理案卷《第七次停钟》</h1>
             <div class="bc-space-dev__status-bar">
               <span class="bc-space-dev__status-dot"></span>
-              <span class="bc-space-dev__status-text">PHASE 04 · 逻辑闭环调优中 (82% COMPLETED)</span>
+              <span class="bc-space-dev__status-text">PHASE 04 · 逻辑闭环栈 (研发进度 82%)</span>
             </div>
           </div>
 
@@ -95,7 +95,7 @@ import spatialData from '../data/spatial-chambers.json'
 
                 <div class="bc-space-dev__card-top">
                   <div class="bc-space-dev__ref">
-                    <span class="bc-space-dev__ref-prefix">CASE REF //</span>
+                    <span class="bc-space-dev__ref-prefix">案卷代号 //</span>
                     <span class="bc-space-dev__ref-code">{c.caseRef}</span>
                   </div>
                   <div class="bc-space-dev__status-wrap">
@@ -125,7 +125,7 @@ import spatialData from '../data/spatial-chambers.json'
 
                 <div class="bc-space-dev__card-foot">
                   <span class="bc-space-dev__barcode">{c.barcode}</span>
-                  <span class="bc-space-dev__explore">INSPECT CASE // 查看推演 ↳</span>
+                  <span class="bc-space-dev__explore">查看案卷推演 ↳</span>
                 </div>
               </article>
             ))}
@@ -137,7 +137,7 @@ import spatialData from '../data/spatial-chambers.json'
       <section class="bc-spatial-portal__view js-view-suggest u-hidden" data-view="suggest" data-lenis-prevent>
         <div class="bc-space-suggest">
           <div class="bc-space-suggest__header">
-            <span class="bc-space-suggest__tag">[ CO-DEV BUREAU // 案卷共研立案局 ]</span>
+            <span class="bc-space-suggest__tag">[ 侦探参谋共研立案局 // CO-DEV BUREAU ]</span>
             <h1 class="bc-space-suggest__title">线索挑刺 · 密室脑洞 · 开发建议投递</h1>
             <p class="bc-space-suggest__desc">
               发现剧本逻辑中的漏洞？有绝妙的不在场证明新脑洞？或者想对 BC 工坊提出开发建议？
@@ -152,12 +152,12 @@ import spatialData from '../data/spatial-chambers.json'
             <div class="bc-card-corner bc-card-corner--br"></div>
 
             <!-- 建议类型切换标签 -->
-            <div class="bc-space-suggest__tags">
-              <label class="bc-space-suggest__tag-opt">
+            <span class="bc-space-suggest__tag">[ 侦探参谋共研立案局 // CO-DEV BUREAU ]</span>
+            <span class="bc-space-suggest__tag">[ 侦探参谋共研立案局 // CO-DEV BUREAU ]</span>
                 <input type="radio" name="suggest_type" value="logic_critique" checked />
                 <span>[ 剧本逻辑挑刺 ]</span>
               </label>
-              <label class="bc-space-suggest__tag-opt">
+            <span class="bc-space-suggest__tag">[ 侦探参谋共研立案局 // CO-DEV BUREAU ]</span>
                 <input type="radio" name="suggest_type" value="trick_idea" />
                 <span>[ 密室诡计脑洞 ]</span>
               </label>
@@ -208,7 +208,7 @@ import spatialData from '../data/spatial-chambers.json'
             <div class="bc-space-suggest__submit-box">
               <button type="submit" class="bc-space-suggest__btn-submit js-suggest-submit">
                 <span class="bc-space-suggest__submit-line"></span>
-                <span class="bc-space-suggest__submit-text">盖章立案归档 // FILE THIS CASE</span>
+                <span class="bc-space-suggest__submit-text">确认盖章并提交立案 ➔</span>
                 <span class="bc-space-suggest__submit-stamp">❖</span>
               </button>
             </div>
@@ -216,7 +216,7 @@ import spatialData from '../data/spatial-chambers.json'
             <!-- 提交成功后盖印动画容器 -->
             <div class="bc-space-suggest__success js-suggest-success u-hidden">
               <div class="bc-space-suggest__seal">
-                <span>CASE FILED</span>
+                <span>案卷已正式封存档案库</span>
                 <span class="bc-space-suggest__seal-id js-success-id">#BC-2026-088</span>
                 <span class="bc-space-suggest__seal-sub">已存入工坊档案库</span>
               </div>
@@ -236,13 +236,13 @@ import spatialData from '../data/spatial-chambers.json'
         <div class="bc-space-radar">
           <div class="bc-space-radar__header">
             <div class="bc-space-radar__head-meta">
-              <span class="bc-space-radar__tag">[ TODAY'S TREND RADAR // 今日热点雷达 ]</span>
-              <span class="bc-radar-quota-badge">LIVE 15 ROLLING BUFFER · 自动迭代</span>
+              <span class="bc-space-radar__tag">[ 今日热点雷达 // TODAY'S TREND RADAR ]</span>
+              <span class="bc-radar-quota-badge">15条前沿情报实时滚动 · 自动迭代</span>
             </div>
             <h1 class="bc-space-radar__title">全球科技 · 剧情推理 · 奇闻观察</h1>
 
             <div class="bc-category-bar">
-              <span class="bc-category-bar__label">RADAR FREQ // 侦测频段:</span>
+              <span class="bc-category-bar__label">侦测频段 // RADAR FREQ:</span>
               <div class="bc-category-pills">
                 {spatialData.radarChamber.categories && spatialData.radarChamber.categories.map((cat, idx) => (
                   <button
@@ -282,7 +282,7 @@ import spatialData from '../data/spatial-chambers.json'
                   <p class="bc-space-radar__summary">{item.summary}</p>
                   <div class="bc-space-radar__foot">
                     <span class="bc-space-radar__tag-spec">{item.specTag}</span>
-                    <span class="bc-space-radar__read">{item.linkText || 'READ INTEL // 展开内参 ↳'}</span>
+                    <span class="bc-space-radar__read">{item.linkText || '展开深度内参 ↳'}</span>
                   </div>
                 </a>
               ) : (
@@ -315,7 +315,7 @@ import spatialData from '../data/spatial-chambers.json'
           <div class="bc-space-gems__header">
             <div class="bc-space-gems__head-meta">
               <span class="bc-space-gems__tag">{spatialData.gemsChamber.tag}</span>
-              <span class="bc-radar-quota-badge">DIGITAL INSPIRATION // 灵感矿脉</span>
+              <span class="bc-radar-quota-badge">全球神仙网站灵感矿脉</span>
             </div>
             <h1 class="bc-space-gems__title">{spatialData.gemsChamber.title}</h1>
 
@@ -323,15 +323,15 @@ import spatialData from '../data/spatial-chambers.json'
               <div class="bc-track-switch">
                 <button type="button" class="bc-track-btn js-track-toggle is-active" data-track="current">
                   <span class="bc-track-pulse">●</span>
-                  <span>当期精选 // ACTIVE ({spatialData.gemsChamber.gems.length})</span>
+                  <span>当期精选 // 20款在席 ({spatialData.gemsChamber.gems.length})</span>
                 </button>
                 <button type="button" class="bc-track-btn js-track-toggle" data-track="archive">
-                  <span>◫ 历史卷宗 // ARCHIVE ({spatialData.gemsChamber.archive ? spatialData.gemsChamber.archive.length : 0})</span>
+                  <span>◫ 历史卷宗 // 往期矿脉 ({spatialData.gemsChamber.archive ? spatialData.gemsChamber.archive.length : 0}款已封存)</span>
                 </button>
               </div>
 
               <div class="bc-category-bar">
-                <span class="bc-category-bar__label">AESTHETICS // 美学谱系:</span>
+                <span class="bc-category-bar__label">美学谱系 // AESTHETICS:</span>
                 <div class="bc-category-pills">
                   {spatialData.gemsChamber.categories && spatialData.gemsChamber.categories.map((cat, idx) => (
                     <button
@@ -395,8 +395,8 @@ import spatialData from '../data/spatial-chambers.json'
                   <div class="bc-card-corner bc-card-corner--br"></div>
 
                   <div class="bc-space-gems__top">
-                    <span class="bc-space-gems__card-badge is-archived">{g.archivedAt || 'ARCHIVE'}</span>
-                    <span class="bc-space-gems__rank">{g.rank || 'HISTORIC'}</span>
+                    <span class="bc-space-gems__card-badge is-archived">{g.archivedAt || '往期封存'}</span>
+                    <span class="bc-space-gems__rank">{g.rank || '往期灵感'}</span>
                   </div>
 
                   <div class="bc-space-gems__title-row">
@@ -407,13 +407,13 @@ import spatialData from '../data/spatial-chambers.json'
                   <p class="bc-space-gems__desc">{g.desc}</p>
 
                   <div class="bc-space-gems__foot">
-                    <span class="bc-space-gems__link">{g.linkText || 'VISIT ARCHIVE ↳'}</span>
+                    <span class="bc-space-gems__link">{g.linkText || '探索往期站点 ↳'}</span>
                   </div>
                 </a>
               ))
             ) : (
               <div class="bc-archive-empty">
-                <span class="bc-archive-empty__stamp">[ ARCHIVE STANDBY // 灵感卷宗就绪 ]</span>
+                <span class="bc-archive-empty__stamp">[ 历史灵感卷宗就绪 // ARCHIVE STANDBY ]</span>
                 <p>超出当期 20 款容量的探索站点将自动沉淀封存于此，目前所有站点均在当期精选列席。</p>
               </div>
             )}
@@ -427,7 +427,7 @@ import spatialData from '../data/spatial-chambers.json'
           <div class="bc-space-toolbox__header">
             <div class="bc-space-toolbox__head-meta">
               <span class="bc-space-toolbox__tag">{spatialData.toolboxChamber.tag}</span>
-              <span class="bc-radar-quota-badge">MONTHLY 30 ARSENAL · 永久沉淀</span>
+              <span class="bc-radar-quota-badge">当期精选30款 · 历史军械永久沉淀</span>
             </div>
             <h1 class="bc-space-toolbox__title">{spatialData.toolboxChamber.title}</h1>
 
@@ -435,15 +435,15 @@ import spatialData from '../data/spatial-chambers.json'
               <div class="bc-track-switch">
                 <button type="button" class="bc-track-btn js-track-toggle is-active" data-track="current">
                   <span class="bc-track-pulse">●</span>
-                  <span>当期精选装备 // ACTIVE ({spatialData.toolboxChamber.tools.length})</span>
+                  <span>当期精选装备 // 30款在席 ({spatialData.toolboxChamber.tools.length})</span>
                 </button>
                 <button type="button" class="bc-track-btn js-track-toggle" data-track="archive">
-                  <span>◫ 历史卷宗军械库 // ARCHIVE ({spatialData.toolboxChamber.archive ? spatialData.toolboxChamber.archive.length : 0})</span>
+                  <span>◫ 历史军械库 // 往期神兵 ({spatialData.toolboxChamber.archive ? spatialData.toolboxChamber.archive.length : 0}款已封存)</span>
                 </button>
               </div>
 
               <div class="bc-category-bar">
-                <span class="bc-category-bar__label">ARSENAL CLASS // 装备谱系:</span>
+                <span class="bc-category-bar__label">装备军械谱 // ARSENAL CLASS:</span>
                 <div class="bc-category-pills">
                   {spatialData.toolboxChamber.categories && spatialData.toolboxChamber.categories.map((cat, idx) => (
                     <button
@@ -515,7 +515,7 @@ import spatialData from '../data/spatial-chambers.json'
                   data-category={t.categoryId || 'all'}
                 >
                   <div class="bc-space-toolbox__tool-name">
-                    <span class="bc-archive-stamp">◫ {t.archivedAt || 'ARCHIVE'}</span>
+                    <span class="bc-archive-stamp">◫ {t.archivedAt || '往期封存'}</span>
                     {t.name}
                     {t.platform && <span class="bc-platform-tag">{t.platform}</span>}
                   </div>
@@ -528,7 +528,7 @@ import spatialData from '../data/spatial-chambers.json'
               ))
             ) : (
               <div class="bc-archive-empty">
-                <span class="bc-archive-empty__stamp">[ ARSENAL ARCHIVE STANDBY // 历史军械库就绪 ]</span>
+                <span class="bc-archive-empty__stamp">[ 历史军械库就绪 // ARSENAL STANDBY ]</span>
                 <p>每月超出 30 款容量的神兵将自动移入此处永久封存，目前全部装备均在当期精选库列席。</p>
               </div>
             )}
@@ -1070,10 +1070,10 @@ import spatialData from '../data/spatial-chambers.json'
 
       const titleMap: Record<string, string> = {
         dev: 'CHAMBER // 01 · 密室案卷研发机密舱',
-        suggest: 'CHAMBER // 02 · 侦探参谋局 (CO-DEV)',
-        radar: 'CHAMBER // 03 · 今日本格热点雷达',
-        gems: 'CHAMBER // 04 · 神仙网站探索',
-        toolbox: 'CHAMBER // 05 · 极客实用工具箱',
+        suggest: 'CHAMBER // 02 · 侦探参谋共研立案局',
+        radar: 'CHAMBER // 03 · 今日前沿科技热点雷达',
+        gems: 'CHAMBER // 04 · 全球神仙网站灵感矿脉',
+        toolbox: 'CHAMBER // 05 · 极客实用影音与开源工具箱',
       };
       const spaceTitle = titleMap[spaceId] || 'DIMENSION // UNKNOWN';
       if (this.spaceIndicator) {
@@ -1193,7 +1193,7 @@ import spatialData from '../data/spatial-chambers.json'
         ease: 'power2.in',
         onUpdate: () => {
           if (this.transitVelEl) {
-            this.transitVelEl.textContent = `${velState.speed.toFixed(1)} LY/S`;
+            this.transitVelEl.textContent = `${velState.speed.toFixed(1)} 光年/秒`;
           }
         }
       }, 0);
@@ -1217,7 +1217,7 @@ import spatialData from '../data/spatial-chambers.json'
         ease: 'power3.out',
         onUpdate: () => {
           if (this.transitVelEl) {
-            this.transitVelEl.textContent = `${velState.speed.toFixed(1)} LY/S`;
+            this.transitVelEl.textContent = `${velState.speed.toFixed(1)} 光年/秒`;
           }
         }
       }, 0.7);

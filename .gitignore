@@ -24,3 +24,7 @@ pnpm-debug.log*
 .idea/
 
 *.zip
+
+# python cache
+__pycache__/
+*.py[cod]
