@@ -126,20 +126,20 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 02:42 UTC",
+        "time": "今日发布 // 03:21 UTC",
         "title": "全球数字阅读普惠：Dolly Parton 想象力图书馆底层工程解构",
-        "summary": "HackerNews 社区热榜头条（得分 410）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #410★ ]",
+        "summary": "HackerNews 社区热榜头条（得分 434）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #434★ ]",
         "linkText": "展开深度内参 ↳",
         "url": "https://imaginationlibrary.com/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 02:42 UTC",
+        "time": "今日发布 // 03:21 UTC",
         "title": "偶然和一个在药店工作的女生聊了聊，震惊于药店的黑心，写了个总结，和大家分享一下",
-        "summary": "来自国内极客社区的热议思潮（讨论度 52 节点：健康）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 52 条热议 ]",
+        "summary": "来自国内极客社区的热议思潮（讨论度 71 节点：健康）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 71 条热议 ]",
         "linkText": "展开深度内参 ↳",
         "url": "https://www.v2ex.com/t/1251749"
       },
@@ -166,20 +166,20 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 02:42 UTC",
-        "title": "极客硬核逆向：任天堂 3DS 平台移植 F-Zero X 引擎原理解析",
-        "summary": "HackerNews 社区热榜头条（得分 58）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #58★ ]",
+        "time": "今日发布 // 03:21 UTC",
+        "title": "寰宇观察：关于 Removing Next.js Got My Blog to 100 on Every Lighthouse Category 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 34）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #34★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://hypnotize.works/gdx-3ds/postmortem/index.html"
+        "url": "https://korindiehacker.bloffy.blog/en/removing-nextjs-got-my-blog-to-100-on-every-lighthouse-category"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 02:42 UTC",
+        "time": "今日发布 // 03:21 UTC",
         "title": "有件事我搞不明白， V 站为何不升级一下交互和 UI？然后出一个官方的 APP？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 50 节点：V2EX）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 50 条热议 ]",
+        "summary": "来自国内极客社区的热议思潮（讨论度 54 节点：V2EX）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 54 条热议 ]",
         "linkText": "展开深度内参 ↳",
         "url": "https://www.v2ex.com/t/1251696"
       },
@@ -206,22 +206,22 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 02:42 UTC",
-        "title": "Overgrown // 当绿植藤蔓攻占废弃标签页：数字园艺交互实验",
-        "summary": "HackerNews 社区热榜头条（得分 151）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #151★ ]",
+        "time": "今日发布 // 03:21 UTC",
+        "title": "极客硬核逆向：任天堂 3DS 平台移植 F-Zero X 引擎原理解析",
+        "summary": "HackerNews 社区热榜头条（得分 74）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #74★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://charliegerard.dev/blog/overgrown-extension/"
+        "url": "https://hypnotize.works/gdx-3ds/postmortem/index.html"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 02:42 UTC",
-        "title": "有没有发现一个奇怪的现象？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 45 节点：分享发现）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 45 条热议 ]",
+        "time": "今日发布 // 03:21 UTC",
+        "title": "股灾来了就开个银河买纳指或者红利低波 ETF 吧，“万 1 免 5”股票基金免 5 大笑脸开户",
+        "summary": "来自国内极客社区的热议思潮（讨论度 52 节点：推广）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 52 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251636"
+        "url": "https://www.v2ex.com/t/1251738"
       },
       {
         "categoryId": "observatory",
@@ -246,22 +246,22 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 02:42 UTC",
-        "title": "顶会先锋探索：无注意力机制架构(2025)能否颠覆大模型范式？",
-        "summary": "HackerNews 社区热榜头条（得分 30）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #30★ ]",
+        "time": "今日发布 // 03:21 UTC",
+        "title": "Overgrown // 当绿植藤蔓攻占废弃标签页：数字园艺交互实验",
+        "summary": "HackerNews 社区热榜头条（得分 171）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #171★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://arxiv.org/abs/2512.19428"
+        "url": "https://charliegerard.dev/blog/overgrown-extension/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 02:42 UTC",
-        "title": "股灾来了就开个银河买纳指或者红利低波 ETF 吧，“万 1 免 5”股票基金免 5 大笑脸开户",
-        "summary": "来自国内极客社区的热议思潮（讨论度 45 节点：推广）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 45 条热议 ]",
+        "time": "今日发布 // 03:21 UTC",
+        "title": "创业一年了，还活着",
+        "summary": "来自国内极客社区的热议思潮（讨论度 48 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 48 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251738"
+        "url": "https://www.v2ex.com/t/1251768"
       }
     ],
     "categories": [
@@ -921,7 +921,7 @@
       {
         "name": "Rea // AI 智能二进制逆向平台",
         "desc": "结合 AI Agent 架构的现代化二进制程序与移动端 App 行为逆向解构平台。",
-        "badge": "逆向兵刃 · 385.2k★",
+        "badge": "逆向兵刃 · 385.4k★",
         "categoryId": "geek",
         "url": "https://github.com/morluto/rea",
         "launchText": "探查源码 ➔",
