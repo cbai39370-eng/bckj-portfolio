@@ -80,7 +80,4 @@ body,
 
 ::view-transition-new(root) {
   z-index: 9999;
-  /* 水波前缘波峰发光 (Wave Crest Water Glow) */
-  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.95))
-          drop-shadow(0 0 45px rgba(0, 210, 240, 0.5));
 }
