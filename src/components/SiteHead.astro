@@ -486,7 +486,8 @@ const themes = [
           const preview = btn.querySelector('.sb-theme__preview') as HTMLElement | null
           const swatchBg = preview?.style.getPropertyValue('--swatch-bg')?.trim()
           this.closeThemeMenu()
-          this.executeThemeTransition(e, () => { this.applyThemeFamily(themeId) })
+          const targetColor = swatchBg || (themeColorMap[themeId] || themeColorMap['default']).color
+          this.executeThemeTransition(e, () => { this.applyThemeFamily(themeId) }, targetColor)
         })
       })
 
@@ -625,72 +626,249 @@ const themes = [
     }
 
     /**
-     * 激发真实多重同心水波涟漪光环 (Concentric Water Ripple Echo Rings)
-     * - 伴随点击点产生主波峰光环、第二重回声环、第三重微澜水晕
+     * 高拟真物理水面涟漪光影引擎 (Luxury Physical Water Ripple Canvas Engine)
+     * - 12 重连续同心水波列 (Wave Train)，具有真实重力-毛细水波动力学传播特性
+     * - 3D 浮雕光影：波谷折射凹陷暗影 + 透光水色晕体 + 菲涅尔白亮晶莹波峰高光
+     * - 流体表面张力有机微扰 (非死板几何机械圆)，水漾随行微颤
+     * - 晶莹落水飞溅微珠 + 中心水滴回弹微澜
      */
-    spawnWaterRippleRings(x: number, y: number, maxRadius: number, themeColor: string) {
+    triggerPhysicalWaterRipple(
+      cx: number,
+      cy: number,
+      themeColorHex: string = '#00d2f0',
+      maxRadius: number = 1800
+    ) {
       if (typeof document === 'undefined') return
 
-      const layer = document.createElement('div')
-      layer.className = 'bc-water-ripple-dock'
-      layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9999999;overflow:hidden;'
+      let canvas = document.getElementById('bc-water-ripple-canvas') as HTMLCanvasElement | null
+      if (!canvas) {
+        canvas = document.createElement('canvas')
+        canvas.id = 'bc-water-ripple-canvas'
+        canvas.style.cssText =
+          'position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:9999999;'
+        document.body.appendChild(canvas)
+      }
 
-      // 3 重同心扩散水波涟漪（主波峰环、回声涟漪、外圈微澜）
-      const rippleConfigs = [
-        { scale: 2.2, duration: 1050, delay: 0, border: '2.5px solid rgba(255,255,255,0.95)', shadow: `0 0 35px ${themeColor}, inset 0 0 15px rgba(255,255,255,0.6)` },
-        { scale: 1.8, duration: 950, delay: 130, border: `2px solid ${themeColor}`, shadow: `0 0 22px ${themeColor}` },
-        { scale: 1.4, duration: 850, delay: 260, border: '1.5px solid rgba(255,255,255,0.5)', shadow: `0 0 15px ${themeColor}` },
-      ]
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      canvas.width = window.innerWidth * dpr
+      canvas.height = window.innerHeight * dpr
+      const ctx = canvas.getContext('2d')
+      if (!ctx) return
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
 
-      rippleConfigs.forEach((cfg) => {
-        const ring = document.createElement('div')
-        ring.style.cssText = `position:absolute;left:${x}px;top:${y}px;border-radius:50%;transform:translate(-50%,-50%);width:0;height:0;pointer-events:none;border:${cfg.border};box-shadow:${cfg.shadow};`
-        layer.appendChild(ring)
+      const hex = themeColorHex.replace('#', '')
+      const r = parseInt(hex.substring(0, 2), 16) || 0
+      const g = parseInt(hex.substring(2, 4), 16) || 210
+      const b = parseInt(hex.substring(4, 6), 16) || 240
 
-        ring.animate(
-          [
-            { width: '0px', height: '0px', opacity: 1 },
-            { width: `${maxRadius * cfg.scale}px`, height: `${maxRadius * cfg.scale}px`, opacity: 0 },
-          ],
-          {
-            duration: cfg.duration,
-            delay: cfg.delay,
-            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-            fill: 'forwards',
-          }
-        )
-      })
+      const duration = 1800 // 1.8s 完整水波漫延与水面重归平静
+      const startTime = performance.now()
 
-      // 水滴落水微光晕
-      const splash = document.createElement('div')
-      splash.style.cssText = `position:absolute;left:${x}px;top:${y}px;width:12px;height:12px;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle, #fff 0%, ${themeColor} 70%, transparent 100%);pointer-events:none;`
-      layer.appendChild(splash)
-      splash.animate(
-        [
-          { transform: 'translate(-50%,-50%) scale(0.5)', opacity: 1 },
-          { transform: 'translate(-50%,-50%) scale(5)', opacity: 0 },
-        ],
-        {
-          duration: 400,
-          easing: 'ease-out',
-          fill: 'forwards',
+      // 12 重致密物理水波列 (Wave Train)
+      const waveCount = 12
+      const waves: Array<{
+        delay: number
+        baseAmp: number
+        width: number
+        seed: number
+      }> = []
+
+      for (let i = 0; i < waveCount; i++) {
+        waves.push({
+          delay: i === 0 ? 0 : 35 + i * 65,
+          baseAmp: i === 0 ? 1.0 : i === 1 ? 0.95 : i === 2 ? 0.90 : Math.max(0.42, 0.86 - i * 0.038),
+          width: Math.max(16, 28 - i * 0.8),
+          seed: i * 2.31 + 0.8,
+        })
+      }
+
+      // 入水飞溅的晶莹微光珠 (40 颗)
+      const particles: Array<{
+        x: number
+        y: number
+        vx: number
+        vy: number
+        size: number
+        life: number
+        decay: number
+      }> = []
+
+      for (let i = 0; i < 40; i++) {
+        const ang = Math.random() * Math.PI * 2
+        const spd = 0.8 + Math.random() * 3.0
+        particles.push({
+          x: cx,
+          y: cy,
+          vx: Math.cos(ang) * spd,
+          vy: Math.sin(ang) * spd,
+          size: 1.5 + Math.random() * 2.5,
+          life: 1.0,
+          decay: 0.0011 + Math.random() * 0.0013,
+        })
+      }
+
+      const drawWavyCircle = (
+        radius: number,
+        seed: number,
+        strokeStyle: string,
+        lineWidth: number,
+        glowColor: string | null = null,
+        glowBlur: number = 0
+      ) => {
+        if (radius <= 0.5) return
+        const steps = Math.min(120, Math.max(40, Math.floor(radius * 0.12)))
+        const angleStep = (Math.PI * 2) / steps
+        const amp = Math.min(6, Math.max(1.8, radius * 0.0055))
+
+        ctx.beginPath()
+        for (let i = 0; i <= steps; i++) {
+          const theta = i * angleStep
+          const perturb =
+            Math.sin(theta * 6 + seed) * 0.55 +
+            Math.cos(theta * 10 - seed * 0.8) * 0.3 +
+            Math.sin(theta * 14 + seed * 1.5) * 0.15
+
+          const rad = radius + perturb * amp
+          const px = cx + Math.cos(theta) * rad
+          const py = cy + Math.sin(theta) * rad
+
+          if (i === 0) ctx.moveTo(px, py)
+          else ctx.lineTo(px, py)
         }
-      )
+        ctx.closePath()
 
-      document.body.appendChild(layer)
-      setTimeout(() => {
-        layer.remove()
-      }, 1400)
+        ctx.strokeStyle = strokeStyle
+        ctx.lineWidth = lineWidth
+        if (glowColor && glowBlur > 0) {
+          ctx.shadowColor = glowColor
+          ctx.shadowBlur = glowBlur
+        } else {
+          ctx.shadowBlur = 0
+        }
+        ctx.stroke()
+        ctx.shadowBlur = 0
+      }
+
+      const render = () => {
+        const now = performance.now()
+        const elapsed = now - startTime
+        const globalProgress = Math.min(elapsed / duration, 1.0)
+
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+
+        if (globalProgress >= 1.0) {
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+          return
+        }
+
+        // 全局淡出：前 75% 饱满清亮，后 25% 舒缓隐退
+        const globalDecay =
+          globalProgress < 0.75
+            ? 1.0
+            : 1.0 - Math.pow((globalProgress - 0.75) / 0.25, 1.4)
+
+        // 逐波绘制连续水波
+        waves.forEach((w) => {
+          const wElapsed = elapsed - w.delay
+          if (wElapsed <= 0) return
+
+          // 物理水波匀速推荡扩散：1650ms 漫延至全屏
+          const travelProgress = Math.min(wElapsed / 1650, 1.0)
+          const easedRadius = Math.pow(travelProgress, 0.9) * maxRadius
+
+          if (easedRadius <= 2) return
+
+          const edgeRatio = easedRadius / maxRadius
+          const distanceDamp = edgeRatio < 0.8 ? 1.0 : (1.0 - (edgeRatio - 0.8) / 0.2)
+          const currentAmp = w.baseAmp * globalDecay * distanceDamp
+          if (currentAmp <= 0.015) return
+
+          // 1. 3D 波谷折射暗影 (深邃凹陷立体感)
+          const troughRadius = Math.max(1, easedRadius - 6)
+          drawWavyCircle(
+            troughRadius,
+            w.seed + 0.6,
+            `rgba(0, 0, 0, ${currentAmp * 0.45})`,
+            Math.max(3, w.width * 0.45)
+          )
+
+          // 2. 水色透光晕体 (主题色水光)
+          drawWavyCircle(
+            easedRadius,
+            w.seed,
+            `rgba(${r}, ${g}, ${b}, ${currentAmp * 0.85})`,
+            w.width,
+            `rgba(${r}, ${g}, ${b}, ${currentAmp * 0.95})`,
+            Math.min(22, w.width * 0.85)
+          )
+
+          // 3. 菲涅尔白光镜面波峰 (晶莹白浪线条)
+          const specAlpha = currentAmp * 0.96
+          drawWavyCircle(
+            easedRadius + 1.2,
+            w.seed,
+            `rgba(255, 255, 255, ${specAlpha})`,
+            Math.max(2, w.width * 0.16)
+          )
+          drawWavyCircle(
+            easedRadius - 1.2,
+            w.seed,
+            `rgba(255, 255, 255, ${specAlpha * 0.55})`,
+            Math.max(1.4, w.width * 0.1)
+          )
+        })
+
+        // 水滴飞溅粒子
+        particles.forEach((p) => {
+          p.x += p.vx
+          p.y += p.vy
+          p.vx *= 0.97
+          p.vy *= 0.97
+          p.life -= p.decay * elapsed
+
+          if (p.life > 0.02) {
+            const pAlpha = p.life * globalDecay
+            ctx.beginPath()
+            ctx.arc(p.x, p.y, p.size * pAlpha, 0, Math.PI * 2)
+            ctx.fillStyle = `rgba(255, 255, 255, ${pAlpha * 0.95})`
+            ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.9)`
+            ctx.shadowBlur = 8
+            ctx.fill()
+            ctx.shadowBlur = 0
+          }
+        })
+
+        // 中心水滴回弹微澜
+        const reboundStart = 140
+        if (elapsed > reboundStart && elapsed < reboundStart + 700) {
+          const rebProg = (elapsed - reboundStart) / 700
+          const rebRadius = rebProg * 115
+          const rebAlpha = (1.0 - rebProg) * 0.85 * globalDecay
+          ctx.beginPath()
+          ctx.arc(cx, cy, rebRadius, 0, Math.PI * 2)
+          ctx.strokeStyle = `rgba(255, 255, 255, ${rebAlpha})`
+          ctx.lineWidth = 2.5 * (1.0 - rebProg)
+          ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.9)`
+          ctx.shadowBlur = 12
+          ctx.stroke()
+          ctx.shadowBlur = 0
+        }
+
+        requestAnimationFrame(render)
+      }
+
+      requestAnimationFrame(render)
     }
 
     /**
      * 现代水波纹涟漪扩散动效 (View Transitions API Organic Ripple Reveal)
-     * - 时长从 520ms 延展至 1000ms，配合 cubic-bezier(0.4, 0, 0.2, 1) 流体舒缓曲线，告别太快闪过
-     * - 伴随三重同心水波涟漪环（主波纹、回声环、水色微澜），呈现极具水韵的逼真涟漪感
+     * - 与物理水面涟漪光影引擎协同，1350ms 流体水幕推涌换色
+     * - 新旧主题交融之际，12 重立体水波伴随光影荡漾全屏，呈现身临其境的水韵
      */
     async executeThemeTransition(
       triggerOrigin?: MouseEvent | HTMLElement | { clientX: number; clientY: number } | null,
-      callback?: () => void
+      callback?: () => void,
+      targetColor?: string
     ) {
       const cb = callback || (() => {})
 
@@ -731,12 +909,12 @@ const themes = [
       const endRadius = Math.hypot(
         Math.max(x, window.innerWidth - x),
         Math.max(y, window.innerHeight - y)
-      )
+      ) + 200
 
-      // 4. 激活多重同心水波涟漪光环
+      // 4. 激活高拟真物理水面涟漪光影引擎
       const activeTheme = this.getActiveThemeId()
-      const themeColor = (themeColorMap[activeTheme] || themeColorMap['default']).color
-      this.spawnWaterRippleRings(x, y, endRadius, themeColor)
+      const rippleColor = targetColor || (themeColorMap[activeTheme] || themeColorMap['default']).color
+      this.triggerPhysicalWaterRipple(x, y, rippleColor, endRadius)
 
       try {
         const transition = (document as any).startViewTransition(() => {
@@ -745,7 +923,7 @@ const themes = [
 
         await transition.ready
 
-        // 5. 执行优雅舒缓的流体波纹扩散 (1000ms 舒缓流体阻尼)
+        // 5. 执行优雅自然的流体水幕推涌换色 (1350ms 流体阻尼，与水波峰同步漫延)
         const anim = document.documentElement.animate(
           {
             clipPath: [
@@ -754,8 +932,8 @@ const themes = [
             ],
           },
           {
-            duration: 1000,
-            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            duration: 1350,
+            easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
             pseudoElement: '::view-transition-new(root)',
           }
         )
@@ -773,7 +951,7 @@ const themes = [
     }
 
     performWipe(callback: () => void, targetMaskColor?: string) {
-      this.executeThemeTransition(this.contrastButton, callback)
+      this.executeThemeTransition(this.contrastButton, callback, targetMaskColor)
     }
 
     triggerWipe(swapCallback?: () => void) {
@@ -796,6 +974,8 @@ const themes = [
     toggleContrast(e?: MouseEvent) {
       const isContrasted = document.documentElement.classList.contains('theme-contrasted')
       const nextContrasted = !isContrasted
+      const activeTheme = this.getActiveThemeId()
+      const contrastColor = (themeColorMap[activeTheme] || themeColorMap['default']).color
 
       this.executeThemeTransition(e || this.contrastButton, () => {
         if (nextContrasted) {
@@ -808,7 +988,7 @@ const themes = [
           'contrastchange',
           nextContrasted ? 'contrasted' : 'default'
         )
-      })
+      }, contrastColor)
     }
 
     /**
