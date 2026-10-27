@@ -116,32 +116,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 08:30 UTC",
-        "title": "多模态推演能否构建真正的“物理闭环密室”？",
-        "summary": "实测最新前沿大模型在多重伪解答架构中的表现：虽然能瞬间生成海量障眼法，但在微观物理材质力学与时间线交叉口供的精确剪裁上，人类本格心机依然是不可替代的胜负手。",
-        "specTag": "[ 深度内参: 密室闭环逻辑 ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "Sebastian Raschka's from-scratch video course on building reasoning models 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 602）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #602★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://bckj.site"
+        "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 03:21 UTC",
-        "title": "全球数字阅读普惠：Dolly Parton 想象力图书馆底层工程解构",
-        "summary": "HackerNews 社区热榜头条（得分 434）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #434★ ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "寰宇观察：关于 Three new discoveries in mathematics, computer science, and physics 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 597）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #597★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://imaginationlibrary.com/"
+        "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 03:21 UTC",
-        "title": "偶然和一个在药店工作的女生聊了聊，震惊于药店的黑心，写了个总结，和大家分享一下",
-        "summary": "来自国内极客社区的热议思潮（讨论度 71 节点：健康）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 71 条热议 ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "深夜求助，物业只提前 1 小时通知停电，导致我家里电脑坏了",
+        "summary": "来自国内极客社区的热议思潮（讨论度 101 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 101 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251749"
+        "url": "https://www.v2ex.com/t/1252074"
       },
       {
         "categoryId": "observatory",
@@ -156,32 +156,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 07:15 UTC",
-        "title": "推理模型时代：从盲目补全到本格长链条自我证伪",
-        "summary": "深度剖析 DeepSeek-R1 与 o1 类长思考模型的拓扑结构：大模型首次具备了推翻自身第一假设并回溯验证的能力，如同侦探在案发现场推演多条死胡同后的绝地反击。",
-        "specTag": "[ 技术突破: 思考模型自我回溯 ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses) 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 95）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #95★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://news.ycombinator.com"
+        "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 03:21 UTC",
-        "title": "寰宇观察：关于 Removing Next.js Got My Blog to 100 on Every Lighthouse Category 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 34）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #34★ ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "寰宇观察：关于 The Exponential Time Hypothesis Is False [pdf] 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 404）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #404★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://korindiehacker.bloffy.blog/en/removing-nextjs-got-my-blog-to-100-on-every-lighthouse-category"
+        "url": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 03:21 UTC",
-        "title": "有件事我搞不明白， V 站为何不升级一下交互和 UI？然后出一个官方的 APP？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 54 节点：V2EX）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 54 条热议 ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "媳妇上个月辞职出来创业了",
+        "summary": "来自国内极客社区的热议思潮（讨论度 100 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 100 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251696"
+        "url": "https://www.v2ex.com/t/1251868"
       },
       {
         "categoryId": "observatory",
@@ -196,32 +196,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 06:40 UTC",
-        "title": "Agentic Coding 范式转移：写代码已演变为系统架构博弈",
-        "summary": "当 AI 助手能自主分析数十万行跨模块依赖并执行精准重构，程序员的核心竞争力正在从语法敲击彻底迁徙为逻辑裁决与本格审美鉴赏。",
-        "specTag": "[ 范式转移: 智能体系统裁决 ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "AI vibe coding 的进展，不知道程序员还能存活多久？",
+        "summary": "来自国内极客社区的热议思潮（讨论度 72 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 72 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://github.com/trending"
+        "url": "https://www.v2ex.com/t/1251976"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 03:21 UTC",
-        "title": "极客硬核逆向：任天堂 3DS 平台移植 F-Zero X 引擎原理解析",
-        "summary": "HackerNews 社区热榜头条（得分 74）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #74★ ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "寰宇观察：关于 16-bit Windows (Windows 1.x, 2.x, 3.0, 3.1, etc.) on 64-bit Windows 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 36）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #36★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://hypnotize.works/gdx-3ds/postmortem/index.html"
+        "url": "https://github.com/otya128/winevdm"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 03:21 UTC",
-        "title": "股灾来了就开个银河买纳指或者红利低波 ETF 吧，“万 1 免 5”股票基金免 5 大笑脸开户",
-        "summary": "来自国内极客社区的热议思潮（讨论度 52 节点：推广）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 52 条热议 ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "你们是如何和岳父岳母相处的",
+        "summary": "来自国内极客社区的热议思潮（讨论度 90 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 90 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251738"
+        "url": "https://www.v2ex.com/t/1251970"
       },
       {
         "categoryId": "observatory",
@@ -236,32 +236,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "TODAY // 05:20 UTC",
-        "title": "本地端侧算力突围：纯离线小参数模型赋能单机推理游戏",
-        "summary": "基于 WebGPU 与 ONNX 架构的 1.5B/3B 参数端侧模型实测，无需连接云端即可实现亚秒级动态 NPC 心理博弈，彻底斩断隐私泄露与高昂服务器账单。",
-        "specTag": "[ 端侧推理: WEBGPU ]",
-        "linkText": "READ INTEL // 展开内参 ↳",
-        "url": "https://huggingface.co"
+        "time": "今日发布 // 08:30 UTC",
+        "title": "多模态推演能否构建真正的“物理闭环密室”？",
+        "summary": "实测最新前沿大模型在多重伪解答架构中的表现：虽然能瞬间生成海量障眼法，但在微观物理材质力学与时间线交叉口供的精确剪裁上，人类本格心机依然是不可替代的胜负手。",
+        "specTag": "[ 深度内参: 密室闭环逻辑 ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://bckj.site"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 03:21 UTC",
-        "title": "Overgrown // 当绿植藤蔓攻占废弃标签页：数字园艺交互实验",
-        "summary": "HackerNews 社区热榜头条（得分 171）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #171★ ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "寰宇观察：关于 Oldest GUI application that still runs on Windows 11 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 335）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #335★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://charliegerard.dev/blog/overgrown-extension/"
+        "url": "https://blog.enlyth.com/posts/oldest-windows-gui-app-win-11/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 03:21 UTC",
-        "title": "创业一年了，还活着",
-        "summary": "来自国内极客社区的热议思潮（讨论度 48 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 48 条热议 ]",
+        "time": "今日发布 // 03:49 UTC",
+        "title": "坠机日，大妈和瓦工 3 台机器都阵亡了",
+        "summary": "来自国内极客社区的热议思潮（讨论度 86 节点：Claude）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 86 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251768"
+        "url": "https://www.v2ex.com/t/1251991"
       }
     ],
     "categories": [
@@ -921,7 +921,7 @@
       {
         "name": "Rea // AI 智能二进制逆向平台",
         "desc": "结合 AI Agent 架构的现代化二进制程序与移动端 App 行为逆向解构平台。",
-        "badge": "逆向兵刃 · 385.4k★",
+        "badge": "逆向兵刃 · 392.5k★",
         "categoryId": "geek",
         "url": "https://github.com/morluto/rea",
         "launchText": "探查源码 ➔",
@@ -930,7 +930,7 @@
       {
         "name": "Spotube // 纯净流媒体音乐客户端",
         "desc": "纯净轻量开源流媒体音乐客户端，利用开放 API 获取无损音频流，桌面与移动双端通吃，内存占用极低。",
-        "badge": "天籁之源 · 50.3k★",
+        "badge": "天籁之源 · 50.4k★",
         "categoryId": "audio",
         "url": "https://github.com/team-spotube/spotube",
         "launchText": "探查源码 ➔",
@@ -957,7 +957,7 @@
       {
         "name": "Awesome-Hacking // 极客开源神兵",
         "desc": "Awesome-Hacking // 极客网络抓包嗅探与逆向架构调试台，深入协议底层。",
-        "badge": "逆向兵刃 · 123.6k★",
+        "badge": "逆向兵刃 · 123.7k★",
         "categoryId": "geek",
         "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
         "launchText": "探查源码 ➔",
