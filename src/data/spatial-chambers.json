@@ -116,32 +116,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "Sebastian Raschka's from-scratch video course on building reasoning models 引发 引发",
-        "summary": "HackerNews 社区热榜头条（得分 602）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #602★ ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "Tailscale 零配置虚拟组网技术演进与全球极客内网穿透实践",
+        "summary": "HackerNews 社区热榜头条（得分 226）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #226★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models"
+        "url": "https://tailscale.com/ssh-investigation-update"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "寰宇观察：关于 Three new discoveries in mathematics, computer science, and physics 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 597）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #597★ ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "寰宇观察：关于 Git for US Legislation 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 84）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #84★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
+        "url": "https://lexifina.com/blog/git-for-the-us-code"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "深夜求助，物业只提前 1 小时通知停电，导致我家里电脑坏了",
-        "summary": "来自国内极客社区的热议思潮（讨论度 101 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 101 条热议 ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "情感抉择问题,ab 选择纠结",
+        "summary": "来自国内极客社区的热议思潮（讨论度 100 节点：情感问题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 100 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1252074"
+        "url": "https://www.v2ex.com/t/1252192"
       },
       {
         "categoryId": "observatory",
@@ -156,32 +156,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses) 引发 引发",
-        "summary": "HackerNews 社区热榜头条（得分 95）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #95★ ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "Early progress on accelerating drug development with Claude 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 165）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #165★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/"
+        "url": "https://www.anthropic.com/research/early-progress-drug-development"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "寰宇观察：关于 The Exponential Time Hypothesis Is False [pdf] 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 404）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #404★ ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "寰宇观察：关于 Genie 4 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 790）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #790★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf"
+        "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "媳妇上个月辞职出来创业了",
-        "summary": "来自国内极客社区的热议思潮（讨论度 100 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 100 条热议 ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "今天发现一个沙雕游戏：大到离谱的斧头",
+        "summary": "来自国内极客社区的热议思潮（讨论度 82 节点：分享发现）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 82 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251868"
+        "url": "https://www.v2ex.com/t/1252202"
       },
       {
         "categoryId": "observatory",
@@ -196,32 +196,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "AI vibe coding 的进展，不知道程序员还能存活多久？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 72 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 72 条热议 ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "Jetbrains 在经历 Fleet 和 Air 的失败之后再次发布一款的轻量级编辑器 Thinkrail",
+        "summary": "来自国内极客社区的热议思潮（讨论度 75 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 75 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251976"
+        "url": "https://www.v2ex.com/t/1252393"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "寰宇观察：关于 16-bit Windows (Windows 1.x, 2.x, 3.0, 3.1, etc.) on 64-bit Windows 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 36）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #36★ ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "寰宇观察：关于 Ink droplets in motion snag top prize in Nikon Small World contest 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 117）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #117★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://github.com/otya128/winevdm"
+        "url": "https://arstechnica.com/science/2026/10/meet-the-2026-winner-of-nikons-small-world-photomicrography-contest/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "你们是如何和岳父岳母相处的",
-        "summary": "来自国内极客社区的热议思潮（讨论度 90 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 90 条热议 ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "人生到底应该未雨绸缪，还是车到山前必有路？",
+        "summary": "来自国内极客社区的热议思潮（讨论度 80 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 80 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251970"
+        "url": "https://www.v2ex.com/t/1252239"
       },
       {
         "categoryId": "observatory",
@@ -246,22 +246,22 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "寰宇观察：关于 Oldest GUI application that still runs on Windows 11 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 335）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #335★ ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "寰宇观察：关于 Ghostty 1.4 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 843）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #843★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://blog.enlyth.com/posts/oldest-windows-gui-app-win-11/"
+        "url": "https://ghostty.org/docs/install/release-notes/1-4-0"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 03:49 UTC",
-        "title": "坠机日，大妈和瓦工 3 台机器都阵亡了",
-        "summary": "来自国内极客社区的热议思潮（讨论度 86 节点：Claude）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 86 条热议 ]",
+        "time": "今日发布 // 04:07 UTC",
+        "title": "第一次去健身房需要注意什么",
+        "summary": "来自国内极客社区的热议思潮（讨论度 60 节点：健身）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 60 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251991"
+        "url": "https://www.v2ex.com/t/1252288"
       }
     ],
     "categories": [
@@ -912,7 +912,7 @@
       {
         "name": "Meetily // 离线端侧AI会议助手",
         "desc": "隐私优先的本地端侧 AI 智能语音会议纪要与离线实时语音转录神器，100% 本地运算零云端泄露。",
-        "badge": "离线神兵 · 32.2k★",
+        "badge": "离线神兵 · 32.3k★",
         "categoryId": "local",
         "url": "https://github.com/Zackriya-Solutions/meetily",
         "launchText": "探查源码 ➔",
@@ -921,7 +921,7 @@
       {
         "name": "Rea // AI 智能二进制逆向平台",
         "desc": "结合 AI Agent 架构的现代化二进制程序与移动端 App 行为逆向解构平台。",
-        "badge": "逆向兵刃 · 392.5k★",
+        "badge": "逆向兵刃 · 398.1k★",
         "categoryId": "geek",
         "url": "https://github.com/morluto/rea",
         "launchText": "探查源码 ➔",
@@ -957,7 +957,7 @@
       {
         "name": "Awesome-Hacking // 极客开源神兵",
         "desc": "Awesome-Hacking // 极客网络抓包嗅探与逆向架构调试台，深入协议底层。",
-        "badge": "逆向兵刃 · 123.7k★",
+        "badge": "逆向兵刃 · 123.8k★",
         "categoryId": "geek",
         "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
         "launchText": "探查源码 ➔",
