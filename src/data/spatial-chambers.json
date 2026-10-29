@@ -116,122 +116,42 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "Tailscale 零配置虚拟组网技术演进与全球极客内网穿透实践",
-        "summary": "HackerNews 社区热榜头条（得分 226）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #226★ ]",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "Claude Code burns ~15–20% of your tokens on a 3-word status line 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 89）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #89★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://tailscale.com/ssh-investigation-update"
+        "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "寰宇观察：关于 Git for US Legislation 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 84）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #84★ ]",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "寰宇观察：关于 Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 208）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #208★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://lexifina.com/blog/git-for-the-us-code"
+        "url": "https://divagr.com/blog/qwenputer"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "情感抉择问题,ab 选择纠结",
-        "summary": "来自国内极客社区的热议思潮（讨论度 100 节点：情感问题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 100 条热议 ]",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "码农恶习之：抽烟、喝酒、熬夜、奶茶甜品、脏外卖；在这几种合法的小市民生活习惯中，哪种对血条的伤害最大？",
+        "summary": "来自国内极客社区的热议思潮（讨论度 122 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 122 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1252192"
+        "url": "https://www.v2ex.com/t/1252506"
       },
       {
         "categoryId": "observatory",
         "category": "视界暗线 // OBSERVATORY",
-        "time": "TODAY // 04:15 UTC",
-        "title": "全球密码未解之谜：Cicada 3301 密码学寻宝与暗网谜团",
-        "summary": "回顾互联网历史上最富神秘色彩的本格密码学挑战，融合了物理书本密钥、微积分极坐标与暗网洋葱路由的跨维度脑力激荡。",
-        "specTag": "[ 极客探秘: 蝉3301 ]",
-        "linkText": "READ INTEL // 展开内参 ↳",
-        "url": "https://en.wikipedia.org/wiki/Cicada_3301"
-      },
-      {
-        "categoryId": "ai",
-        "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "Early progress on accelerating drug development with Claude 引发 引发",
-        "summary": "HackerNews 社区热榜头条（得分 165）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #165★ ]",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "网络探秘：GitLab Security Incident: Attempted Exploitation of CVE-2026-97229 背后的隐秘协议与数字线索",
+        "summary": "HackerNews 社区热榜头条（得分 120）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #120★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.anthropic.com/research/early-progress-drug-development"
-      },
-      {
-        "categoryId": "global",
-        "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "寰宇观察：关于 Genie 4 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 790）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #790★ ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
-      },
-      {
-        "categoryId": "domestic",
-        "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "今天发现一个沙雕游戏：大到离谱的斧头",
-        "summary": "来自国内极客社区的热议思潮（讨论度 82 节点：分享发现）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 82 条热议 ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1252202"
-      },
-      {
-        "categoryId": "observatory",
-        "category": "视界暗线 // OBSERVATORY",
-        "time": "TODAY // 05:10 UTC",
-        "title": "被遗忘的冷战短波电台：频段中的“林肯郡偷猎者”机械密码",
-        "summary": "数字电台（Numbers Station）二十年未解之谜复盘：全自动磁带循环播报、一次性密码本（OTP）与不可破译的绝对数学盲区。",
-        "specTag": "[ 密码探秘: 幽灵数字电台 ]",
-        "linkText": "READ INTEL // 展开内参 ↳",
-        "url": "https://en.wikipedia.org/wiki/Numbers_station"
-      },
-      {
-        "categoryId": "ai",
-        "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "Jetbrains 在经历 Fleet 和 Air 的失败之后再次发布一款的轻量级编辑器 Thinkrail",
-        "summary": "来自国内极客社区的热议思潮（讨论度 75 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 75 条热议 ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1252393"
-      },
-      {
-        "categoryId": "global",
-        "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "寰宇观察：关于 Ink droplets in motion snag top prize in Nikon Small World contest 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 117）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #117★ ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://arstechnica.com/science/2026/10/meet-the-2026-winner-of-nikons-small-world-photomicrography-contest/"
-      },
-      {
-        "categoryId": "domestic",
-        "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "人生到底应该未雨绸缪，还是车到山前必有路？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 80 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 80 条热议 ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1252239"
-      },
-      {
-        "categoryId": "observatory",
-        "category": "视界暗线 // OBSERVATORY",
-        "time": "TODAY // 03:00 UTC",
-        "title": "去中心化协议考察：从 Gopher、Usenet 到 Nostr 的极客暗涌",
-        "summary": "当主流互联网被封闭花园与算法投喂彻底隔绝，极客开发者正在用纯粹端到端公私钥对与中继网络重构不受限的自由信息暗网。",
-        "specTag": "[ 去中心化协议: NOSTR ]",
-        "linkText": "READ INTEL // 展开内参 ↳",
-        "url": "https://github.com/nostr-protocol"
+        "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html"
       },
       {
         "categoryId": "ai",
@@ -246,22 +166,102 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "寰宇观察：关于 Ghostty 1.4 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 843）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #843★ ]",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "深度剖析：为什么 is this fingerprinting script creating bioweapons?",
+        "summary": "HackerNews 社区热榜头条（得分 955）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #955★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://ghostty.org/docs/install/release-notes/1-4-0"
+        "url": "https://nullpt.rs/fingerprinting-bioweapons"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:07 UTC",
-        "title": "第一次去健身房需要注意什么",
-        "summary": "来自国内极客社区的热议思潮（讨论度 60 节点：健身）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 60 条热议 ]",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "是我太感情淡漠吗？",
+        "summary": "来自国内极客社区的热议思潮（讨论度 92 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 92 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1252288"
+        "url": "https://www.v2ex.com/t/1252584"
+      },
+      {
+        "categoryId": "observatory",
+        "category": "视界暗线 // OBSERVATORY",
+        "time": "TODAY // 04:15 UTC",
+        "title": "全球密码未解之谜：Cicada 3301 密码学寻宝与暗网谜团",
+        "summary": "回顾互联网历史上最富神秘色彩的本格密码学挑战，融合了物理书本密钥、微积分极坐标与暗网洋葱路由的跨维度脑力激荡。",
+        "specTag": "[ 极客探秘: 蝉3301 ]",
+        "linkText": "READ INTEL // 展开内参 ↳",
+        "url": "https://en.wikipedia.org/wiki/Cicada_3301"
+      },
+      {
+        "categoryId": "ai",
+        "category": "智子推演 // AI & PARADOX",
+        "time": "今日发布 // 07:15 UTC",
+        "title": "推理模型时代：从盲目补全到本格长链条自我证伪",
+        "summary": "深度剖析 DeepSeek-R1 与 o1 类长思考模型的拓扑结构：大模型首次具备了推翻自身第一假设并回溯验证的能力，如同侦探在案发现场推演多条死胡同后的绝地反击。",
+        "specTag": "[ 技术突破: 思考模型自我回溯 ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://news.ycombinator.com"
+      },
+      {
+        "categoryId": "global",
+        "category": "寰宇前沿 // GLOBAL TECH",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "寰宇观察：关于 A Health Update 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 151）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #151★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://furbo.org/2026/10/28/a-health-update/"
+      },
+      {
+        "categoryId": "domestic",
+        "category": "极客生态 // DOMESTIC DEV",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "兄弟们， MacBook Pro 经典 LOGO 发光的重新回归，有点小激动啊",
+        "summary": "来自国内极客社区的热议思潮（讨论度 81 节点：MacBook Pro）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 81 条热议 ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://www.v2ex.com/t/1252716"
+      },
+      {
+        "categoryId": "observatory",
+        "category": "视界暗线 // OBSERVATORY",
+        "time": "TODAY // 05:10 UTC",
+        "title": "被遗忘的冷战短波电台：频段中的“林肯郡偷猎者”机械密码",
+        "summary": "数字电台（Numbers Station）二十年未解之谜复盘：全自动磁带循环播报、一次性密码本（OTP）与不可破译的绝对数学盲区。",
+        "specTag": "[ 密码探秘: 幽灵数字电台 ]",
+        "linkText": "READ INTEL // 展开内参 ↳",
+        "url": "https://en.wikipedia.org/wiki/Numbers_station"
+      },
+      {
+        "categoryId": "ai",
+        "category": "智子推演 // AI & PARADOX",
+        "time": "今日发布 // 06:40 UTC",
+        "title": "Agentic Coding 范式转移：写代码已演变为系统架构博弈",
+        "summary": "当 AI 助手能自主分析数十万行跨模块依赖并执行精准重构，程序员的核心竞争力正在从语法敲击彻底迁徙为逻辑裁决与本格审美鉴赏。",
+        "specTag": "[ 范式转移: 智能体系统裁决 ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://github.com/trending"
+      },
+      {
+        "categoryId": "global",
+        "category": "寰宇前沿 // GLOBAL TECH",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "寰宇观察：关于 The 'else' keyword is probably a literal translation from German (2020) 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 34）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #34★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://github.com/e-n-f/if-then-else/blob/master/if-then-else.md"
+      },
+      {
+        "categoryId": "domestic",
+        "category": "极客生态 // DOMESTIC DEV",
+        "time": "今日发布 // 04:30 UTC",
+        "title": "[满血不降智] 一个真正一目了然的自建 Codex 中转站",
+        "summary": "来自国内极客社区的热议思潮（讨论度 75 节点：推广）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 75 条热议 ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://www.v2ex.com/t/1252521"
       }
     ],
     "categories": [
@@ -298,7 +298,7 @@
     "gems": [
       {
         "url": "https://github.com/GraphiteEditor/Graphite",
-        "badge": "创意开源 · 27.7k★",
+        "badge": "创意开源 · 27.8k★",
         "badgeClass": "is-codepen",
         "rank": "开源力场实验室",
         "title": "Graphite // 创意力场实验室",
@@ -370,7 +370,7 @@
       },
       {
         "url": "https://github.com/processing/p5.js",
-        "badge": "创意开源 · 24.2k★",
+        "badge": "创意开源 · 24.3k★",
         "badgeClass": "is-codepen",
         "rank": "开源力场实验室",
         "title": "p5.js // 创意力场实验室",
@@ -894,7 +894,7 @@
       {
         "name": "洛雪音乐 // 极客开源神兵",
         "desc": "基于 Electron 与 Vue 打造的开源音频流客户端。支持各大平台歌曲搜索、歌词逐字同步与自定义音源解析脚本。",
-        "badge": "天籁之源 · 54.8k★",
+        "badge": "天籁之源 · 54.9k★",
         "categoryId": "audio",
         "url": "https://github.com/lyswhut/lx-music-desktop",
         "launchText": "探查源码 ➔",
@@ -921,7 +921,7 @@
       {
         "name": "Rea // AI 智能二进制逆向平台",
         "desc": "结合 AI Agent 架构的现代化二进制程序与移动端 App 行为逆向解构平台。",
-        "badge": "逆向兵刃 · 398.1k★",
+        "badge": "逆向兵刃 · 403.5k★",
         "categoryId": "geek",
         "url": "https://github.com/morluto/rea",
         "launchText": "探查源码 ➔",
@@ -957,7 +957,7 @@
       {
         "name": "Awesome-Hacking // 极客开源神兵",
         "desc": "Awesome-Hacking // 极客网络抓包嗅探与逆向架构调试台，深入协议底层。",
-        "badge": "逆向兵刃 · 123.8k★",
+        "badge": "逆向兵刃 · 123.9k★",
         "categoryId": "geek",
         "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
         "launchText": "探查源码 ➔",
