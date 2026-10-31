@@ -116,32 +116,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 04:30 UTC",
-        "title": "We ran AI agent swarms in Minecraft and Mindustry 引发 引发",
-        "summary": "HackerNews 社区热榜头条（得分 219）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #219★ ]",
+        "time": "今日发布 // 04:12 UTC",
+        "title": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 827）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #827★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://labs.ycombinator.com/projects/games/index.html"
+        "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:30 UTC",
-        "title": "寰宇观察：关于 We're releasing the weights of Mistral Large 4 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 1270）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #1270★ ]",
+        "time": "今日发布 // 04:12 UTC",
+        "title": "极客首发：To Honor Sir Patrick Stewart, Enjoy the TNG Episode Guessing Game",
+        "summary": "HackerNews 社区热榜头条（得分 115）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #115★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://mistral.ai/news/mistral-large-4-oss/"
+        "url": "https://tng.episodle.com/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:30 UTC",
-        "title": "亲戚来上海找工作想在我家打地铺，老婆不乐意，我妈说我不懂人情世故",
-        "summary": "来自国内极客社区的热议思潮（讨论度 387 节点：上海）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 387 条热议 ]",
+        "time": "今日发布 // 04:12 UTC",
+        "title": "AppleTV 看不了国内的优爱腾，国际版的会员要另开，于是……",
+        "summary": "来自国内极客社区的热议思潮（讨论度 69 节点：Apple）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 69 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1252878"
+        "url": "https://www.v2ex.com/t/1253203"
       },
       {
         "categoryId": "observatory",
@@ -166,22 +166,22 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:30 UTC",
-        "title": "寰宇观察：关于 Cuis: The Modern Smalltalk-80 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 29）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #29★ ]",
+        "time": "今日发布 // 04:12 UTC",
+        "title": "寰宇观察：关于 Cloudflare Turnstile solver library (no headless browser required) 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 126）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #126★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://cuis.st/"
+        "url": "https://github.com/chris124567/cfsolve"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:30 UTC",
-        "title": "你们了解了历史真相后，有没有很难受，感觉几十年的世界观价值观崩溃了，然后很抑郁，心情烦闷，你们都是怎么排解的。感觉自己走不出来了，尤其是国内新闻，多看一眼就心情沉重。\r\n\r\n不是矫情， 39 岁老登的真实感受，求解答",
-        "summary": "来自国内极客社区的热议思潮（讨论度 137 节点：问与答）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 137 条热议 ]",
+        "time": "今日发布 // 04:12 UTC",
+        "title": "人生第一次相亲了",
+        "summary": "来自国内极客社区的热议思潮（讨论度 50 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 50 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1253102"
+        "url": "https://www.v2ex.com/t/1253190"
       },
       {
         "categoryId": "observatory",
@@ -206,22 +206,22 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:30 UTC",
-        "title": "寰宇观察：关于 Astroterm: A Planetarium for Your Terminal 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 33）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #33★ ]",
+        "time": "今日发布 // 04:12 UTC",
+        "title": "寰宇观察：关于 My favourite PowerMac is a Nintendo Wii 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 265）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #265★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://github.com/da-luce/astroterm"
+        "url": "https://virtuallyfun.com/2026/10/29/my-favourite-powermac-is-a-nintendo-wii/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:30 UTC",
-        "title": "Android 全平台纯自研内核 IPTV 播放器，各种格式都可以快速起播",
-        "summary": "来自国内极客社区的热议思潮（讨论度 102 节点：Android）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 102 条热议 ]",
+        "time": "今日发布 // 04:12 UTC",
+        "title": "下个月要被调去带团队了，是否需要给组员买一些 token plan",
+        "summary": "来自国内极客社区的热议思潮（讨论度 44 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 44 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1252867"
+        "url": "https://www.v2ex.com/t/1253155"
       },
       {
         "categoryId": "observatory",
@@ -246,22 +246,22 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:30 UTC",
-        "title": "寰宇观察：关于 I'm so bad at billiards that I ended up in the hyperbolic plane [video] 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 28）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #28★ ]",
+        "time": "今日发布 // 04:12 UTC",
+        "title": "行业观察：Scribd Breached",
+        "summary": "HackerNews 社区热榜头条（得分 66）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #66★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.youtube.com/watch?v=kL9BTbIGxLg"
+        "url": "https://news.ycombinator.com/item?id=50312756"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:30 UTC",
-        "title": "准备卸载红果了",
-        "summary": "来自国内极客社区的热议思潮（讨论度 93 节点：问与答）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 93 条热议 ]",
+        "time": "今日发布 // 04:12 UTC",
+        "title": "第一个完整适配 iPhone Duo 的 V2EX 客户端： V2Echo 终生会员五折优惠延至双十一末",
+        "summary": "来自国内极客社区的热议思潮（讨论度 43 节点：分享创造）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 43 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1252841"
+        "url": "https://www.v2ex.com/t/1253164"
       }
     ],
     "categories": [
@@ -921,7 +921,7 @@
       {
         "name": "Rea // AI 智能二进制逆向平台",
         "desc": "结合 AI Agent 架构的现代化二进制程序与移动端 App 行为逆向解构平台。",
-        "badge": "逆向兵刃 · 408.6k★",
+        "badge": "逆向兵刃 · 412.8k★",
         "categoryId": "geek",
         "url": "https://github.com/morluto/rea",
         "launchText": "探查源码 ➔",
@@ -957,7 +957,7 @@
       {
         "name": "Awesome-Hacking // 极客开源神兵",
         "desc": "Awesome-Hacking // 极客网络抓包嗅探与逆向架构调试台，深入协议底层。",
-        "badge": "逆向兵刃 · 124.0k★",
+        "badge": "逆向兵刃 · 124.1k★",
         "categoryId": "geek",
         "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
         "launchText": "探查源码 ➔",
