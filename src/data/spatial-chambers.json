@@ -116,82 +116,42 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "agent 的代码到底审不审核",
-        "summary": "来自国内极客社区的热议思潮（讨论度 51 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 51 条热议 ]",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "Scaling Git at OpenAI 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 121）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #121★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1253699"
+        "url": "https://openai.com/index/scaling-git-at-openai/"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "寰宇观察：关于 F/OSS Comics #13: BSD Unix, Part 3 – The Beginning of BSD Unix 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 41）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #41★ ]",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "寰宇观察：关于 Astra can read and write weights to improve Qwen 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 2251）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #2251★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://fosscomics.com/posts/13.%20BSD%20Unix%20Part%203%20-%20The%20Beginning%20of%20BSD%20Unix/"
+        "url": "https://rikiyat.github.io/blog/weight-space-programming/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "没有人讨论影之刃零吗？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 119 节点：游戏）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 119 条热议 ]",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "前公司老板找我回去救场，情况比较特殊，想听听各位的建议",
+        "summary": "来自国内极客社区的热议思潮（讨论度 211 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 211 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1253638"
+        "url": "https://www.v2ex.com/t/1253836"
       },
       {
         "categoryId": "observatory",
         "category": "视界暗线 // OBSERVATORY",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "极客首发：HackerBooks – HackerTube, but for books mentioned on HN",
-        "summary": "HackerNews 社区热榜头条（得分 1079）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #1079★ ]",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "极客首发：Hacker Times, a New York Times-inspired version of Hacker News",
+        "summary": "HackerNews 社区热榜头条（得分 129）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #129★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://hackerbooks.org"
-      },
-      {
-        "categoryId": "ai",
-        "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "用 AI 逆向了搜狗输入法， 让搜狗输入法(v16.10)完全断网 / 禁止更新 / 禁止广告 的一键脚本",
-        "summary": "来自国内极客社区的热议思潮（讨论度 47 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 47 条热议 ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1253540"
-      },
-      {
-        "categoryId": "global",
-        "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "寰宇观察：关于 Postgres 19 is late because so many more bugs are being found now 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 168）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #168★ ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html"
-      },
-      {
-        "categoryId": "domestic",
-        "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "你们除了上班 娱乐方式有哪些",
-        "summary": "来自国内极客社区的热议思潮（讨论度 80 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 80 条热议 ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1253690"
-      },
-      {
-        "categoryId": "observatory",
-        "category": "视界暗线 // OBSERVATORY",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "网络探秘：HackerTube: YouTube built from videos recommended by HN 背后的隐秘协议与数字线索",
-        "summary": "HackerNews 社区热榜头条（得分 2385）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #2385★ ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://karpathy.bearblog.dev/hacker-tube/"
+        "url": "https://hackertimes.ca/"
       },
       {
         "categoryId": "ai",
@@ -206,32 +166,32 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "技术思潮：Which TV do you recommend for privacy?",
-        "summary": "HackerNews 社区热榜头条（得分 207）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #207★ ]",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "寰宇观察：关于 DiscImageStudio: burn visible artwork onto CDs, DVDs and Blu-ray discs 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 102）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #102★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://news.ycombinator.com/item?id=50328896"
+        "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "现在的行情真的很冷",
-        "summary": "来自国内极客社区的热议思潮（讨论度 66 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 66 条热议 ]",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "朋友一家定期献血，我看着矿泉水瓶陷入了沉思",
+        "summary": "来自国内极客社区的热议思潮（讨论度 154 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 154 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1253652"
+        "url": "https://www.v2ex.com/t/1253782"
       },
       {
         "categoryId": "observatory",
         "category": "视界暗线 // OBSERVATORY",
         "time": "今日发布 // 04:35 UTC",
-        "title": "网络探秘：Mystery of 60-Second Fluctuations in Power Grids Solved 背后的隐秘协议与数字线索",
-        "summary": "HackerNews 社区热榜头条（得分 41）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #41★ ]",
+        "title": "极客首发：HackerBooks – HackerTube, but for books mentioned on HN",
+        "summary": "HackerNews 社区热榜头条（得分 1079）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #1079★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.fz-juelich.de/en/news/archive/press-release/2026/mystery-of-60-second-fluctuations-in-power-grids-solved"
+        "url": "https://hackerbooks.org"
       },
       {
         "categoryId": "ai",
@@ -246,22 +206,62 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:32 UTC",
-        "title": "寰宇观察：关于 An Italian farmer found some unknown seeds in his attic and planted them 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 240）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #240★ ]",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "极客首发：Subvocal – Talk to your computer without making noise",
+        "summary": "HackerNews 社区热榜头条（得分 619）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #619★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/"
+        "url": "https://news.ycombinator.com/item?id=50340088"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "大家现在每天早餐消费多少钱？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 60 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 60 条热议 ]",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "[中转站推广] 双 11 活动新用户注册送 10 元",
+        "summary": "来自国内极客社区的热议思潮（讨论度 120 节点：推广）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 120 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1253673"
+        "url": "https://www.v2ex.com/t/1253999"
+      },
+      {
+        "categoryId": "observatory",
+        "category": "视界暗线 // OBSERVATORY",
+        "time": "今日发布 // 04:35 UTC",
+        "title": "网络探秘：HackerTube: YouTube built from videos recommended by HN 背后的隐秘协议与数字线索",
+        "summary": "HackerNews 社区热榜头条（得分 2385）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #2385★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://karpathy.bearblog.dev/hacker-tube/"
+      },
+      {
+        "categoryId": "ai",
+        "category": "智子推演 // AI & PARADOX",
+        "time": "今日发布 // 06:40 UTC",
+        "title": "Agentic Coding 范式转移：写代码已演变为系统架构博弈",
+        "summary": "当 AI 助手能自主分析数十万行跨模块依赖并执行精准重构，程序员的核心竞争力正在从语法敲击彻底迁徙为逻辑裁决与本格审美鉴赏。",
+        "specTag": "[ 范式转移: 智能体系统裁决 ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://github.com/trending"
+      },
+      {
+        "categoryId": "global",
+        "category": "寰宇前沿 // GLOBAL TECH",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "寰宇观察：关于 US boy names that became girl names and vice versa 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 336）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #336★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://namedaisy.com/blog/boy-names-that-became-girl-names"
+      },
+      {
+        "categoryId": "domestic",
+        "category": "极客生态 // DOMESTIC DEV",
+        "time": "今日发布 // 05:28 UTC",
+        "title": "Claude 不到 10 分钟搓了个这个，码农真的要玩完了",
+        "summary": "来自国内极客社区的热议思潮（讨论度 90 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 90 条热议 ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://www.v2ex.com/t/1253990"
       }
     ],
     "categories": [
@@ -930,7 +930,7 @@
       {
         "name": "Spotube // 纯净流媒体音乐客户端",
         "desc": "纯净轻量开源流媒体音乐客户端，利用开放 API 获取无损音频流，桌面与移动双端通吃，内存占用极低。",
-        "badge": "天籁之源 · 50.5k★",
+        "badge": "天籁之源 · 50.6k★",
         "categoryId": "audio",
         "url": "https://github.com/team-spotube/spotube",
         "launchText": "探查源码 ➔",
@@ -957,7 +957,7 @@
       {
         "name": "Ghidra // 软件逆向工程反编译架构",
         "desc": "由美国国家安全局开源的强大逆向工程套件。支持 x86/ARM/MIPS 全指令集反汇编与 C 语言高阶代码反编译还原。",
-        "badge": "逆向兵刃 · 96.9k★",
+        "badge": "逆向兵刃 · 97.3k★",
         "categoryId": "geek",
         "url": "https://github.com/NationalSecurityAgency/ghidra",
         "launchText": "探查源码 ➔",
