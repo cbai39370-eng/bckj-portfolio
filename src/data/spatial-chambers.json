@@ -116,32 +116,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "Ripple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding 引发 引发",
-        "summary": "HackerNews 社区热榜头条（得分 264）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #264★ ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "Claude Code sends your email address to websites 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 771）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #771★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.ricursive.com/ripple"
+        "url": "https://github.com/anthropics/claude-code/issues/107757"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "寰宇观察：关于 Residential proxies detected on White House network 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 838）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #838★ ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "寰宇观察：关于 sshole 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 2474）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #2474★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://layer3intel.com/blog/residential-proxies-white-house-network"
+        "url": "https://sshhole.com"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "全球 3.5 万个电台随机听 RoamDial： iOS 版上架了，安卓正在封测，发帖送一波永久 Pro 码",
-        "summary": "来自国内极客社区的热议思潮（讨论度 172 节点：分享创造）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 172 条热议 ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "不要用 sparkcloud 机场",
+        "summary": "来自国内极客社区的热议思潮（讨论度 80 节点：问与答）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 80 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254622"
+        "url": "https://www.v2ex.com/t/1254791"
       },
       {
         "categoryId": "observatory",
@@ -156,32 +156,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "Kimi K3.1 Pro model weights are out 引发 引发",
-        "summary": "HackerNews 社区热榜头条（得分 435）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #435★ ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "MS Paint Remote Code Execution 重大安全漏洞预警与防御拓扑",
+        "summary": "HackerNews 社区热榜头条（得分 406）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #406★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+        "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "寰宇观察：关于 Images 2.6 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 190）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #190★ ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "寰宇观察：关于 Pwn.college 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 34）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #34★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://openai.com/index/introducing-images-2-6/"
+        "url": "https://pwn.college/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "刚去接水，发现领导在用洗洁精洗眼镜，搜了下好像说是可以，不过长期用会有什么问题吗",
-        "summary": "来自国内极客社区的热议思潮（讨论度 87 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 87 条热议 ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "微信输入法敏感词提取器",
+        "summary": "来自国内极客社区的热议思潮（讨论度 76 节点：信息安全）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 76 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254628"
+        "url": "https://www.v2ex.com/t/1254864"
       },
       {
         "categoryId": "observatory",
@@ -196,32 +196,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "全新三端纯原生 SSH 客户端： SSH、SFTP 与 AI 尽在一个应用里，随楼依次赠送 100 位评论者 50 个$v2ex",
-        "summary": "来自国内极客社区的热议思潮（讨论度 167 节点：分享创造）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 167 条热议 ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "Closed AI models dominate the price-极限性能基准测算与调优 frontier",
+        "summary": "HackerNews 社区热榜头条（得分 35）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #35★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254583"
+        "url": "https://village.dev/blog/closed-ai-models-now-dominate-the-price-performance-frontier/"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "寰宇观察：关于 A thousand fewer paths to root 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 229）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #229★ ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "寰宇观察：关于 Nvidia Kubernetes Engine (NVKE) 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 31）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #31★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+        "url": "https://github.com/dsx-ai-factory/nvke"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "昨天通知被裁员了，到现在脑瓜子还是嗡嗡的",
-        "summary": "来自国内极客社区的热议思潮（讨论度 83 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 83 条热议 ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "呆了八年还是被裁了",
+        "summary": "来自国内极客社区的热议思潮（讨论度 66 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 66 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254452"
+        "url": "https://www.v2ex.com/t/1254749"
       },
       {
         "categoryId": "observatory",
@@ -236,32 +236,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "我觉得 ai 时代对于普通人是利好啊，为啥如此多的人反感/不屑呢？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 74 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 74 条热议 ]",
+        "time": "今日发布 // 08:30 UTC",
+        "title": "多模态推演能否构建真正的“物理闭环密室”？",
+        "summary": "实测最新前沿大模型在多重伪解答架构中的表现：虽然能瞬间生成海量障眼法，但在微观物理材质力学与时间线交叉口供的精确剪裁上，人类本格心机依然是不可替代的胜负手。",
+        "specTag": "[ 深度内参: 密室闭环逻辑 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254526"
+        "url": "https://bckj.site"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
         "time": "今日发布 // 05:16 UTC",
-        "title": "寰宇观察：关于 Starfall – Affordable, routine access to microgravity 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 164）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #164★ ]",
+        "title": "寰宇观察：关于 Residential proxies detected on White House network 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 838）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #838★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.spacex.com/starfall"
+        "url": "https://layer3intel.com/blog/residential-proxies-white-house-network"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 05:16 UTC",
-        "title": "现在国模编程第一是谁？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 83 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 83 条热议 ]",
+        "time": "今日发布 // 05:15 UTC",
+        "title": "做了一款 iOS 阅读器「随阅」，目前限免，欢迎试试",
+        "summary": "来自国内极客社区的热议思潮（讨论度 58 节点：分享创造）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 58 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254390"
+        "url": "https://www.v2ex.com/t/1254782"
       }
     ],
     "categories": [
@@ -921,7 +921,7 @@
       {
         "name": "Awesome-Hacking // 极客开源神兵",
         "desc": "Awesome-Hacking // 极客网络抓包嗅探与逆向架构调试台，深入协议底层。",
-        "badge": "逆向兵刃 · 124.6k★",
+        "badge": "逆向兵刃 · 124.7k★",
         "categoryId": "geek",
         "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
         "launchText": "探查源码 ➔",
@@ -957,7 +957,7 @@
       {
         "name": "Ghidra // 软件逆向工程反编译架构",
         "desc": "由美国国家安全局开源的强大逆向工程套件。支持 x86/ARM/MIPS 全指令集反汇编与 C 语言高阶代码反编译还原。",
-        "badge": "逆向兵刃 · 97.9k★",
+        "badge": "逆向兵刃 · 98.2k★",
         "categoryId": "geek",
         "url": "https://github.com/NationalSecurityAgency/ghidra",
         "launchText": "探查源码 ➔",
