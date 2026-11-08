@@ -116,32 +116,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "The AI sell-off compared to well-known stock market crashes 引发 引发",
-        "summary": "HackerNews 社区热榜头条（得分 27）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #27★ ]",
+        "time": "今日发布 // 04:36 UTC",
+        "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 259）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #259★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.kadoa.com/companies/insights/ai-selloff-perspective"
+        "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "寰宇观察：关于 Libghostty 1.0 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 381）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #381★ ]",
+        "time": "今日发布 // 04:36 UTC",
+        "title": "寰宇观察：关于 What I run on my $10 USD OpenStick homelab 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 440）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #440★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://mitchellh.com/writing/libghostty-1-0"
+        "url": "https://blog.bosscher.ch/posts/openstick/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "如果不上班了，你还能靠什么继续谋生！",
-        "summary": "来自国内极客社区的热议思潮（讨论度 118 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 118 条热议 ]",
+        "time": "今日发布 // 08:00 UTC",
+        "title": "为什么很多人把 DeepSeek 神化了？看国内大模型工程落地思潮",
+        "summary": "来自国内开发者社区的热点思潮（讨论度 60+ 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 极客讨论: V2EX 60+ 热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254971"
+        "url": "https://www.v2ex.com/t/1251402"
       },
       {
         "categoryId": "observatory",
@@ -166,22 +166,22 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "寰宇观察：关于 A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 394）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #394★ ]",
+        "time": "今日发布 // 04:36 UTC",
+        "title": "Rust 编译器最新优化：无开销抽象与跨架构编译提速实战",
+        "summary": "HackerNews 社区热榜头条（得分 15）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #15★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://hightouch.com/blog/llm-judges-identity-resolution"
+        "url": "https://github.com/crmne/zapfast"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "大佬们今年双 11 准备买点啥？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 56 节点：问与答）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 56 条热议 ]",
+        "time": "今日发布 // 05:45 UTC",
+        "title": "私有云盘 AList 生态爆发：家庭微型服务器如何重构数字资产仓",
+        "summary": "探讨基于 Linux 迷你主机与 Docker 容器聚合全网网盘直链的实战经验，彻底解决插画资产与高清无损影音的跨设备高速传输痛点。",
+        "specTag": "[ 个人资产: ALIST 私有存储仓 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254969"
+        "url": "https://www.v2ex.com"
       },
       {
         "categoryId": "observatory",
@@ -206,22 +206,22 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "寰宇观察：关于 I Toured Unitree's Factory. I'm More Bullish on the West 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 69）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #69★ ]",
+        "time": "今日发布 // 04:36 UTC",
+        "title": "寰宇观察：关于 Making any integer with four 2s (2025) 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 81）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #81★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://josef.cn/blog/unitree"
+        "url": "https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
         "time": "今日发布 // 04:46 UTC",
-        "title": "居委会是如何精准知道家里住了哪些人的",
-        "summary": "来自国内极客社区的热议思潮（讨论度 47 节点：上海）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 47 条热议 ]",
+        "title": "如果不上班了，你还能靠什么继续谋生！",
+        "summary": "来自国内极客社区的热议思潮（讨论度 118 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 118 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254966"
+        "url": "https://www.v2ex.com/t/1254971"
       },
       {
         "categoryId": "observatory",
@@ -246,22 +246,22 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "寰宇观察：关于 Tesla to wind down Cybertruck production 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 916）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #916★ ]",
+        "time": "今日发布 // 04:36 UTC",
+        "title": "寰宇观察：关于 GitHub New pull request overview page in public preview 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 94）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #94★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817"
+        "url": "https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
         "time": "今日发布 // 04:46 UTC",
-        "title": "今天离职谈话领导说他心寒了",
-        "summary": "来自国内极客社区的热议思潮（讨论度 44 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 44 条热议 ]",
+        "title": "大佬们今年双 11 准备买点啥？",
+        "summary": "来自国内极客社区的热议思潮（讨论度 56 节点：问与答）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 56 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1255048"
+        "url": "https://www.v2ex.com/t/1254969"
       }
     ],
     "categories": [
@@ -894,7 +894,7 @@
       {
         "name": "洛雪音乐 // 极客开源神兵",
         "desc": "基于 Electron 与 Vue 打造的开源音频流客户端。支持各大平台歌曲搜索、歌词逐字同步与自定义音源解析脚本。",
-        "badge": "天籁之源 · 55.1k★",
+        "badge": "天籁之源 · 55.2k★",
         "categoryId": "audio",
         "url": "https://github.com/lyswhut/lx-music-desktop",
         "launchText": "探查源码 ➔",
@@ -921,7 +921,7 @@
       {
         "name": "Awesome-Hacking // 极客开源神兵",
         "desc": "Awesome-Hacking // 极客网络抓包嗅探与逆向架构调试台，深入协议底层。",
-        "badge": "逆向兵刃 · 124.8k★",
+        "badge": "逆向兵刃 · 124.9k★",
         "categoryId": "geek",
         "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
         "launchText": "探查源码 ➔",
@@ -930,7 +930,7 @@
       {
         "name": "Spotube // 纯净流媒体音乐客户端",
         "desc": "纯净轻量开源流媒体音乐客户端，利用开放 API 获取无损音频流，桌面与移动双端通吃，内存占用极低。",
-        "badge": "天籁之源 · 50.6k★",
+        "badge": "天籁之源 · 50.7k★",
         "categoryId": "audio",
         "url": "https://github.com/team-spotube/spotube",
         "launchText": "探查源码 ➔",
@@ -957,7 +957,7 @@
       {
         "name": "Ghidra // 软件逆向工程反编译架构",
         "desc": "由美国国家安全局开源的强大逆向工程套件。支持 x86/ARM/MIPS 全指令集反汇编与 C 语言高阶代码反编译还原。",
-        "badge": "逆向兵刃 · 98.4k★",
+        "badge": "逆向兵刃 · 98.6k★",
         "categoryId": "geek",
         "url": "https://github.com/NationalSecurityAgency/ghidra",
         "launchText": "探查源码 ➔",
