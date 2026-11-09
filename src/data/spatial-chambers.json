@@ -116,22 +116,22 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 04:36 UTC",
-        "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files 引发 引发",
-        "summary": "HackerNews 社区热榜头条（得分 259）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #259★ ]",
+        "time": "今日发布 // 04:46 UTC",
+        "title": "Outlook.com Is Quietly Rejecting Email from Domains Without DMARC 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 307）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #307★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again"
+        "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:36 UTC",
-        "title": "寰宇观察：关于 What I run on my $10 USD OpenStick homelab 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 440）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #440★ ]",
+        "time": "今日发布 // 04:46 UTC",
+        "title": "寰宇观察：关于 RIP, Harvest 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 131）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #131★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://blog.bosscher.ch/posts/openstick/"
+        "url": "https://aphyr.com/posts/427-rip-harvest"
       },
       {
         "categoryId": "domestic",
@@ -166,12 +166,12 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:36 UTC",
+        "time": "今日发布 // 04:46 UTC",
         "title": "Rust 编译器最新优化：无开销抽象与跨架构编译提速实战",
-        "summary": "HackerNews 社区热榜头条（得分 15）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #15★ ]",
+        "summary": "HackerNews 社区热榜头条（得分 320）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #320★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://github.com/crmne/zapfast"
+        "url": "https://ketchup3d.github.io/app/"
       },
       {
         "categoryId": "domestic",
@@ -206,12 +206,12 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:36 UTC",
-        "title": "寰宇观察：关于 Making any integer with four 2s (2025) 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 81）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #81★ ]",
+        "time": "今日发布 // 04:46 UTC",
+        "title": "寰宇观察：关于 A Critique of GPUI 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 16）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #16★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/"
+        "url": "https://blog.zortax.de/posts/a-critique-of-gpui"
       },
       {
         "categoryId": "domestic",
@@ -246,12 +246,12 @@
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:36 UTC",
-        "title": "寰宇观察：关于 GitHub New pull request overview page in public preview 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 94）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #94★ ]",
+        "time": "今日发布 // 04:46 UTC",
+        "title": "寰宇观察：关于 Unlocking any car from X brand in most of the world 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 157）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #157★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/"
+        "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/"
       },
       {
         "categoryId": "domestic",
@@ -903,7 +903,7 @@
       {
         "name": "IINA // 现代极简播放器天花板",
         "desc": "macOS 现代极简视频播放器天花板，基于 mpv 内核深度定制，画中画与流媒体解码神器。",
-        "badge": "极影魔方 · 47.0k★",
+        "badge": "极影魔方 · 47.1k★",
         "categoryId": "video",
         "url": "https://github.com/iina/iina",
         "launchText": "探查源码 ➔",
@@ -921,7 +921,7 @@
       {
         "name": "Awesome-Hacking // 极客开源神兵",
         "desc": "Awesome-Hacking // 极客网络抓包嗅探与逆向架构调试台，深入协议底层。",
-        "badge": "逆向兵刃 · 124.9k★",
+        "badge": "逆向兵刃 · 125.0k★",
         "categoryId": "geek",
         "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
         "launchText": "探查源码 ➔",
@@ -957,7 +957,7 @@
       {
         "name": "Ghidra // 软件逆向工程反编译架构",
         "desc": "由美国国家安全局开源的强大逆向工程套件。支持 x86/ARM/MIPS 全指令集反汇编与 C 语言高阶代码反编译还原。",
-        "badge": "逆向兵刃 · 98.6k★",
+        "badge": "逆向兵刃 · 98.8k★",
         "categoryId": "geek",
         "url": "https://github.com/NationalSecurityAgency/ghidra",
         "launchText": "探查源码 ➔",
