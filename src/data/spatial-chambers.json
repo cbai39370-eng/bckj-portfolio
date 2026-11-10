@@ -116,32 +116,32 @@
       {
         "categoryId": "ai",
         "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "Outlook.com Is Quietly Rejecting Email from Domains Without DMARC 引发 引发",
-        "summary": "HackerNews 社区热榜头条（得分 307）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #307★ ]",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "Claude Fable 5.2 and Mythos 5.2 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 404）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #404★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc"
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
       },
       {
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "寰宇观察：关于 RIP, Harvest 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 131）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #131★ ]",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "寰宇观察：关于 USPS now offers official ZIP Code boundary polygons 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 573）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #573★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://aphyr.com/posts/427-rip-harvest"
+        "url": "https://postalpro.usps.com/zcb"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 08:00 UTC",
-        "title": "为什么很多人把 DeepSeek 神化了？看国内大模型工程落地思潮",
-        "summary": "来自国内开发者社区的热点思潮（讨论度 60+ 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 极客讨论: V2EX 60+ 热议 ]",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "七年级期中考试分数如下，哎，认命了",
+        "summary": "来自国内极客社区的热议思潮（讨论度 150 节点：教育）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 150 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1251402"
+        "url": "https://www.v2ex.com/t/1255591"
       },
       {
         "categoryId": "observatory",
@@ -152,6 +152,86 @@
         "specTag": "[ 社区热榜 #129★ ]",
         "linkText": "展开深度内参 ↳",
         "url": "https://hackertimes.ca/"
+      },
+      {
+        "categoryId": "ai",
+        "category": "智子推演 // AI & PARADOX",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "Payments Canada announces launch of Canada's Real-Time Rail (RTR) payment system 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 503）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #503★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy"
+      },
+      {
+        "categoryId": "global",
+        "category": "寰宇前沿 // GLOBAL TECH",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "寰宇观察：关于 E-means: Outperforming k-means in one-tenth the epochs 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 338）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #338★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://e-means.github.io/"
+      },
+      {
+        "categoryId": "domestic",
+        "category": "极客生态 // DOMESTIC DEV",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "突然想到个一直没有想的事情，各位一般多久剪一次头发",
+        "summary": "来自国内极客社区的热议思潮（讨论度 119 节点：生活）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 119 条热议 ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://www.v2ex.com/t/1255744"
+      },
+      {
+        "categoryId": "observatory",
+        "category": "视界暗线 // OBSERVATORY",
+        "time": "今日发布 // 04:35 UTC",
+        "title": "极客首发：HackerBooks – HackerTube, but for books mentioned on HN",
+        "summary": "HackerNews 社区热榜头条（得分 1079）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #1079★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://hackerbooks.org"
+      },
+      {
+        "categoryId": "ai",
+        "category": "智子推演 // AI & PARADOX",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "Foldable Flight: The Best Paper Airplanes 引发 引发",
+        "summary": "HackerNews 社区热榜头条（得分 930）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #930★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://www.foldableflight.com"
+      },
+      {
+        "categoryId": "global",
+        "category": "寰宇前沿 // GLOBAL TECH",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "寰宇观察：关于 Locating the source of a mysterious beep 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 87）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #87★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/"
+      },
+      {
+        "categoryId": "domestic",
+        "category": "极客生态 // DOMESTIC DEV",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "[送会员] 为了学好 英语 和 日语，我做了这个...",
+        "summary": "来自国内极客社区的热议思潮（讨论度 112 节点：分享创造）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 112 条热议 ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://www.v2ex.com/t/1255556"
+      },
+      {
+        "categoryId": "observatory",
+        "category": "视界暗线 // OBSERVATORY",
+        "time": "今日发布 // 04:35 UTC",
+        "title": "网络探秘：HackerTube: YouTube built from videos recommended by HN 背后的隐秘协议与数字线索",
+        "summary": "HackerNews 社区热榜头条（得分 2385）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #2385★ ]",
+        "linkText": "展开深度内参 ↳",
+        "url": "https://karpathy.bearblog.dev/hacker-tube/"
       },
       {
         "categoryId": "ai",
@@ -167,101 +247,21 @@
         "categoryId": "global",
         "category": "寰宇前沿 // GLOBAL TECH",
         "time": "今日发布 // 04:46 UTC",
-        "title": "Rust 编译器最新优化：无开销抽象与跨架构编译提速实战",
-        "summary": "HackerNews 社区热榜头条（得分 320）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #320★ ]",
+        "title": "寰宇观察：关于 RIP, Harvest 的全球架构演进思潮",
+        "summary": "HackerNews 社区热榜头条（得分 131）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
+        "specTag": "[ 社区热榜 #131★ ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://ketchup3d.github.io/app/"
+        "url": "https://aphyr.com/posts/427-rip-harvest"
       },
       {
         "categoryId": "domestic",
         "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 05:45 UTC",
-        "title": "私有云盘 AList 生态爆发：家庭微型服务器如何重构数字资产仓",
-        "summary": "探讨基于 Linux 迷你主机与 Docker 容器聚合全网网盘直链的实战经验，彻底解决插画资产与高清无损影音的跨设备高速传输痛点。",
-        "specTag": "[ 个人资产: ALIST 私有存储仓 ]",
+        "time": "今日发布 // 06:01 UTC",
+        "title": "我做的收费 SSH 客户端 Termark，被人 1:1 复刻并开源了",
+        "summary": "来自国内极客社区的热议思潮（讨论度 77 节点：程序员）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
+        "specTag": "[ 社区频段: 77 条热议 ]",
         "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com"
-      },
-      {
-        "categoryId": "observatory",
-        "category": "视界暗线 // OBSERVATORY",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "极客首发：HackerBooks – HackerTube, but for books mentioned on HN",
-        "summary": "HackerNews 社区热榜头条（得分 1079）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #1079★ ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://hackerbooks.org"
-      },
-      {
-        "categoryId": "ai",
-        "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 07:15 UTC",
-        "title": "推理模型时代：从盲目补全到本格长链条自我证伪",
-        "summary": "深度剖析 DeepSeek-R1 与 o1 类长思考模型的拓扑结构：大模型首次具备了推翻自身第一假设并回溯验证的能力，如同侦探在案发现场推演多条死胡同后的绝地反击。",
-        "specTag": "[ 技术突破: 思考模型自我回溯 ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://news.ycombinator.com"
-      },
-      {
-        "categoryId": "global",
-        "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "寰宇观察：关于 A Critique of GPUI 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 16）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #16★ ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://blog.zortax.de/posts/a-critique-of-gpui"
-      },
-      {
-        "categoryId": "domestic",
-        "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "如果不上班了，你还能靠什么继续谋生！",
-        "summary": "来自国内极客社区的热议思潮（讨论度 118 节点：职场话题）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 118 条热议 ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254971"
-      },
-      {
-        "categoryId": "observatory",
-        "category": "视界暗线 // OBSERVATORY",
-        "time": "今日发布 // 04:35 UTC",
-        "title": "网络探秘：HackerTube: YouTube built from videos recommended by HN 背后的隐秘协议与数字线索",
-        "summary": "HackerNews 社区热榜头条（得分 2385）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #2385★ ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://karpathy.bearblog.dev/hacker-tube/"
-      },
-      {
-        "categoryId": "ai",
-        "category": "智子推演 // AI & PARADOX",
-        "time": "今日发布 // 06:40 UTC",
-        "title": "Agentic Coding 范式转移：写代码已演变为系统架构博弈",
-        "summary": "当 AI 助手能自主分析数十万行跨模块依赖并执行精准重构，程序员的核心竞争力正在从语法敲击彻底迁徙为逻辑裁决与本格审美鉴赏。",
-        "specTag": "[ 范式转移: 智能体系统裁决 ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://github.com/trending"
-      },
-      {
-        "categoryId": "global",
-        "category": "寰宇前沿 // GLOBAL TECH",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "寰宇观察：关于 Unlocking any car from X brand in most of the world 的全球架构演进思潮",
-        "summary": "HackerNews 社区热榜头条（得分 157）。该议题引发全球架构师与开发者关于现代计算体系、开源生态与工程效率的深度论战。",
-        "specTag": "[ 社区热榜 #157★ ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/"
-      },
-      {
-        "categoryId": "domestic",
-        "category": "极客生态 // DOMESTIC DEV",
-        "time": "今日发布 // 04:46 UTC",
-        "title": "大佬们今年双 11 准备买点啥？",
-        "summary": "来自国内极客社区的热议思潮（讨论度 56 节点：问与答）。折射出当下国内程序员在独立开发、日常生产力重构与工程落地中的真实呼声。",
-        "specTag": "[ 社区频段: 56 条热议 ]",
-        "linkText": "展开深度内参 ↳",
-        "url": "https://www.v2ex.com/t/1254969"
+        "url": "https://www.v2ex.com/t/1255590"
       }
     ],
     "categories": [
@@ -912,7 +912,7 @@
       {
         "name": "Meetily // 离线端侧AI会议助手",
         "desc": "隐私优先的本地端侧 AI 智能语音会议纪要与离线实时语音转录神器，100% 本地运算零云端泄露。",
-        "badge": "离线神兵 · 32.5k★",
+        "badge": "离线神兵 · 32.6k★",
         "categoryId": "local",
         "url": "https://github.com/Zackriya-Solutions/meetily",
         "launchText": "探查源码 ➔",
@@ -921,7 +921,7 @@
       {
         "name": "Awesome-Hacking // 极客开源神兵",
         "desc": "Awesome-Hacking // 极客网络抓包嗅探与逆向架构调试台，深入协议底层。",
-        "badge": "逆向兵刃 · 125.0k★",
+        "badge": "逆向兵刃 · 125.1k★",
         "categoryId": "geek",
         "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
         "launchText": "探查源码 ➔",
@@ -957,7 +957,7 @@
       {
         "name": "Ghidra // 软件逆向工程反编译架构",
         "desc": "由美国国家安全局开源的强大逆向工程套件。支持 x86/ARM/MIPS 全指令集反汇编与 C 语言高阶代码反编译还原。",
-        "badge": "逆向兵刃 · 98.8k★",
+        "badge": "逆向兵刃 · 99.2k★",
         "categoryId": "geek",
         "url": "https://github.com/NationalSecurityAgency/ghidra",
         "launchText": "探查源码 ➔",
